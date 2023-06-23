@@ -13,7 +13,8 @@ Additional, they following functional use-cases are covered:
 
  1. [Manage Portal Settings (appearance, logos, fonts, etc.)](./products/SwaggerHub%20Portal%20APIs/Manage-Portal-Settings.md)
  2. [Create and publish new Product](./products/SwaggerHub%20Portal%20APIs/Create-New-Product.md)
- 3. [Manage existing Products](./products/SwaggerHub%20Portal%20APIs/Manage-Existing-Products.md)
+ 3. [Add APIs and Documents to Product](./products/SwaggerHub%20Portal%20APIs/Add-Product-Content.md)
+ 4. [Manage existing Products](./products/SwaggerHub%20Portal%20APIs/Manage-Existing-Products.md)
  
 
 ### File structure (todo)
