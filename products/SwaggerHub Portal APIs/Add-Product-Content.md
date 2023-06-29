@@ -1,4 +1,4 @@
-## Use Case 3 - Add APIs and Documentation to a Product
+# Add APIs and Documentation to a Product
 
 Once a product has been created, it can be hydrated with the technical API reference documents (e.g. an OpenAPI document or AsyncAPI document) and additional Markdown documents to further explain for consumers how to get up and running with the product.
 
@@ -33,7 +33,7 @@ Sample response payload:
 ```
 > **note** keep note of the returned `id` for the section, as it will be needed for later API calls to add API references and documentation.
 
-### Add API Reference
+## Add API Reference
 
 API reference documents (e.g., an OpenAPI definition) exist as **table-of-contents** resources within a product section. An API reference document can be added to a product via a `POST` request to the `/sections/{sectionId}/table-of-contents` resource endpoint.
 
@@ -64,7 +64,7 @@ Sample response body:
 }
 ```
 
-### Add Documentation
+## Add Documentation
 
 Additional Markdown documentation can also be added to improve the understanding and consumption experience of products. Markdown documents also exist as **table-of-contents** resources within a product section. A Markdown document reference can be added to a product via a `POST` request to the `/sections/{sectionId}/table-of-contents` resource endpoint.
 
@@ -94,7 +94,7 @@ Sample response body:
 }
 ```
 
-#### Add Markdown contents
+### Add Markdown contents
 Now that the `documentId` of the _table-of-contents_ resource for the markdown has been obtained, the content itself can be prepared. Markdown content can be added to the document via a `PATCH` request to the `/documents/{documentId}` resource endpoint.
 
 A sample cURL request to update document content:

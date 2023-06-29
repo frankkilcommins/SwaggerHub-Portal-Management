@@ -14,7 +14,7 @@ The following table outlines the settings per product
 | `hidden` | Indicates whether or not the product will be displayed on the portal landing page. Defaults to `false` (so product is visible on landing page by default). |
 | `logoId` | A reference to the logo attachment. *Note*  A _logo_ must be 64x64 pixels, have a `.jpg`, `.gif`, or `.png` file format, and be less than 5MB in size. |
 
-### Create Product
+## Create Product
 This section describes how to create a product and set the main product settings.
 
 A new product can be created via a `POST` request to the `/products` endpoint. Below is a sample `cURL` request, which creates a product with the base settings populated, and sets the visibility to _private_.
@@ -44,7 +44,7 @@ Sample response body:
 
 > **note** keep note of the returned `id` for the products, as it will be needed for later API calls
 
-### Add Product Logo
+## Add Product Logo
 Products can also have a _logo_. To create a logo, leverage the `/attachments/branding/{portalId}` endpoint and `POST` the binary file data. This is the same process as creating the image files for the _portal settings_.
 
 > Don't forget to replace the placeholders in the sample request with real values
@@ -54,7 +54,7 @@ curl -X POST -H "Content-Type: image/png" --data-binary "@logo.png" https://api.
 --header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>'
 ```
 
-Now that the logo has been created, issue a `PATCH` request to the `/products/{productId}` and set the logoId branding info. This will add the logo to the product.
+Now that the logo has been created, issue a `PATCH` request to the `/products/{productId}` and set the `logoId` branding info. This will add the logo to the product.
 
 Sample cURL request to update a product and set the logoId
 ```

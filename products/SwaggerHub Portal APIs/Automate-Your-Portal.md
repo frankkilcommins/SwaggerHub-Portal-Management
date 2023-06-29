@@ -1,7 +1,8 @@
 # Automate Your Portal And API Documentation
 
-There are many use cases that highlight the benefits of managing the SwaggerHub portal (including API documentation) in an automated fashion and effectively treating API 
-documentation as code.
+The SwaggerHub Portal is a _best-of-breed_ API developer portal designed to provide a seamless and comprehensive experience for teams and companies to showcase their APIs.
+
+There are many use cases that highlight the benefits of managing the SwaggerHub portal (including API documentation) in an automated fashion and effectively treating API documentation as code.
 
 Some that come to mind:
 - **Efficiency and Consistency:** By managing the portal in an automated fashion, companies can streamline and standardize their portal management processes. They can use version control systems and CI/CD pipelines to manage API documentation as code, ensuring consistency across the documentation and eliminating manual errors.

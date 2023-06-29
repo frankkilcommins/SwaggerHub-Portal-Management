@@ -2,7 +2,7 @@
 
 It's very natural to want to manage an existing API product. The administrative APIs support editing the product settings, as well as the ability to add, edit, or delete API references and markdown documents. Should the need arise to delete a product completely, the APIs also cater for this use case.
 
-### Edit Product Settings
+## Edit Product Settings
 A product's settings can be updated via a `PATCH` request to the `/products/{productId}` endpoint.
 
 Sample cURL request to update product settings:
@@ -21,7 +21,7 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/products/<
 }'
 ```
 
-### Edit API Reference, Documentation, or Table of Contents Order
+## Edit API Reference, Documentation, or Table of Contents Order
 
 A product's API references, markdown document references, or table-of-contents orders can be updated via a `PATCH` request to the `/table-of-contents/{id}` endpoint. 
 
@@ -43,4 +43,4 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/table-of-c
 }'
 ```
 
-> It's possible to have multiple API references and documents as part of a product. To add additional content to the _table-of-content follow the guides in [Add APIs and Documentation to a Product](#use-case-3---add-apis-and-documentation-to-a-product)
+> It's possible to have multiple API references and documents as part of a product. To add additional content to the _table-of-contents_ follow the guides in [Add APIs and Documentation to a Product](#use-case-3---add-apis-and-documentation-to-a-product)

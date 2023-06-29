@@ -18,9 +18,9 @@ The following table outlines the settings per level
 | landingPage | `illustrationImageId` | A reference to the illustration image attachment. *Note*  An _illustration_ image should be at least 566 x 320 pixels, with a 16:9 aspect ratio, have a `.jpg`, or `.png` file format, and be less than 5MB in size. |
 | landingPage | `pageDescription` | A short description for the portal landing page (upto 500 characters long). Markdown format supported.
 
-### Retrieve the base information of your portal
+## Retrieve the base information of your portal
 
-To obtain the basic information on a portal instance, send a `GET` request to `https://api.portal.swaggerhub.com/v1/organizations?subdomain=<YOUR-CONFIGURED-DOMAIN>`
+To obtain the basic information on a portal instance, send a `GET` request to `https://api.portal.swaggerhub.com/v1/portals?subdomain=<YOUR-CONFIGURED-DOMAIN>`
 
 Sample cURL request:
 ```
@@ -60,7 +60,7 @@ Sample response body:
 
 > Keep the response to hand as you'll use some of the data to update the JSON requests when making additional API calls.
 
-### Upload branding and landing images
+## Upload branding and landing images
 The `logo`, `hero`, `illustration`, and `favicon` files can be uploaded via `POST` requests to the `/attachments/branding/{portalId}?name={imageName}` endpoint.
 
 > Don't forget to replace the placeholders in the sample request with real values
@@ -72,7 +72,7 @@ curl -X POST -H "Content-Type: image/png" --data-binary "@fav.png" https://api.p
 > Keep the response to hand as you'll use some of the data to update the portal settings shortly
 
 
-### Update the Portal Settings
+## Update the Portal Settings
 
 Portal settings can be updated via a `PATCH` request to the `/portals/{portalId}` endpoint.
 
