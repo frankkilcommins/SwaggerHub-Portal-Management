@@ -29,6 +29,9 @@ Additionally, the following functional use-cases are covered:
   - product_2 ...
   - product_N
 
+### Control Ordering and API references
+Add a simple ReadMe.md to each product folder. Example [ReadMe for Metadata](./products/SwaggerHub%20Portal%20APIs/ReadMe.md).
+
 ### Other ToDos
  
  - Harden the Portal API OpenAPI document
