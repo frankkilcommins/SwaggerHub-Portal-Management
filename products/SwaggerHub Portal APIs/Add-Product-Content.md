@@ -1,46 +1,54 @@
-# Add APIs and Documentation to a Product
+Once a product has been created, it can be enriched with the technical API reference documents (e.g. an OpenAPI document or AsyncAPI document) and additional Markdown documents to further explain for consumers how to get up and running with the product.
 
-Once a product has been created, it can be hydrated with the technical API reference documents (e.g. an OpenAPI document or AsyncAPI document) and additional Markdown documents to further explain for consumers how to get up and running with the product.
-
-The SwaggerHub Portal APIs can be leveraged to automate the creation of API references and additional documentation material which can enhance the developer experience (DX) of published products. 
+The SwaggerHub Portal APIs can be leveraged to automate the creation of API references and additional documentation material which can enhance the developer experience (DX) of published products.
 
 The following API resources and paths are leveraged:
-- `/sections`
-- `/sections/{sectionId}/table-of-contents`
-- `/attachments/documentation/{portalId}`
-- `/documents/{documentId`
 
-Within the portal, API reference material and documentation are grouped under a resource known as **sections**. When creating a product a _default_ section is created which is accessible via a `GET` request to the `/sections?productId={productId}` endpoint.
+* `/sections`
+* `/sections/{sectionId}/table-of-contents`
+* `/documents/{documentId}`
 
-Sample cURL request:
+Within the portal, API reference material and documentation are grouped under a resource known as **sections**. 
+
+## Add Section
+Prior to adding API references or supporting documentation, you must create a _section_ to house the content. 
+
+A section can be created via a `POST` request to the [`/sections`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Sections/createSection) resource endpoint.
+
+Sample cURL request to create a section:
+
 ```
-curl --location 'https://api.portal.swaggerhub.com/v1/sections?productId=<PRODUCT-ID>' \
---header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>'
+curl --location --request POST 'https://api.portal.swaggerhub.com/v1/sections' \
+--header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>' \
+--header 'Content-Type: application/json' \
+
+--data '
+{
+    "productId": "<The productId from previous step>",
+    "title": "Petstore Adoptions API",
+    "slug": "petstore-adoptions",
+    "order": 1
+}
 ```
 
 Sample response payload:
+
 ```
 {
-  "items": [
-    {
-      "id": "02fdcafc-9328-4eb2-8315-a2ce34d9644b",
-      "productId": "afda3749-2314-4153-a53f-ed54ab2387b2",
-      "title": "default",
-      "slug": "default"
-    }
-  ]
+  "id": "5234107e-f789-4540-87b1-53a566f47163"
 }
 ```
-> **note** keep note of the returned `id` for the section, as it will be needed for later API calls to add API references and documentation.
+
+> **Note:** keep note of the returned `id` for the section, as it will be needed for later API calls to add API references and documentation.
 
 ## Add API Reference
 
-API reference documents (e.g., an OpenAPI definition) exist as **table-of-contents** resources within a product section. An API reference document can be added to a product via a `POST` request to the `/sections/{sectionId}/table-of-contents` resource endpoint.
+API reference documents (e.g., an OpenAPI definition) exist as **table-of-contents** resources within a product section. An API reference document can be added to a product via a `POST` request to the [`/sections/{sectionId}/table-of-contents`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Table-of-Contents/createTableOfContentsEntry) resource endpoint.
 
-> **Note** currently only SwaggerHub hosted API references can be linked to portal products. Please have the published URL of your SwaggerHub API ready when preparing the API request below!
-
+> **Note:** currently only SwaggerHub hosted API references can be linked to portal products. Please have the published URL of your SwaggerHub API ready when preparing the API request below!
 
 A sample cURL request to add an API reference:
+
 ```
 curl --location --request POST 'https://api.portal.swaggerhub.com/v1/sections/<SECTION-ID>/table-of-contents' \
 --header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>' \
@@ -58,6 +66,7 @@ curl --location --request POST 'https://api.portal.swaggerhub.com/v1/sections/<S
 ```
 
 Sample response body:
+
 ```
 {
   "id": "4adfa584-c88f-49a8-b66e-7e90f3c20395"
@@ -66,11 +75,12 @@ Sample response body:
 
 ## Add Documentation
 
-Additional Markdown documentation can also be added to improve the understanding and consumption experience of products. Markdown documents also exist as **table-of-contents** resources within a product section. A Markdown document reference can be added to a product via a `POST` request to the `/sections/{sectionId}/table-of-contents` resource endpoint.
+Additional Markdown documentation can also be added to improve the understanding and consumption experience of products. Markdown documents also exist as **table-of-contents** resources within a product section. A Markdown document reference can be added to a product via a `POST` request to the [`/sections/{sectionId}/table-of-contents`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Table-of-Contents/createTableOfContentsEntry) resource endpoint.
 
-The difference between a Markdown document and an API Reference document is described via the `content` object in the request payload. The `order` to control where the document will appear in the _table-of-contents_.
+The difference between a Markdown document and an API Reference document is described via the `content` object in the request payload. The `order` to control where the document will appear in the *table-of-contents*.
 
 A sample cURL request to add a documentation reference:
+
 ```
 curl --location --request POST 'https://api.portal.swaggerhub.com/v1/sections/<SECTION-ID>/table-of-contents' \
 --header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>' \
@@ -87,6 +97,7 @@ curl --location --request POST 'https://api.portal.swaggerhub.com/v1/sections/<S
 ```
 
 Sample response body:
+
 ```
 {
   "id": "0afe1039-e1a4-4bb3-9d13-a0e7c2a6942c",
@@ -95,9 +106,11 @@ Sample response body:
 ```
 
 ### Add Markdown contents
-Now that the `documentId` of the _table-of-contents_ resource for the markdown has been obtained, the content itself can be prepared. Markdown content can be added to the document via a `PATCH` request to the `/documents/{documentId}` resource endpoint.
+
+Now that the `documentId` of the *table-of-contents* resource for the markdown has been obtained, the content itself can be prepared. Markdown content can be added to the document via a `PATCH` request to the [`/documents/{documentId}`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Documents/patchDocument) resource endpoint.
 
 A sample cURL request to update document content:
+
 ```
 curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/documents/<DOCUMENT-ID>' \
 --header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>' \
@@ -108,8 +121,19 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/documents/
 }'
 ```
 
-After adding documentation and linking an API reference, the published portal product documentation looks like follows:
-![Sample Portal Product Documentation](./images/Sample-Portal-Product-Documentation.png)
+## Publish your content
+The last step needed will be to publish the product documentation content, so that it appears on your live portal. Product content can be published via a `PUT` request to the [`/products/{productId}/published-content`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Publishing/publishContent) resource endpoint.
 
-![Sample Portal Product API Reference Docs](./images/Sample-Portal-Product-API-Reference.png)
+ 🚧All API references and documentation added in the previous steps will be published as part of this call.
 
+A sample cURL request to publish product content:
+```cURL
+curl --location --request PUT 'https://api.portal.swaggerhub.com/v1/products/<PRODUCT-ID>/table-of-contents' \
+--header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>' \
+```
+
+After publishing the documentation and API reference, the portal product documentation looks like follows:
+
+![Sample Portal Product Documentation](https://smartbear.portal.swaggerhub.com/services/api/attachments/6e522cab-1ff6-4551-b9c2-3dd5bfc3013b)
+
+![Sample Portal Product API Reference](https://smartbear.portal.swaggerhub.com/services/api/attachments/b9ba0727-de64-4a69-b717-eab1c61bcdfa)

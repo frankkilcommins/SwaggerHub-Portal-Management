@@ -1,6 +1,11 @@
-Welcome to the SwaggerHub Portal API! This API allows you to manage your SwaggerHub Portal instance, which serves as a comprehensive platform for showcasing and managing APIs. Whether you're a team or a company, this guide will help you get started and understand the business value of the SwaggerHub Portal API.
+Welcome to the SwaggerHub Portal API! 👋
 
-> **Note** The APIs enable direct configuration and content management of a SwaggerHub Portal instance.
+The SwaggerHub Portal is an API developer portal designed to provide a seamless and comprehensive experience for teams and companies to showcase their APIs. This guide will help you get started and understand the business value of the SwaggerHub Portal API. 🚀
+
+**What's this API used for?**
+This API allows you to manage your SwaggerHub Portal instance and automate many activities which can become very useful as more of your teams publish content into your developer portal.
+
+> **Note:** The APIs enable direct configuration and content management of a SwaggerHub Portal instance.
 
 Here's why the SwaggerHub Portal API is valuable:
 
@@ -20,7 +25,6 @@ The SwaggerHub Portal API provides the management APIs for the following resourc
 | Resource | Description | Permissions |
 | -------- | ----------- | ----------- |
 | Portals | A collection representing portal instances and allowing management on portal instances settings. The portal settings control the branding, name, domain url, and availability of a portal. These settings are split into three levels: `general`, `branding`, and `landingPage`. | Read, Modify, Delete |
-| Attachments | Manage and distribute image files and markdown content used by the portal settings, or within products. | Create, Modify, Delete |
 | Documents | A resource for storing document content (specifically for Markdown files/attachments) | Read, Modify, Delete |
 | Sections | A section is a resource used to hold API references as well as API document references and organize them into tables of contents. | Create, Modify, Delete |
 | Products | A collection of metadata (a.k.a. *product settings*), API reference documents (e.g., an OpenAPI document), and Markdown documents which are bundled and presented to a consumer as a product. | Create, Modify, Delete |
