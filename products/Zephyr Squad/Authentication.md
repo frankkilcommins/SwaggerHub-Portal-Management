@@ -5,7 +5,7 @@ The API authentication is based on JSON Web Token (JWT), which is a key for acce
 
 ## Generate a Key
 
-For accessing the API, you must generate an access key in Jira. To generate an access token, click on your profile picture at the page bottom left, and choose the option “Zephyr Squad API keys". For more information, please check out the documentation.
+For accessing the API, you must generate an access key in Jira. To generate an access token, click on your Atlassian profile picture at the page top right, and choose the option “Zephyr Squad API keys". For more information, please check out the documentation.
 
 ## Accessing the API
 
