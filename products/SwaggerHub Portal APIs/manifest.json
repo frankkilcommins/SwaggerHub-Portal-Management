@@ -10,13 +10,15 @@
             "order": 0,
             "parent": "",
             "name": "Getting Started",
+            "slug":"getting-started",
             "type": "markdown",
-            "contentUrl": "getting-started.md"
+            "contentUrl": "Getting-Started.md"
         },
         {
             "order": 1,
             "parent": "",
             "name": "Automate Your Portal",
+            "slug":"automate-your-portal",
             "type": "markdown",
             "contentUrl": "Automate-Your-Portal.md"
         },
@@ -24,6 +26,7 @@
             "order": 2,
             "parent": "",
             "name": "Authentication",
+            "slug":"authentication",
             "type": "markdown",
             "contentUrl": "Authentication.md"
         },
@@ -31,6 +34,7 @@
             "order": 3,
             "parent": "",
             "name": "Create a Product",
+            "slug":"create-new-product",
             "type": "markdown",
             "contentUrl": "Create-New-Product.md"
         },
@@ -38,13 +42,15 @@
             "order": 4,
             "parent": "",
             "name": "Add Documentation Content",
+            "slug":"add-product-content",
             "type": "markdown",
-            "contentUrl": "Add-Documentation-Content.md"
+            "contentUrl": "Add-Product-Content.md"
         },
         {
             "order": 5,
             "parent": "",
             "name": "Manage Existing Products",
+            "slug":"manage-existing-products",
             "type": "markdown",
             "contentUrl": "Manage-Existing-Products.md"
         },
@@ -53,7 +59,7 @@
             "parent": "",
             "name": "SwaggerHub Portal API",
             "slug":"swaggerhub-portal-api",
-            "type": "apiurl",
+            "type": "apiUrl",
             "contentUrl": "https://api.swaggerhub.com/apis/smartbear-public/swaggerhub-portal-api/0.2.0-beta/swagger.json"
         }
     ]
