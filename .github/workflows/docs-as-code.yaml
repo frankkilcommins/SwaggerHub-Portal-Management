@@ -39,12 +39,13 @@ jobs:
               echo "Product is a directory"
               product_name=${product#./products/}
               echo "Product name: $product_name"
-              manifest="../products/$product_name/manifest.json"
+              manifest="./products/$product_name/manifest.json"
               echo "Manifest: $manifest"
               if [[ -f "$manifest" ]]; then
                 echo "Manifest is a file"
-                . ./scripts/publish-portal-content.sh portal_product_upsert "$manifest" "$product_name"
-                . ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product_name"
+                manifest_path="../products/$product_name/manifest.json"
+                . ./scripts/publish-portal-content.sh portal_product_upsert "$manifest_path" "$product_name"
+                . ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest_path" "$product_name"
               else
                 echo "Manifest is not a file"
               fi
