@@ -28,10 +28,6 @@ declare -g section_id
 declare -g product_id
 declare -g document_id
 
-# ToDo - replace with variable set from GitHub Actions
-#portal_product_upsert "../products/Adopt a Pet/manifest.json" "Adopt a Pet"
-#load_and_process_product_manifest_content_metadata "../products/SwaggerHub Portal APIs/manifest.json" "SwaggerHub Portal APIs"
-
 ## HELPER FUNCTIONS
 log_message() {
     local log_level=$1
@@ -99,7 +95,7 @@ function portal_branding_image_post() {
     local image_name=$3
     local encoded_param_value=$(url_encode "$image_name")
 
-    log_message $INFO "Uploading branding image for portal $portal_id from ../products/$image_name/$image_path"
+    log_message $INFO "Uploading branding image for portal $portal_id from /products/$image_name/$image_path"
 
     # get existing branding attachments
     portal_branding_attachments_get "$portal_id"
@@ -114,7 +110,7 @@ function portal_branding_image_post() {
     fi
 
     # get the Content-Type of the image from the image path if the file exists  
-    local full_path="../products/$image_name/$image_path"
+    local full_path="./products/$image_name/$image_path"
 
     if [ -f "$full_path" ]; then
         local content_type=$(file --mime-type -b "$full_path")
@@ -159,10 +155,10 @@ function portal_product_doc_image_post() {
         return
     fi
 
-    log_message $INFO "Uploading image for product $product_id from ../products/$product_name/images/embedded/$image_filename"
+    log_message $INFO "Uploading image for product $product_id from /products/$product_name/images/embedded/$image_filename"
 
     # get the Content-Type of the image from the image path
-    local full_path="../products/$product_name/images/embedded/$image_filename"
+    local full_path="./products/$product_name/images/embedded/$image_filename"
     local content_type=$(file --mime-type -b "$full_path")
 
     local response=$(curl -s --request POST \
@@ -214,7 +210,7 @@ function portal_product_load_documentation_images() {
 
     log_message $INFO "Loading documentation images for product $product_name ..."
 
-    local images_path="../products/$product_name/images/embedded"
+    local images_path="./products/$product_name/images/embedded"
     if [ ! -d "$images_path" ]; then
         log_message $WARNING "No images found in $images_path"
         return
@@ -280,7 +276,7 @@ function load_and_process_product_manifest_content_metadata() {
             portal_product_toc_markdown_upsert "$name" "$slug" $order "$product_toc_id"
             log_message $INFO "Document ID: $document_id"
 
-            local markdown_file="../products/$product_name/$contentUrl"
+            local markdown_file="./products/$product_name/$contentUrl"
             if [ ! -f "$markdown_file" ]; then
                 log_message $ERROR "Markdown file not found: $markdown_file"
                 exit 1
@@ -336,7 +332,7 @@ function load_and_process_product_manifest_content_metadata() {
                 portal_product_toc_markdown_upsert "$child_name" "$child_slug" $child_order "$parent_toc_id"
                 log_message $INFO "Document ID for CHILD: $document_id"
 
-                local child_markdown_file="../products/$product_name/$child_contentUrl"
+                local child_markdown_file="./products/$product_name/$child_contentUrl"
                 if [ ! -f "$child_markdown_file" ]; then
                     log_message $ERROR "Markdown file not found: $child_markdown_file"
                     exit 1
