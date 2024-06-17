@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Author: @frankkilcommins
 # This script is part of a workflow that publishes content to the SwaggerHub Portal instance.
 
 # SwaggerHub Portal API Ref: https://app.swaggerhub.com/apis-docs/smartbear-public/swaggerhub-portal-api/0.2.0-beta
