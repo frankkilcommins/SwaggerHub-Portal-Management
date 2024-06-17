@@ -44,9 +44,8 @@ jobs:
               echo "Manifest: $manifest"
               if [[ -f "$manifest" ]]; then
                 echo "Manifest is a file"
-                manifest_path="../products/$product_name/manifest.json"
-                . ./scripts/publish-portal-content.sh && portal_product_upsert "$manifest_path" "$product_name"
-                . ./scripts/publish-portal-content.sh && load_and_process_product_manifest_content_metadata "$manifest_path" "$product_name"
+                . ./scripts/publish-portal-content.sh && portal_product_upsert "$manifest" "$product_name"
+                . ./scripts/publish-portal-content.sh && load_and_process_product_manifest_content_metadata "$manifest" "$product_name"
               else
                 echo "Manifest is not a file"
               fi
