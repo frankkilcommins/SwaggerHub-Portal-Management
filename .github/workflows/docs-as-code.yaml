@@ -12,9 +12,9 @@ on:
         default: '1' # Set the default log level to INFO
 
 env:
-      PORTAL_STAGING_SUBDOMAIN: ${{ secrets.SWAGGERHUB_PORTAL_STAGING_SUBDOMAIN }}
-      PORTAL_SUBDOMAIN: ${{ secrets.SWAGGERHUB_PORTAL_SUBDOMAIN }}
+      PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}
       SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
+      LOG_LEVEL: ${{ github.event.inputs.log_level }}
 
 jobs:
   publish:
@@ -42,8 +42,6 @@ jobs:
                 ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product"
               fi
             fi
-          done
-        env:
-          LOG_LEVEL: ${{ env.LOG_LEVEL }}          
+          done       
 
     
