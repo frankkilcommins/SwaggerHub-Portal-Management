@@ -14,7 +14,6 @@ on:
 env:
   SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
   LOG_LEVEL: ${{ github.event.inputs.log_level }}
-  SWAGGERHUB_PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}  
 
 jobs:
   publish:
@@ -56,6 +55,6 @@ jobs:
             fi
           done    
         env:
-          PORTAL_SUBDOMAIN: ${{ SWAGGERHUB_PORTAL_SUBDOMAIN }}   
+          PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}   
 
     
