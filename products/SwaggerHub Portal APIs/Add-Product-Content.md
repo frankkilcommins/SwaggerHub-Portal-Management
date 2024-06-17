@@ -13,7 +13,7 @@ Within the portal, API reference material and documentation are grouped under a 
 ## Add Section
 Prior to adding API references or supporting documentation, you must create a _section_ to house the content. 
 
-A section can be created via a `POST` request to the [`/sections`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Sections/createSection) resource endpoint.
+A section can be created via a `POST` request to the [`/sections`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Sections/createSection) resource endpoint.
 
 Sample cURL request to create a section:
 
@@ -43,7 +43,7 @@ Sample response payload:
 
 ## Add API Reference
 
-API reference documents (e.g., an OpenAPI definition) exist as **table-of-contents** resources within a product section. An API reference document can be added to a product via a `POST` request to the [`/sections/{sectionId}/table-of-contents`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Table-of-Contents/createTableOfContentsEntry) resource endpoint.
+API reference documents (e.g., an OpenAPI definition) exist as **table-of-contents** resources within a product section. An API reference document can be added to a product via a `POST` request to the [`/sections/{sectionId}/table-of-contents`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Table-of-Contents/createTableOfContentsEntry) resource endpoint.
 
 > **Note:** currently only SwaggerHub hosted API references can be linked to portal products. Please have the published URL of your SwaggerHub API ready when preparing the API request below!
 
@@ -75,7 +75,7 @@ Sample response body:
 
 ## Add Documentation
 
-Additional Markdown documentation can also be added to improve the understanding and consumption experience of products. Markdown documents also exist as **table-of-contents** resources within a product section. A Markdown document reference can be added to a product via a `POST` request to the [`/sections/{sectionId}/table-of-contents`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Table-of-Contents/createTableOfContentsEntry) resource endpoint.
+Additional Markdown documentation can also be added to improve the understanding and consumption experience of products. Markdown documents also exist as **table-of-contents** resources within a product section. A Markdown document reference can be added to a product via a `POST` request to the [`/sections/{sectionId}/table-of-contents`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Table-of-Contents/createTableOfContentsEntry) resource endpoint.
 
 The difference between a Markdown document and an API Reference document is described via the `content` object in the request payload. The `order` to control where the document will appear in the *table-of-contents*.
 
@@ -107,7 +107,7 @@ Sample response body:
 
 ### Add Markdown contents
 
-Now that the `documentId` of the *table-of-contents* resource for the markdown has been obtained, the content itself can be prepared. Markdown content can be added to the document via a `PATCH` request to the [`/documents/{documentId}`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Documents/patchDocument) resource endpoint.
+Now that the `documentId` of the *table-of-contents* resource for the markdown has been obtained, the content itself can be prepared. Markdown content can be added to the document via a `PATCH` request to the [`/documents/{documentId}`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Documents/patchDocument) resource endpoint.
 
 A sample cURL request to update document content:
 
@@ -122,7 +122,7 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/documents/
 ```
 
 ## Publish your content
-The last step needed will be to publish the product documentation content, so that it appears on your live portal. Product content can be published via a `PUT` request to the [`/products/{productId}/published-content`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Publishing/publishContent) resource endpoint.
+The last step needed will be to publish the product documentation content, so that it appears on your live portal. Product content can be published via a `PUT` request to the [`/products/{productId}/published-content`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Publishing/publishContent) resource endpoint.
 
  🚧All API references and documentation added in the previous steps will be published as part of this call.
 
@@ -134,6 +134,6 @@ curl --location --request PUT 'https://api.portal.swaggerhub.com/v1/products/<PR
 
 After publishing the documentation and API reference, the portal product documentation looks like follows:
 
-![Sample Portal Product Documentation](https://smartbear.portal.swaggerhub.com/services/api/attachments/6e522cab-1ff6-4551-b9c2-3dd5bfc3013b)
+![Sample-Portal-Product-Documentation.png](./images/embedded/Sample-Portal-Product-Documentation.png)
 
-![Sample Portal Product API Reference](https://smartbear.portal.swaggerhub.com/services/api/attachments/b9ba0727-de64-4a69-b717-eab1c61bcdfa)
+![Sample-Portal-Product-API-Reference.png](./images/embedded/Sample-Portal-Product-API-Reference.png)

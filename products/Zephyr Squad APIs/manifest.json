@@ -1,0 +1,37 @@
+{
+    "productMetadata": {
+        "description": "A flexible test management solution for small Agile teams in Jira.",
+        "slug": "zephyr-squad",
+        "public": true,
+        "hidden": false,
+        "logo": "images/Zephyr-Squad.png",
+        "logoDark": "",
+        "autoPublish": true
+    },
+    "contentMetadata": [
+        {
+            "order": 0,
+            "parent": "",
+            "name": "Introduction",
+            "slug":"introduction",
+            "type": "markdown",
+            "contentUrl": "Introduction.md"
+        },
+        {
+            "order": 1,
+            "parent": "",
+            "name": "Authentication",
+            "slug":"authentication",
+            "type": "markdown",
+            "contentUrl": "Authentication.md"
+        },
+        {
+            "order": 6,
+            "parent": "",
+            "name": "Zephyr Squad Cloud API",
+            "slug":"zephyr-squad-cloud-api",
+            "type": "apiUrl",
+            "contentUrl": "https://api.swaggerhub.com/apis/smartbear-public/zephyr-squad-cloud-api/2.4/swagger.json"
+        }
+    ]
+}

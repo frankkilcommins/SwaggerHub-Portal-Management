@@ -2,7 +2,7 @@
 
 ## Edit Product Settings
 
-A product's settings can be updated via a `PATCH` request to the [`/products/{productId}`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Products/patchProduct) endpoint.
+A product's settings can be updated via a `PATCH` request to the [`/products/{productId}`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Products/patchProduct) endpoint.
 
 Sample cURL request to update product settings:
 
@@ -22,7 +22,7 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/products/<
 
 ## Edit API Reference, Documentation, or Table of Contents Order
 
-A product's API references, markdown document references, or table-of-contents orders can be updated via a `PATCH` request to the [`/table-of-contents/{id}`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Content-Table-of-Contents/patchTableOfContents) endpoint.
+A product's API references, markdown document references, or table-of-contents orders can be updated via a `PATCH` request to the [`/table-of-contents/{id}`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Table-of-Contents/patchTableOfContents) endpoint.
 
 Sample cURL request to update a product API reference:
 
@@ -42,4 +42,4 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/table-of-c
 }'
 ```
 
-> It's possible to have multiple API references and documents as part of a product. To add additional content to the *table-of-contents* follow the guides in [Add APIs and Docs to Product](https://smartbear.portal.swaggerhub.com/portal/default/add-apis-and-docs-to-product)
+> It's possible to have multiple API references and documents as part of a product. To add additional content to the *table-of-contents* follow the guides in [Add APIs and Docs to Product](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/add-apis-and-docs-to-product)

@@ -1,6 +1,6 @@
 This is the **Zephyr Squad Cloud** API. If you are looking for the Server API, please refer to the [documentation](https://support.smartbear.com/zephyr-squad-server/docs/api/index.html) for more information.
 
-This API uses the [OpenAPI specification](https://swagger.io/specification/v3/). If you want to generate clients for different languages, please use the link above to download the API specification and use it with your preferred tools.
+This API uses the [OpenAPI Specification](https://swagger.io/specification/v3/). If you want to generate clients for different languages, please use the link above to download the API specification and use it with your preferred tools.
 
 For feature requests or general support, please head to our [support site](https://support.smartbear.com/zephyr-squad-cloud).
 
