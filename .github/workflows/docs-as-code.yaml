@@ -33,15 +33,21 @@ jobs:
 
       - name: Iterate over product folders
         run: |
-          for product in ./products/*; do
-            if [[ -d "$product" ]]; then
-              manifest="./$product/manifest.json"
-              if [[ -f "$manifest" ]]; then
-                ./scripts/publish-portal-content.sh portal_product_upsert "$manifest" "$product"
-                ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product"
-              fi
+          echo "Product: $product"
+          if [[ -d "$product" ]]; then
+            echo "Product is a directory"
+            manifest="./$product/manifest.json"
+            echo "Manifest: $manifest"
+            if [[ -f "$manifest" ]]; then
+              echo "Manifest is a file"
+              . ./scripts/publish-portal-content.sh portal_product_upsert "$manifest" "$product"
+              . ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product"
+            else
+              echo "Manifest is not a file"
             fi
-          done
+          else
+            echo "Product is not a directory"
+          fi
         env:
           PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}   
 
