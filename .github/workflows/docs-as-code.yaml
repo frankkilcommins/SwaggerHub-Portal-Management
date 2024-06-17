@@ -37,19 +37,21 @@ jobs:
             echo "Product: $product"
             if [[ -d "$product" ]]; then
               echo "Product is a directory"
-              manifest="./$product/manifest.json"
+              product_name=${product#./products/}
+              echo "Product name: $product_name"
+              manifest="../products/$product_name/manifest.json"
               echo "Manifest: $manifest"
               if [[ -f "$manifest" ]]; then
                 echo "Manifest is a file"
-                . ./scripts/publish-portal-content.sh portal_product_upsert "$manifest" "$product"
-                . ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product"
+                . ./scripts/publish-portal-content.sh portal_product_upsert "$manifest" "$product_name"
+                . ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product_name"
               else
                 echo "Manifest is not a file"
               fi
             else
               echo "Product is not a directory"
             fi
-          done        
+          done    
         env:
           PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}   
 
