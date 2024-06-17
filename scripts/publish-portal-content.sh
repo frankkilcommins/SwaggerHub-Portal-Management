@@ -23,15 +23,6 @@ PORTAL_SUBDOMAIN="${SWAGGERHUB_PORTAL_SUBDOMAIN}"
 SWAGGERHUB_API_KEY="${SWAGGERHUB_API_KEY}"
 PORTAL_URL="https://api.portal.swaggerhub.com/v1"
 
-log_message $INFO "Fetching portal information..."
-portalsResponse=$(curl -s --request GET \
-    --url "$PORTAL_URL/portals?subdomain=$PORTAL_SUBDOMAIN" \
-    --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
-    --header "Content-Type: application/json")
-
-portal_id=$(echo "$portalsResponse" | jq -r '.items[0].id')
-log_message $INFO "Portal ID: $portal_id"
-
 declare -g section_id
 declare -g product_id
 declare -g document_id
@@ -865,3 +856,14 @@ function portal_product_publish() {
     log_message $INFO "Done publishing product."
     log_message $DEBUG "Exit portal_product_publish"
 }
+
+
+## Initial setup - get portal ID for the subdomain
+log_message $INFO "Fetching portal information..."
+portalsResponse=$(curl -s --request GET \
+    --url "$PORTAL_URL/portals?subdomain=$PORTAL_SUBDOMAIN" \
+    --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
+    --header "Content-Type: application/json")
+
+portal_id=$(echo "$portalsResponse" | jq -r '.items[0].id')
+log_message $INFO "Portal ID: $portal_id"
