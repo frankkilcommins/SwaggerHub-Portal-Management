@@ -3,7 +3,10 @@
         "description": "An API developer portal, designed to provide a seamless experience for those looking to showcase their APIs.",
         "slug": "swaggerhub-portal",
         "public": true,
-        "hidden": false
+        "hidden": false,
+        "logo": "images/SwaggerHub Icon Color.png",
+        "logoDark": "",
+        "autoPublish": true
     },
     "contentMetadata": [
         {
@@ -15,7 +18,7 @@
             "contentUrl": "Getting-Started.md"
         },
         {
-            "order": 1,
+            "order": 2,
             "parent": "",
             "name": "Automate Your Portal",
             "slug":"automate-your-portal",
@@ -23,7 +26,7 @@
             "contentUrl": "Automate-Your-Portal.md"
         },
         {
-            "order": 2,
+            "order": 1,
             "parent": "",
             "name": "Authentication",
             "slug":"authentication",
@@ -32,7 +35,7 @@
         },
         {
             "order": 3,
-            "parent": "",
+            "parent": "automate-your-portal",
             "name": "Create a Product",
             "slug":"create-new-product",
             "type": "markdown",
@@ -40,7 +43,7 @@
         },
         {
             "order": 4,
-            "parent": "",
+            "parent": "automate-your-portal",
             "name": "Add Documentation Content",
             "slug":"add-product-content",
             "type": "markdown",
@@ -48,7 +51,7 @@
         },
         {
             "order": 5,
-            "parent": "",
+            "parent": "automate-your-portal",
             "name": "Manage Existing Products",
             "slug":"manage-existing-products",
             "type": "markdown",
@@ -61,6 +64,14 @@
             "slug":"swaggerhub-portal-api",
             "type": "apiUrl",
             "contentUrl": "https://api.swaggerhub.com/apis/smartbear-public/swaggerhub-portal-api/0.2.0-beta/swagger.json"
+        },
+        {
+            "order": 7,
+            "parent": "",
+            "name": "API Changelog",
+            "slug":"api-changelog",
+            "type": "markdown",
+            "contentUrl": "API-Changelog.md"
         }
     ]
 }

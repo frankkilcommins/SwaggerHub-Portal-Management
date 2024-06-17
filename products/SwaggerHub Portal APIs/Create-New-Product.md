@@ -16,7 +16,7 @@ The following table outlines the settings per product
 
 This section describes how to create a product and set the main product settings.
 
-A new product can be created via a `POST` request to the [`/products`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Products/createProduct) endpoint. Below is a sample `cURL` request, which creates a product with the base settings populated, and sets the visibility to *private*.
+A new product can be created via a `POST` request to the [`/products`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Products/createProduct) endpoint. Below is a sample `cURL` request, which creates a product with the base settings populated, and sets the visibility to *private*.
 
 > don't forget to replace the placeholder values with the real values
 
@@ -53,4 +53,4 @@ Products can also have a *logo*.
 
 
 After updating the product settings, the published portal now looks as follows:
-![Sample Portal Landing Page With Product](https://smartbear.portal.swaggerhub.com/services/api/attachments/19f96917-4666-4d34-aebb-136127edc839)
+![Sample-Portal-Landing-With-Product.png](./images/embedded/Sample-Portal-Landing-With-Product.png)

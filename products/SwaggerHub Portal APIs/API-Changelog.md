@@ -4,7 +4,7 @@
 
 | Version |Release date  |Change notes  |
 | --- | --- | --- |
-| 0.1.0-beta |2023-08-18  | [view notes](https://smartbear.portal.swaggerhub.com/portal/default/api-changelog#v0-1-0-beta) |
+| 0.1.0-beta |2023-08-18  | [view notes](https://frankkilcommins.portal.swaggerhub.com/portal/default/api-changelog#v0-1-0-beta) |
 
 
 ## v0.1.0-beta
@@ -20,3 +20,5 @@ The API provides the ability to access, manage, and update the following resourc
 | Products | A collection of metadata (a.k.a. **product settings**), API reference documents (e.g., an OpenAPI document), and Markdown documents which are bundled and presented to a consumer as a product. |
 | Documents | A resource for storing document content (specifically for Markdown files). |
 | Sections | A section is a resource used to hold API references as well as API document references and organize them into tables of contents. |
+
+Great to be live!

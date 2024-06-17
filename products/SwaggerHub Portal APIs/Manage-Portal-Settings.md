@@ -19,7 +19,7 @@ The following table outlines the settings per level
 
 ## Retrieve the base information of your portal
 
-To obtain the basic information on a portal instance, send a `GET` request to [`https://api.portal.swaggerhub.com/v1/portals?subdomain=<YOUR-CONFIGURED-DOMAIN>`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Portals/getPortals).
+To obtain the basic information on a portal instance, send a `GET` request to [`https://api.portal.swaggerhub.com/v1/portals?subdomain=<YOUR-CONFIGURED-DOMAIN>`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api-0.1.0-beta#/Portals/getPortals).
 
 Sample cURL request:
 
@@ -67,7 +67,7 @@ Sample response body:
 
 ## Update the Portal Settings
 
-Portal settings can be updated via a `PATCH` request to the [`/portals/{portalId}`](https://smartbear.portal.swaggerhub.com/portal/default/swaggerhub-portal-api-0.1.0-beta#/Portals/patchPortal) endpoint.
+Portal settings can be updated via a `PATCH` request to the [`/portals/{portalId}`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api-0.1.0-beta#/Portals/patchPortal) endpoint.
 
 Below is a sample *request body* which can be supplied with the request.
 
@@ -110,4 +110,4 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/portals/<Y
 ```
 
 After updating the portal settings via the above PATCH request, the published portal now looks as follows:
-![Sample Portal Landing Page](https://smartbear.portal.swaggerhub.com/services/api/attachments/07788bea-2ad1-4e09-9f68-2f4836bd5471)
+![Sample-Portal-Landing.png](./images/embedded/Sample-Portal-Landing.png)
