@@ -10,6 +10,9 @@
 # - SWAGGERHUB_API_KEY: SwaggerHub API Key
 # - SWAGGERHUB_PORTAL_SUBDOMAIN: SwaggerHub Portal subdomain
 
+trap 'echo "Error on line $LINENO"' ERR
+set -x
+
 # Log levels
 DEBUG=0
 INFO=1
