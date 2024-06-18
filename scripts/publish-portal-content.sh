@@ -94,15 +94,20 @@ function portal_branding_image_post() {
     local portal_id=$1
     local image_path=$2
     local image_name=$3
-    local encoded_param_value=$(url_encode "$image_name")
+
+    # let's parse the image path to get the image name (everything after the last /)
+    image_shortname=$(basename "$image_path")
+
+    local encoded_param_value=$(url_encode "$image_shortname")
 
     log_message $INFO "Uploading branding image for portal $portal_id from /products/$image_name/$image_path"
+    log_message $DEBUG "See if image $image_shortname already exists"
 
     # get existing branding attachments
     portal_branding_attachments_get "$portal_id"
 
     # Check if the image is already uploaded
-    local image_already_uploaded=$(echo "$existing_branding_attachments" | jq -r "first(.[] | select(.name == \"$image_name\")) | .id")
+    local image_already_uploaded=$(echo "$existing_branding_attachments" | jq -r "first(.[] | select(.name == \"$image_shortname\")) | .id")
 
     if [ -n "$image_already_uploaded" ]; then
         log_message $INFO "Image already uploaded: $image_already_uploaded"
