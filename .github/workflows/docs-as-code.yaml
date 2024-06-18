@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       log_level:
-        description: 'Log level: 0=DEBUG, 1=INFO, 2=WARNING, 3=ERROR'
+        description: 'Log level: 1=DEBUG, 2=INFO, 3=WARNING, 4=ERROR'
         required: false
-        default: '1' # Set the default log level to INFO
+        default: '2' # Set the default log level to INFO
 
 env:
   SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}

@@ -10,18 +10,16 @@
 # - SWAGGERHUB_API_KEY: SwaggerHub API Key
 # - SWAGGERHUB_PORTAL_SUBDOMAIN: SwaggerHub Portal subdomain
 
-trap 'echo "Error on line $LINENO"' ERR
-set -x
+#trap 'echo "Error on line $LINENO"' ERR
 
 # Log levels
-DEBUG=0
-INFO=1
-WARNING=2
-ERROR=3
+DEBUG=1
+INFO=2
+WARNING=3
+ERROR=4
 
 # Default log level
-LOG_LEVEL=${LOG_LEVEL:-$INFO}
-
+LOG_LEVEL=${LOG_LEVEL:=$INFO}
 
 PORTAL_SUBDOMAIN="${SWAGGERHUB_PORTAL_SUBDOMAIN}"
 SWAGGERHUB_API_KEY="${SWAGGERHUB_API_KEY}"
@@ -39,13 +37,13 @@ log_message() {
 
     case $log_level in
         $DEBUG)
-            [ $LOG_LEVEL -le $DEBUG ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [DEBUG] $message" ;;
+            ([ $LOG_LEVEL -le $DEBUG ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [DEBUG] $message") || true ;;
         $INFO)
-            [ $LOG_LEVEL -le $INFO ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [INFO] $message" ;;
+            ([ $LOG_LEVEL -le $INFO ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [INFO] $message") || true ;;
         $WARNING)
-            [ $LOG_LEVEL -le $WARNING ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [WARNING] $message" ;;
+            ([ $LOG_LEVEL -le $WARNING ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [WARNING] $message") || true ;;
         $ERROR)
-            [ $LOG_LEVEL -le $ERROR ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [ERROR] $message" >&2 ;;
+            ([ $LOG_LEVEL -le $ERROR ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [ERROR] $message" >&2) || true ;;
         *)
             echo "$(date '+%Y-%m-%d %H:%M:%S') [UNKNOWN] $message" ;;
     esac
