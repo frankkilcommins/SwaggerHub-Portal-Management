@@ -110,4 +110,4 @@ curl --location --request PATCH 'https://api.portal.swaggerhub.com/v1/portals/<Y
 ```
 
 After updating the portal settings via the above PATCH request, the published portal now looks as follows:
-![Sample-Portal-Landing.png](./images/embedded/Sample-Portal-Landing.png)
+![Sample-Portal-Landing2.png](./images/embedded/Sample-Portal-Landing2.png)
