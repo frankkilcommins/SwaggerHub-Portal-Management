@@ -134,6 +134,6 @@ curl --location --request PUT 'https://api.portal.swaggerhub.com/v1/products/<PR
 
 After publishing the documentation and API reference, the portal product documentation looks like follows:
 
-![Sample-Portal-Product-Documentation.png](./images/embedded/Sample-Portal-Product-Documentation.png)
+![Sample-Portal-Product-Documentation2.png](./images/embedded/Sample-Portal-Product-Documentation2.png)
 
-![Sample-Portal-Product-API-Reference.png](./images/embedded/Sample-Portal-Product-API-Reference.png)
+![Sample-Portal-Product-API-Reference2.png](./images/embedded/Sample-Portal-Product-API-Reference2.png)

@@ -53,4 +53,4 @@ Products can also have a *logo*.
 
 
 After updating the product settings, the published portal now looks as follows:
-![Sample-Portal-Landing-With-Product.png](./images/embedded/Sample-Portal-Landing-With-Product.png)
+![Sample-Portal-Landing-With-Product2.png](./images/embedded/Sample-Portal-Landing-With-Product2.png)
