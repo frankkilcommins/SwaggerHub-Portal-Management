@@ -4,7 +4,7 @@
         "slug": "swaggerhub-portal",
         "public": true,
         "hidden": false,
-        "logo": "images/SwaggerHub Icon Color.png",
+        "logo": "images/SwaggerHub.png",
         "logoDark": "",
         "autoPublish": true
     },

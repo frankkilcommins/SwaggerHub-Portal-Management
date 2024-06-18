@@ -7,14 +7,13 @@ on:
   workflow_dispatch:
     inputs:
       log_level:
-        description: 'Log level: 0=DEBUG, 1=INFO, 2=WARNING, 3=ERROR'
+        description: 'Log level: 1=DEBUG, 2=INFO, 3=WARNING, 4=ERROR'
         required: false
-        default: '1' # Set the default log level to INFO
+        default: '2' # Set the default log level to INFO
 
 env:
-      PORTAL_STAGING_SUBDOMAIN: ${{ secrets.SWAGGERHUB_PORTAL_STAGING_SUBDOMAIN }}
-      PORTAL_SUBDOMAIN: ${{ secrets.SWAGGERHUB_PORTAL_SUBDOMAIN }}
-      SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
+  SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
+  LOG_LEVEL: ${{ github.event.inputs.log_level }}
 
 jobs:
   publish:
@@ -24,26 +23,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Iterate over product folders
+        shell: bash
         run: |
           for product in ./products/*; do
+            echo "Product: $product"
             if [[ -d "$product" ]]; then
-              manifest="./$product/manifest.json"
+              echo "Product is a directory"
+              product_name=${product#./products/}
+              echo "Product name: $product_name"
+              manifest="./products/$product_name/manifest.json"
+              echo "Manifest: $manifest"
               if [[ -f "$manifest" ]]; then
-                ./scripts/publish-portal-content.sh portal_product_upsert "$manifest" "$product"
-                ./scripts/publish-portal-content.sh load_and_process_product_manifest_content_metadata "$manifest" "$product"
+                echo "Manifest is a file"
+                . ./scripts/publish-portal-content.sh && portal_product_upsert "$manifest" "$product_name"
+                . ./scripts/publish-portal-content.sh && load_and_process_product_manifest_content_metadata "$manifest" "$product_name"
+              else
+                echo "Manifest is not a file"
               fi
+            else
+              echo "Product is not a directory"
             fi
           done
         env:
-          LOG_LEVEL: ${{ env.LOG_LEVEL }}          
+            SWAGGERHUB_PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}          
 
     

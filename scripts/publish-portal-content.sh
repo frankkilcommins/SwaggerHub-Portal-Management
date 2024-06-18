@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Author: @frankkilcommins
 # This script is part of a workflow that publishes content to the SwaggerHub Portal instance.
 
 # SwaggerHub Portal API Ref: https://app.swaggerhub.com/apis-docs/smartbear-public/swaggerhub-portal-api/0.2.0-beta
@@ -9,36 +10,24 @@
 # - SWAGGERHUB_API_KEY: SwaggerHub API Key
 # - SWAGGERHUB_PORTAL_SUBDOMAIN: SwaggerHub Portal subdomain
 
+#trap 'echo "Error on line $LINENO"' ERR
+
 # Log levels
-DEBUG=0
-INFO=1
-WARNING=2
-ERROR=3
+DEBUG=1
+INFO=2
+WARNING=3
+ERROR=4
 
 # Default log level
-LOG_LEVEL=${LOG_LEVEL:-$INFO}
-
+LOG_LEVEL=${LOG_LEVEL:=$INFO}
 
 PORTAL_SUBDOMAIN="${SWAGGERHUB_PORTAL_SUBDOMAIN}"
 SWAGGERHUB_API_KEY="${SWAGGERHUB_API_KEY}"
 PORTAL_URL="https://api.portal.swaggerhub.com/v1"
 
-log_message $INFO "Fetching portal information..."
-portalsResponse=$(curl -s --request GET \
-    --url "$PORTAL_URL/portals?subdomain=$PORTAL_SUBDOMAIN" \
-    --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
-    --header "Content-Type: application/json")
-
-portal_id=$(echo "$portalsResponse" | jq -r '.items[0].id')
-log_message $INFO "Portal ID: $portal_id"
-
 declare -g section_id
 declare -g product_id
 declare -g document_id
-
-# ToDo - replace with variable set from GitHub Actions
-#portal_product_upsert "../products/Adopt a Pet/manifest.json" "Adopt a Pet"
-#load_and_process_product_manifest_content_metadata "../products/SwaggerHub Portal APIs/manifest.json" "SwaggerHub Portal APIs"
 
 ## HELPER FUNCTIONS
 log_message() {
@@ -48,13 +37,13 @@ log_message() {
 
     case $log_level in
         $DEBUG)
-            [ $LOG_LEVEL -le $DEBUG ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [DEBUG] $message" ;;
+            ([ $LOG_LEVEL -le $DEBUG ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [DEBUG] $message") || true ;;
         $INFO)
-            [ $LOG_LEVEL -le $INFO ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [INFO] $message" ;;
+            ([ $LOG_LEVEL -le $INFO ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [INFO] $message") || true ;;
         $WARNING)
-            [ $LOG_LEVEL -le $WARNING ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [WARNING] $message" ;;
+            ([ $LOG_LEVEL -le $WARNING ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [WARNING] $message") || true ;;
         $ERROR)
-            [ $LOG_LEVEL -le $ERROR ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [ERROR] $message" >&2 ;;
+            ([ $LOG_LEVEL -le $ERROR ] && echo "$(date '+%Y-%m-%d %H:%M:%S') [ERROR] $message" >&2) || true ;;
         *)
             echo "$(date '+%Y-%m-%d %H:%M:%S') [UNKNOWN] $message" ;;
     esac
@@ -105,24 +94,30 @@ function portal_branding_image_post() {
     local portal_id=$1
     local image_path=$2
     local image_name=$3
-    local encoded_param_value=$(url_encode "$image_name")
 
-    log_message $INFO "Uploading branding image for portal $portal_id from ../products/$image_name/$image_path"
+    # let's parse the image path to get the image name (everything after the last /)
+    image_shortname=$(basename "$image_path")
+
+    local encoded_param_value=$(url_encode "$image_shortname")
+
+    log_message $INFO "Uploading branding image for portal $portal_id from /products/$image_name/$image_path"
+    log_message $DEBUG "See if image $image_shortname already exists"
 
     # get existing branding attachments
     portal_branding_attachments_get "$portal_id"
 
     # Check if the image is already uploaded
-    local image_already_uploaded=$(echo "$existing_branding_attachments" | jq -r ".[] | select(.name == \"$image_name\") | .id")
+    local image_already_uploaded=$(echo "$existing_branding_attachments" | jq -r "first(.[] | select(.name == \"$image_shortname\")) | .id")
 
     if [ -n "$image_already_uploaded" ]; then
         log_message $INFO "Image already uploaded: $image_already_uploaded"
+        branding_image_id=$image_already_uploaded
         log_message $DEBUG "Exit portal_product_branding_image_post"
         return
     fi
 
     # get the Content-Type of the image from the image path if the file exists  
-    local full_path="../products/$image_name/$image_path"
+    local full_path="./products/$image_name/$image_path"
 
     if [ -f "$full_path" ]; then
         local content_type=$(file --mime-type -b "$full_path")
@@ -167,10 +162,10 @@ function portal_product_doc_image_post() {
         return
     fi
 
-    log_message $INFO "Uploading image for product $product_id from ../products/$product_name/images/embedded/$image_filename"
+    log_message $INFO "Uploading image for product $product_id from /products/$product_name/images/embedded/$image_filename"
 
     # get the Content-Type of the image from the image path
-    local full_path="../products/$product_name/images/embedded/$image_filename"
+    local full_path="./products/$product_name/images/embedded/$image_filename"
     local content_type=$(file --mime-type -b "$full_path")
 
     local response=$(curl -s --request POST \
@@ -222,7 +217,7 @@ function portal_product_load_documentation_images() {
 
     log_message $INFO "Loading documentation images for product $product_name ..."
 
-    local images_path="../products/$product_name/images/embedded"
+    local images_path="./products/$product_name/images/embedded"
     if [ ! -d "$images_path" ]; then
         log_message $WARNING "No images found in $images_path"
         return
@@ -288,7 +283,7 @@ function load_and_process_product_manifest_content_metadata() {
             portal_product_toc_markdown_upsert "$name" "$slug" $order "$product_toc_id"
             log_message $INFO "Document ID: $document_id"
 
-            local markdown_file="../products/$product_name/$contentUrl"
+            local markdown_file="./products/$product_name/$contentUrl"
             if [ ! -f "$markdown_file" ]; then
                 log_message $ERROR "Markdown file not found: $markdown_file"
                 exit 1
@@ -344,7 +339,7 @@ function load_and_process_product_manifest_content_metadata() {
                 portal_product_toc_markdown_upsert "$child_name" "$child_slug" $child_order "$parent_toc_id"
                 log_message $INFO "Document ID for CHILD: $document_id"
 
-                local child_markdown_file="../products/$product_name/$child_contentUrl"
+                local child_markdown_file="./products/$product_name/$child_contentUrl"
                 if [ ! -f "$child_markdown_file" ]; then
                     log_message $ERROR "Markdown file not found: $child_markdown_file"
                     exit 1
@@ -865,3 +860,14 @@ function portal_product_publish() {
     log_message $INFO "Done publishing product."
     log_message $DEBUG "Exit portal_product_publish"
 }
+
+
+## Initial setup - get portal ID for the subdomain
+log_message $INFO "Fetching portal information..."
+portalsResponse=$(curl -s --request GET \
+    --url "$PORTAL_URL/portals?subdomain=$PORTAL_SUBDOMAIN" \
+    --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
+    --header "Content-Type: application/json")
+
+portal_id=$(echo "$portalsResponse" | jq -r '.items[0].id')
+log_message $INFO "Portal ID: $portal_id"
