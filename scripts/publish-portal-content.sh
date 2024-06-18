@@ -102,10 +102,11 @@ function portal_branding_image_post() {
     portal_branding_attachments_get "$portal_id"
 
     # Check if the image is already uploaded
-    local image_already_uploaded=$(echo "$existing_branding_attachments" | jq -r ".[] | select(.name == \"$image_name\") | .id")
+    local image_already_uploaded=$(echo "$existing_branding_attachments" | jq -r "first(.[] | select(.name == \"$image_name\")) | .id")
 
     if [ -n "$image_already_uploaded" ]; then
         log_message $INFO "Image already uploaded: $image_already_uploaded"
+        branding_image_id=$image_already_uploaded
         log_message $DEBUG "Exit portal_product_branding_image_post"
         return
     fi

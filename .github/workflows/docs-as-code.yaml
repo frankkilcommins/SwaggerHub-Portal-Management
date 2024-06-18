@@ -53,5 +53,7 @@ jobs:
               echo "Product is not a directory"
             fi
           done
+        env:
+            SWAGGERHUB_PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}          
 
     
