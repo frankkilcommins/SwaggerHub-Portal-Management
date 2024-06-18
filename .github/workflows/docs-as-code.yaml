@@ -18,7 +18,7 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: production
+    environment: Production
 
     steps:
       - name: Checkout repository
@@ -47,6 +47,6 @@ jobs:
             fi
           done
         env:
-            SWAGGERHUB_PORTAL_SUBDOMAIN: ${{ env.SWAGGERHUB_PORTAL_SUBDOMAIN }}          
+            SWAGGERHUB_PORTAL_SUBDOMAIN: ${{ vars.SWAGGERHUB_PORTAL_SUBDOMAIN }}          
 
     
