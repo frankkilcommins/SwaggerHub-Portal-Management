@@ -163,3 +163,8 @@ The action requires the following **repository environment** to be configured:
 The action requires the following **repository environment variables** to be configured:
 - `SWAGGERHUB_PORTAL_SUBDOMAIN` - the sub-domain used by your portal
 - `SWAGGERHUB_ORG_NAME` - the SwaggerHub organization housing the APIs and standardization rules
+
+The action performs the following jobs:
+1. `spell-check`: Performs spell checking on all of the markdown files under the _products_ folder (**note** to add a list of known good custom words update the ./custom-words.txt file)
+2. `lint-api`: Performs API standardization checks against each API referenced by a product manifest.json file. There is the ability to skip API validation for a specific API product via the productMetadata in the manifest.json.
+3. `publish`: Publishes all of configured products into the referenced SwaggerHub Portal instance.
