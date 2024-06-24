@@ -22,6 +22,7 @@ env:
 jobs:
   spell-check:
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
       - name: Checkout repository
@@ -41,6 +42,7 @@ jobs:
   lint-api:
     runs-on: ubuntu-latest
     if: github.event.inputs.skip_api_linting != 'true'
+    environment: Production
 
     steps:
       - name: Checkout repository
@@ -70,7 +72,7 @@ jobs:
                   echo "$contentMetadata" | jq -c '.' | while IFS= read -r contentMetadataItem; do
                     slug=$(echo "$contentMetadataItem" | jq -r '.slug')
                     echo "Validating API: $slug"
-                    swaggerhub api:validate "${{ vars.SWAGGERHUB_ORGNAME }}/$slug" --fail-on-critical
+                    swaggerhub api:validate "${SWAGGERHUB_ORG_NAME}/$slug" --fail-on-critical
                   done
                 else
                   echo "API validation is not enabled for product: $product_name"
@@ -84,6 +86,7 @@ jobs:
           done
         env:
           SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
+          SWAGGERHUB_ORG_NAME: ${{ vars.SWAGGERHUB_ORG_NAME }} 
 
 
   publish:

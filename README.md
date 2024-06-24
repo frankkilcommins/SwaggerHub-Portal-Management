@@ -162,4 +162,4 @@ The action requires the following **repository environment** to be configured:
 
 The action requires the following **repository environment variables** to be configured:
 - `SWAGGERHUB_PORTAL_SUBDOMAIN` - the sub-domain used by your portal
-- `SWAGGERHUB_ORGNAME` - the SwaggerHub organization housing the APIs and standardization rules
+- `SWAGGERHUB_ORG_NAME` - the SwaggerHub organization housing the APIs and standardization rules
