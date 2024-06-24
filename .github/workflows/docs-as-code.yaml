@@ -64,7 +64,7 @@ jobs:
               product_name=${product#./products/}
               log_message $DEBUG "Product name: $product_name"
               manifest="./products/$product_name/manifest.json"
-              log_message "Manifest: $manifest"
+              log_message $DEBUG "Manifest: $manifest"
               if [[ -f "$manifest" ]]; then
                 log_message $DEBUG "Manifest is a file"
                 validateAPIs=$(jq -r '.productMetadata.validateAPIs' "$manifest")
