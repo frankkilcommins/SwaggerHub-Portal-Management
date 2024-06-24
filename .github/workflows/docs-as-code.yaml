@@ -54,34 +54,36 @@ jobs:
       - name: Iterate over product folders and validate APIs
         shell: bash
         run: |
-          set -x
+          # source the utility script
+          . ./scripts/utilities.sh
+
           for product in ./products/*; do
-            echo "Product: $product"
+            log_message $DEBUG "Product: $product"
             if [[ -d "$product" ]]; then
-              echo "Product is a directory"
+              log_message $DEBUG "Product is a directory"
               product_name=${product#./products/}
-              echo "Product name: $product_name"
+              log_message $DEBUG "Product name: $product_name"
               manifest="./products/$product_name/manifest.json"
-              echo "Manifest: $manifest"
+              log_message "Manifest: $manifest"
               if [[ -f "$manifest" ]]; then
-                echo "Manifest is a file"
+                log_message $DEBUG "Manifest is a file"
                 validateAPIs=$(jq -r '.productMetadata.validateAPIs' "$manifest")
                 if [[ "$validateAPIs" == "true" ]]; then
-                  echo "Validating APIs for product: $product_name"
+                  log_message $INFO "Validating APIs for product: $product_name"
                   contentMetadata=$(jq -c '.contentMetadata[] | select(.type | ascii_downcase == "apiurl")' "$manifest")
                   echo "$contentMetadata" | jq -c '.' | while IFS= read -r contentMetadataItem; do
                     slug=$(echo "$contentMetadataItem" | jq -r '.slug')
-                    echo "Validating API: $slug"
+                    log_message $INFO "Validating API: $slug"
                     swaggerhub api:validate "${SWAGGERHUB_ORG_NAME}/$slug" --fail-on-critical
                   done
                 else
-                  echo "API validation is not enabled for product: $product_name"
+                  log_message $WARNING "API validation is not enabled for product: $product_name"
                 fi
               else
-                echo "Manifest is not a file"
+                log_message $ERROR "Manifest is not a file"
               fi
             else
-              echo "Product is not a directory"
+              log_message $ERROR "Product is not a directory"
             fi
           done
         env:
