@@ -3,6 +3,7 @@ Arazzo
 DevRel
 fontname
 Kilcommins
+Lato
 Merriweather
 petco
 petcopetstore

@@ -83,7 +83,7 @@ Below is a sample *request body* which can be supplied with the request.
   },
   "branding": {
     "fontName": "<The fontname to use for portal>",
-    "accentColor": "<The hexidecimal value for the accent color>"
+    "accentColor": "<The hexadecimal value for the accent color>"
   }
 }
 ```
