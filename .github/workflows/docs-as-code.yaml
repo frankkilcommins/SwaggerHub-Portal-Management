@@ -67,7 +67,7 @@ jobs:
                   echo "Validating APIs for product: $product_name"
                   contentMetadata=$(jq -c '.contentMetadata[] | select(.type | ascii_downcase == "apiurl")' "$manifest")
                   for contentMetadataItem in $contentMetadata; do
-                    slug=$(echo $contentMetadataItem | jq -r '.slug')
+                    slug=$(echo "$contentMetadataItem" | jq -r '.slug')
                     echo "Validating API: $slug"
                     swaggerhub api:validate "${{ vars.SWAGGERHUB_ORGNAME }}/$slug" --fail-on-critical
                   done
