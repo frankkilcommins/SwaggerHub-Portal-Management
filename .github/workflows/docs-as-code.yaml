@@ -52,6 +52,7 @@ jobs:
       - name: Iterate over product folders and validate APIs
         shell: bash
         run: |
+          set -x
           for product in ./products/*; do
             echo "Product: $product"
             if [[ -d "$product" ]]; then
