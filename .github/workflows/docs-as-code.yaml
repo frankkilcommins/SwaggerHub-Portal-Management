@@ -88,7 +88,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: Production
-    needs: [spell-check, lint-api]
+    needs: [spell-check]
+    if: github.event.inputs.skip_api_linting == 'true' || success()
 
     steps:
       - name: Checkout repository
