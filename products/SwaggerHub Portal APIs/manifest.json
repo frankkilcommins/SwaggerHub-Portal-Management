@@ -6,7 +6,8 @@
         "hidden": false,
         "logo": "images/SwaggerHub.png",
         "logoDark": "",
-        "autoPublish": true
+        "autoPublish": true,
+        "validateAPIs": true
     },
     "contentMetadata": [
         {
@@ -63,7 +64,7 @@
             "name": "SwaggerHub Portal API",
             "slug":"swaggerhub-portal-api",
             "type": "apiUrl",
-            "contentUrl": "https://api.swaggerhub.com/apis/smartbear-public/swaggerhub-portal-api/0.2.0-beta/swagger.json"
+            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/swaggerhub-portal-api/0.2.0-beta/swagger.json"
         },
         {
             "order": 7,

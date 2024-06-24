@@ -6,7 +6,8 @@
         "hidden": false,
         "logo": "images/AdoptionsAPI.png",
         "logoDark": "",
-        "autoPublish": true
+        "autoPublish": true,
+        "validateAPIs": true
     },
     "contentMetadata": [
         {
@@ -38,7 +39,7 @@
             "parent": "",
             "name": "Pets API",
             "type": "apiUrl",
-            "slug": "pets-api",
+            "slug": "Pets",
             "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/Pets/1.0.0/swagger.json"
         },
         {
@@ -46,7 +47,7 @@
             "parent": "",
             "name": "Adoptions API",
             "type": "apiUrl",
-            "slug": "adoptions-api",
+            "slug": "Adoptions",
             "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/Adoptions/1.0.0/swagger.json"
         }
     ]

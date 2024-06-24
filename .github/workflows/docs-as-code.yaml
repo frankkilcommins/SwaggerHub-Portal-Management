@@ -10,15 +10,92 @@ on:
         description: 'Log level: 1=DEBUG, 2=INFO, 3=WARNING, 4=ERROR'
         required: false
         default: '2' # Set the default log level to INFO
+      skip_api_linting:
+        description: 'Skip the API linting job'
+        required: false
+        default: 'false'        
 
 env:
   SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
   LOG_LEVEL: ${{ github.event.inputs.log_level }}
 
 jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    environment: Production
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install cspell
+        run: npm install -g cspell
+
+      - name: Run cspell
+        run: cspell --config ./.cspell.json "./products/**/*.md"
+
+  lint-api:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.skip_api_linting != 'true'
+    environment: Production
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install SwaggerHub CLI
+        run: npm install -g swaggerhub-cli
+
+      - name: Iterate over product folders and validate APIs
+        shell: bash
+        run: |
+          # source the utility script
+          . ./scripts/utilities.sh
+
+          for product in ./products/*; do
+            log_message $DEBUG "Product: $product"
+            if [[ -d "$product" ]]; then
+              log_message $DEBUG "Product is a directory"
+              product_name=${product#./products/}
+              log_message $DEBUG "Product name: $product_name"
+              manifest="./products/$product_name/manifest.json"
+              log_message $DEBUG "Manifest: $manifest"
+              if [[ -f "$manifest" ]]; then
+                log_message $DEBUG "Manifest is a file"
+                validateAPIs=$(jq -r '.productMetadata.validateAPIs' "$manifest")
+                if [[ "$validateAPIs" == "true" ]]; then
+                  log_message $INFO "Validating APIs for product: $product_name"
+                  contentMetadata=$(jq -c '.contentMetadata[] | select(.type | ascii_downcase == "apiurl")' "$manifest")
+                  echo "$contentMetadata" | jq -c '.' | while IFS= read -r contentMetadataItem; do
+                    slug=$(echo "$contentMetadataItem" | jq -r '.slug')
+                    log_message $INFO "Validating API: $slug"
+                    swaggerhub api:validate "${SWAGGERHUB_ORG_NAME}/$slug" --fail-on-critical
+                  done
+                else
+                  log_message $WARNING "API validation is not enabled for product: $product_name"
+                fi
+              else
+                log_message $ERROR "Manifest is not a file"
+              fi
+            else
+              log_message $ERROR "Product is not a directory"
+            fi
+          done
+        env:
+          SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
+          SWAGGERHUB_ORG_NAME: ${{ vars.SWAGGERHUB_ORG_NAME }} 
+
+
   publish:
     runs-on: ubuntu-latest
     environment: Production
+    needs: [spell-check, lint-api]
+    if: github.event.inputs.skip_api_linting == 'true' || (needs.spell-check.result == 'success' && needs['lint-api'].result == 'success')
 
     steps:
       - name: Checkout repository

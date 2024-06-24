@@ -76,7 +76,8 @@ A sample manifest is as follows:
         "hidden": false,
         "logo": "images/AdoptionsAPI.png",
         "logoDark": "",
-        "autoPublish": true
+        "autoPublish": true,
+        "validateAPIs": true
     },
     "contentMetadata": [
         {
@@ -134,6 +135,7 @@ The `productMetadata` defines the following properties:
 | logo | The logo property specifies the path to the product logo image file. It is used to display the logo in the portal. |
 | logoDark | The logoDark property specifies the path to an alternative version of the product logo image file. It is used when a dark version of the logo is needed. |
 | autoPublish | This property determines whether the product should be automatically published after deployment or not. If set to true, the product will be published automatically. If set to false, the product will not be published automatically. |
+| validateAPIs | This property determines whether API standardization rules should be ran against the API to determine conformance with organizational rules. |
 
 
 The `contentMetadata` defines the following properties:
@@ -158,5 +160,11 @@ The action requires the following **repository secrets** to be configured:
 The action requires the following **repository environment** to be configured:
 - `Production` - the default environment. Feel free to configure additional environment and adjust the action as required if applicable for your use case.
 
-The action requires the following **repository environment variable** to be configured:
+The action requires the following **repository environment variables** to be configured:
 - `SWAGGERHUB_PORTAL_SUBDOMAIN` - the sub-domain used by your portal
+- `SWAGGERHUB_ORG_NAME` - the SwaggerHub organization housing the APIs and standardization rules
+
+The action performs the following jobs:
+1. `spell-check`: Performs spell checking on all of the markdown files under the _products_ folder (**note** to add a list of known good custom words update the ./custom-words.txt file)
+2. `lint-api`: Performs API standardization checks against each API referenced by a product manifest.json file. There is the ability to skip API validation for a specific API product via the productMetadata in the manifest.json.
+3. `publish`: Publishes all of configured products into the referenced SwaggerHub Portal instance.
