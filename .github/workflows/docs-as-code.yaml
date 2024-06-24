@@ -10,6 +10,10 @@ on:
         description: 'Log level: 1=DEBUG, 2=INFO, 3=WARNING, 4=ERROR'
         required: false
         default: '2' # Set the default log level to INFO
+      skip_api_linting:
+        description: 'Skip the API linting job'
+        required: false
+        default: 'false'        
 
 env:
   SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
@@ -34,10 +38,57 @@ jobs:
       - name: Run cspell
         run: cspell --config ./.cspell.json "./products/**/*.md"
 
+  lint-api:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.skip_api_linting != 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install SwaggerHub CLI
+        run: npm install -g swaggerhub-cli
+
+      - name: Configure SwaggerHub CLI
+        run: swaggerhub configure --apiKey ${{ secrets.SWAGGERHUB_API_KEY }}
+
+      - name: Iterate over product folders and validate APIs
+        shell: bash
+        run: |
+          for product in ./products/*; do
+            echo "Product: $product"
+            if [[ -d "$product" ]]; then
+              echo "Product is a directory"
+              product_name=${product#./products/}
+              echo "Product name: $product_name"
+              manifest="./products/$product_name/manifest.json"
+              echo "Manifest: $manifest"
+              if [[ -f "$manifest" ]]; then
+                echo "Manifest is a file"
+                validateAPIs=$(jq -r '.productMetadata.validateAPIs' "$manifest")
+                if [[ "$validateAPIs" == "true" ]]; then
+                  echo "Validating APIs for product: $product_name"
+                  contentMetadata=$(jq -c '.contentMetadata[] | select(.type | ascii_downcase == "apiurl")' "$manifest")
+                  for contentMetadataItem in $contentMetadata; do
+                    slug=$(echo $contentMetadataItem | jq -r '.slug')
+                    echo "Validating API: $slug"
+                    swaggerhub api:validate "${{ vars.SWAGGERHUB_ORGNAME }}/$slug" --fail-on-critical
+                  done
+                else
+                  echo "API validation is not enabled for product: $product_name"
+                fi
+              else
+                echo "Manifest is not a file"
+              fi
+            else
+              echo "Product is not a directory"
+            fi
+          done                
+
   publish:
     runs-on: ubuntu-latest
     environment: Production
-    needs: spell-check
+    needs: [spell-check, lint-api]
 
     steps:
       - name: Checkout repository
