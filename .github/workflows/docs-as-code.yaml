@@ -49,9 +49,6 @@ jobs:
       - name: Install SwaggerHub CLI
         run: npm install -g swaggerhub-cli
 
-      - name: Configure SwaggerHub CLI
-        run: swaggerhub configure --apiKey ${{ secrets.SWAGGERHUB_API_KEY }}
-
       - name: Iterate over product folders and validate APIs
         shell: bash
         run: |
@@ -83,13 +80,16 @@ jobs:
             else
               echo "Product is not a directory"
             fi
-          done                
+          done
+        env:
+          SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
+
 
   publish:
     runs-on: ubuntu-latest
     environment: Production
-    needs: [spell-check]
-    if: github.event.inputs.skip_api_linting == 'true' || success()
+    needs: [spell-check, lint-api]
+    if: github.event.inputs.skip_api_linting == 'true' || (needs.spell-check.result == 'success' && needs['lint-api'].result == 'success')
 
     steps:
       - name: Checkout repository
