@@ -16,9 +16,28 @@ env:
   LOG_LEVEL: ${{ github.event.inputs.log_level }}
 
 jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install cspell
+        run: npm install -g cspell
+
+      - name: Run cspell
+        run: cspell --config ./.cspell.json "./products/**/*.md"
+
   publish:
     runs-on: ubuntu-latest
     environment: Production
+    needs: spell-check
 
     steps:
       - name: Checkout repository
