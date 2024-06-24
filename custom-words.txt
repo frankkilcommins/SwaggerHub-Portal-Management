@@ -1,4 +1,13 @@
+APIKEY
 Arazzo
-Kilcommins
-SmartBear
 DevRel
+fontname
+Kilcommins
+Merriweather
+petco
+petcopetstore
+Petstore
+Playfair
+Roboto
+SmartBear
+SWAGGERHUB

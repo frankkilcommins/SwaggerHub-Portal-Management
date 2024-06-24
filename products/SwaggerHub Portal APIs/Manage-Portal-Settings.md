@@ -12,10 +12,10 @@ The following table outlines the settings per level
 | branding | `faviconId` | A reference to the favicon attachment. *Note* A *favicon* must be 16x16 pixels, have a `.ico`, `.gif`, or `.png` file format, and be less than 5MB in size. |
 | branding | `logoId` | A reference to the logo attachment. *Note* A *logo* must be 64x64 pixels, have a `.jpg`, `.gif`, or `.png` file format, and be less than 5MB in size. |
 | branding | `fontName` | The font to use for the portal landing page and for all product pages. Support fonts are `Open Sans`, `Montserrat`, `Roboto`, `Playfair Display`, `Lato`, or `Merriweather`. |
-| branding | `accentColor` | A hexidecimal color value to use for the accent color of the landing page and all product pages. |
+| branding | `accentColor` | A hexadecimal color value to use for the accent color of the landing page and all product pages. |
 | landingPage | `heroImageId` | A reference to the hero image attachment. *Note* A *hero* image can be up to 566 x 80 pixels, have a `.jpg`, or `.png` file format, and be less than 5MB in size. |
 | landingPage | `illustrationImageId` | A reference to the illustration image attachment. *Note* An *illustration* image should be at least 566 x 320 pixels, with a 16:9 aspect ratio, have a `.jpg`, or `.png` file format, and be less than 5MB in size. |
-| landingPage | `pageDescription` | A short description for the portal landing page (upto 500 characters long). Markdown format supported. |
+| landingPage | `pageDescription` | A short description for the portal landing page (up to 500 characters long). Markdown format supported. |
 
 ## Retrieve the base information of your portal
 
