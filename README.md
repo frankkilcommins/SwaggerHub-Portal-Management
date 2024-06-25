@@ -1,6 +1,6 @@
 # SwaggerHub-Portal-Management
 
-This ReadMe demonstrates how to automate the deployment of products and product content to be published to aSwaggerHub portal instance 🚀
+This repository demonstrates how to automate the deployment of products and product content to be published to a [SwaggerHub Portal](https://swagger.io/tools/swaggerhub/features/swaggerhub-portal/?utm_medium=product&utm_source=GitHub&utm_campaign=devrel-portal&utm_content=automation-reference) instance 🚀
 
 This bootstrapped repository is setup with 3 sample products which will be deployed and optionally auto-published.
  - A sample "_Adopt a Pet_" product exists in this [folder](./products/Adopt%20a%20Pet/)
@@ -8,6 +8,16 @@ This bootstrapped repository is setup with 3 sample products which will be deplo
  - A sample "_Zephyr Squad APIs_" product exists in this [folder](./products/Zephyr%20Squad%20APIs/)
 
  Each product has varying number of pages, images, content nesting etc.
+
+## Getting Started
+
+To leverage this automation process for your own SwaggerHub Portal, the recommended process is as follows:
+
+- Fork this repo to your local GitHub profile/organization
+- Create the appropriate folders and content underneath the [products folder](./products/) following the [conventions](#conventions) laid out below.
+- Setup the required repository secrets, environment(s), and environment variables needed by the configured [GitHub Actions](#github-actions).
+- Delete the boilerplate products folders: "_Adopt a Pet_",  "_SwaggerHub Portal APIs_", and "_Zephyr Squad APIs_".
+- Run the GitHub Actions to validate and publish your content.
 
 ## Conventions
 
@@ -150,7 +160,7 @@ The `contentMetadata` defines the following properties:
 | contentUrl | The URL or file path of the content. For markdown content, it is the path to the markdown file. For API content, it is the URL of the Swagger/OpenAPI specification as published in SwaggerHub |
 
 
-## GitHub Action
+## GitHub Actions
 
 This repo comes with a simple boilerplate action that can be triggered manually or upon merge into the `main` branch.
 
@@ -163,6 +173,18 @@ The action requires the following **repository environment** to be configured:
 The action requires the following **repository environment variables** to be configured:
 - `SWAGGERHUB_PORTAL_SUBDOMAIN` - the sub-domain used by your portal
 - `SWAGGERHUB_ORG_NAME` - the SwaggerHub organization housing the APIs and standardization rules
+
+### Docs as Code PR Commit Validation Action
+This action runs on every commit and every PR to validate the contents and structure of the content to be published to the portal
+
+The action performs the following jobs:
+1. `spell-check`: Performs spell checking on all of the markdown files under the _products_ folder (**note** to add a list of known good custom words update the ./custom-words.txt file)
+2. `validate-manifests`: Performs a JSON Schema validation check against the defined product manifest.json files to ensure they are correctly specified.
+3. `lint-api`: Performs API standardization checks against each API referenced by a product manifest.json file. There is the ability to skip API validation for a specific API product via the productMetadata in the manifest.json.
+
+
+### Docs as Code Action
+This action runs on upon merging into `main`. It performs all the checks as per above and assuming all validations pass, it then runs then publishes the content to the appropriate SwaggerHub Portal instance.
 
 The action performs the following jobs:
 1. `spell-check`: Performs spell checking on all of the markdown files under the _products_ folder (**note** to add a list of known good custom words update the ./custom-words.txt file)

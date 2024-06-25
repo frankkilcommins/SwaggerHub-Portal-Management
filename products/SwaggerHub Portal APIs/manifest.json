@@ -7,7 +7,7 @@
         "logo": "images/SwaggerHub.png",
         "logoDark": "",
         "autoPublish": true,
-        "validateAPIs": true
+        "validateAPIs": false
     },
     "contentMetadata": [
         {
