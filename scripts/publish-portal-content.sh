@@ -11,7 +11,7 @@
 # - SWAGGERHUB_PORTAL_SUBDOMAIN: SwaggerHub Portal subdomain
 
 # Source the utility script to use its functions
-source ./utilities.sh
+source ./scripts/utilities.sh
 
 PORTAL_SUBDOMAIN="${SWAGGERHUB_PORTAL_SUBDOMAIN}"
 SWAGGERHUB_API_KEY="${SWAGGERHUB_API_KEY}"
