@@ -39,10 +39,46 @@ jobs:
       - name: Run cspell
         run: cspell --config ./.cspell.json "./products/**/*.md"
 
+  validate-manifests:
+    runs-on: ubuntu-latest
+    environment: Production
+    needs: spell-check
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install AJV CLI
+        run: npm install -g ajv-cli
+
+      - name: Validate manifests
+        run: |
+          # source the utility script
+          . ./scripts/utilities.sh
+
+          for product in ./products/*; do
+            if [[ -d "$product" ]]; then
+              product_name=${product#./products/}
+              manifest="./products/$product_name/manifest.json"
+              if [[ -f "$manifest" ]]; then
+                # Further actions...
+                log_message $INFO "Validating manifest in product: $product_name"
+                log_message $DEBUG "Validating manifest: $manifest"
+                ajv validate -s ./schemas/manifest-schema.json -d "$manifest" --spec=draft2020
+              fi
+            fi
+          done 
+
   lint-api:
     runs-on: ubuntu-latest
     if: github.event.inputs.skip_api_linting != 'true'
     environment: Production
+    needs: validate-manifests
 
     steps:
       - name: Checkout repository

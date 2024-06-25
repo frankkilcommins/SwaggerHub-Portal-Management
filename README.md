@@ -21,11 +21,11 @@ The following product structure must be adhered to allow for the automation to p
   - product One _folder_ - contains all data relevant to "Product One"
     - *.md _files_ - contains the markdown documents to be published within "Product One". The file name is used as the table-of-contents entry name.
     - images _folder_ - a folder to house the product logo and _embedded_ sub-folder
-      - *.png / *.jpeg - a root level image to be used as the product logo (needs to be reference from the `manifest.json`)
+      - `*.png / *.jpeg` - a root level image to be used as the product logo (needs to be reference from the `manifest.json`)
       - embedded _folder_ - a folder to storing all images to be embedded within the product markdown pages. See [Image Embedding Conventions](#image-embedding-convention) for more info on how to reference.
     - manifest.json - stores product metadata (like description, slug, logo url, visibility, etc.) and content metadata (like table of contents order, page nesting, etc.)
-  - product Two ...
-  - product N ...
+  - product Two _folder_ ...
+  - product N _folder_ ...
 
 ### Image Embedding Convention
 
@@ -63,7 +63,7 @@ Check out the products operation at [`/products`](https://frankkilcommins.portal
 
 ### Table of Contents Conventions
 
-The table of contents is completely driven by the `manifest.json` file contained within each Product folder.
+The table of contents is completely driven by the `manifest.json` file contained within each Product folder. The specified manifest file MUST validate against [mainfest.schema.json](./schemas/manifest.schema.json).
 
 A sample manifest is as follows:
 
@@ -152,7 +152,7 @@ The `contentMetadata` defines the following properties:
 
 ## GitHub Action
 
-This repo comes with a simple boilerplate action that can be trigger manually or upon merge into the `main` branch.
+This repo comes with a simple boilerplate action that can be triggered manually or upon merge into the `main` branch.
 
 The action requires the following **repository secrets** to be configured:
 - `SWAGGERHUB-API-KEY` - an API key associated to a user with the appropriate permission to be able to publish Portal content. See [Portal User Management](https://support.smartbear.com/swaggerhub-portal/docs/en/user-management.html) for more info.
@@ -166,5 +166,6 @@ The action requires the following **repository environment variables** to be con
 
 The action performs the following jobs:
 1. `spell-check`: Performs spell checking on all of the markdown files under the _products_ folder (**note** to add a list of known good custom words update the ./custom-words.txt file)
-2. `lint-api`: Performs API standardization checks against each API referenced by a product manifest.json file. There is the ability to skip API validation for a specific API product via the productMetadata in the manifest.json.
-3. `publish`: Publishes all of configured products into the referenced SwaggerHub Portal instance.
+2. `validate-manifests`: Performs a JSON Schema validation check against the defined product manifest.json files to ensure they are correctly specified.
+3. `lint-api`: Performs API standardization checks against each API referenced by a product manifest.json file. There is the ability to skip API validation for a specific API product via the productMetadata in the manifest.json.
+4. `publish`: Publishes all of configured products into the referenced SwaggerHub Portal instance.
