@@ -10,5 +10,6 @@ petcopetstore
 Petstore
 Playfair
 Roboto
+SCIM
 SmartBear
 SWAGGERHUB
