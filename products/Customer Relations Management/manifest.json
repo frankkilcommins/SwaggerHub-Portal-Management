@@ -25,6 +25,14 @@
             "slug": "getting-started",
             "type": "markdown",
             "contentUrl": "Getting-Started.md"
+        },
+        {
+            "order": 2,
+            "parent": "",
+            "name": "CRM",
+            "slug": "crm",
+            "type": "apiUrl",
+            "contentUrl": "https://mclaneco.portal.swaggerhub.com/crm"
         }
     ]
 }
