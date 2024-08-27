@@ -1,4 +1,4 @@
-name: Publish Portal Content
+name: Publish Portal Content (Cron)
 
 on:
   schedule:
