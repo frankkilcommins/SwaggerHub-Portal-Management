@@ -13,6 +13,14 @@
         {
             "order": 0,
             "parent": "",
+            "name": "SCIM Users Exp API",
+            "slug": "scim-users-exp-api",
+            "type": "markdown",
+            "contentUrl": "scim-users-exp-api.md"
+        },
+        {
+            "order": 0,
+            "parent": "",
             "name": "Overview",
             "slug": "overview",
             "type": "markdown",
