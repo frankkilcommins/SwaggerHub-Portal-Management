@@ -1,0 +1,38 @@
+{
+    "productMetadata": {
+        "description": "APIs for Customer Relations Management",
+        "slug": "crm",
+        "public": true,
+        "hidden": false,
+        "logo": "images/crm.png",
+        "logoDark": "images/crm.png",
+        "autoPublish": true,
+        "validateAPIs": false
+    },
+    "contentMetadata": [
+        {
+            "order": 0,
+            "parent": "",
+            "name": "Overview",
+            "slug": "overview",
+            "type": "markdown",
+            "contentUrl": "Overview.md"
+        },
+        {
+            "order": 1,
+            "parent": "",
+            "name": "Getting Started",
+            "slug": "getting-started",
+            "type": "markdown",
+            "contentUrl": "Getting-Started.md"
+        },
+        {
+            "order": 2,
+            "parent": "",
+            "name": "CRM",
+            "slug": "crm",
+            "type": "apiUrl",
+            "contentUrl": "https://mclaneco.portal.swaggerhub.com/crm"
+        }
+    ]
+}
