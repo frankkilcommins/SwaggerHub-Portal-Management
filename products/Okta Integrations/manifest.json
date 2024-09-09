@@ -1,0 +1,46 @@
+{
+    "productMetadata": {
+        "description": "Allws users to get, search, add and delete users from a SCIM compliant user store",
+        "slug": "scim-users-exp-api",
+        "public": true,
+        "hidden": false,
+        "logo": "images/scim.png",
+        "logoDark": "images/scim.png",
+        "autoPublish": true,
+        "validateAPIs": false
+    },
+    "contentMetadata": [
+        {
+            "order": 0,
+            "parent": "",
+            "name": "SCIM Users Exp API",
+            "slug": "scim-users-exp-api",
+            "type": "markdown",
+            "contentUrl": "scim-users-exp-api.md"
+        },
+        {
+            "order": 0,
+            "parent": "",
+            "name": "Overview",
+            "slug": "overview",
+            "type": "markdown",
+            "contentUrl": "Overview.md"
+        },
+        {
+            "order": 1,
+            "parent": "",
+            "name": "Getting Started",
+            "slug": "getting-started",
+            "type": "markdown",
+            "contentUrl": "Getting-Started.md"
+        },
+        {
+            "order": 2,
+            "parent": "",
+            "name": "SCIM Users Exp API",
+            "slug": "scim-users-exp-api",
+            "type": "apiUrl",
+            "contentUrl": "https://app.swaggerhub.com/apis/MCLANECO/scim-users-exp-api/v1"
+        }
+    ]
+}
