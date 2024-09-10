@@ -38,9 +38,9 @@
             "order": 3,
             "parent": "scim-users-exp-api",
             "name": "SCIM Users Exp API",
-            "slug": "scim-users-exp-api",
+            "slug": "scim-users-exp-api-v1",
             "type": "apiUrl",
-            "contentUrl": "https://app.swaggerhub.com/apis/MCLANECO/scim-users-exp-api/v1"
+            "contentUrl": "https://apim-test.mclaneco.com/scim-users-exp-api/v1"
         }
     ]
 }
