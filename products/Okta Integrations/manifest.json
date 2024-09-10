@@ -39,7 +39,7 @@
             "parent": "scim-users-exp-api",
             "name": "SCIM Users Exp API",
             "slug": "scim-users-exp-api-v1",
-            "type": "markdown",
+            "type": "apiUrl",
             "contentUrl": "https://app.swaggerhub.com/apis-docs/MCLANECO/scim-users-exp-api/v1"
         }
     ]
