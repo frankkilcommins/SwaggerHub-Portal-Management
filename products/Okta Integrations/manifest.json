@@ -20,7 +20,7 @@
         },
         {
             "order": 0,
-            "parent": "",
+            "parent": "scim-users-exp-api",
             "name": "Overview",
             "slug": "overview",
             "type": "markdown",
@@ -28,7 +28,7 @@
         },
         {
             "order": 1,
-            "parent": "",
+            "parent": "scim-users-exp-api",
             "name": "Getting Started",
             "slug": "getting-started",
             "type": "markdown",
@@ -36,7 +36,7 @@
         },
         {
             "order": 2,
-            "parent": "",
+            "parent": "scim-users-exp-api",
             "name": "SCIM Users Exp API",
             "slug": "scim-users-exp-api",
             "type": "apiUrl",
