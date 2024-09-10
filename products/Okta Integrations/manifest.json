@@ -19,7 +19,7 @@
             "contentUrl": "scim-users-exp-api.md"
         },
         {
-            "order": 0,
+            "order": 1,
             "parent": "scim-users-exp-api",
             "name": "Overview",
             "slug": "overview",
@@ -27,7 +27,7 @@
             "contentUrl": "Overview.md"
         },
         {
-            "order": 1,
+            "order": 2,
             "parent": "scim-users-exp-api",
             "name": "Getting Started",
             "slug": "getting-started",
@@ -35,7 +35,7 @@
             "contentUrl": "Getting-Started.md"
         },
         {
-            "order": 2,
+            "order": 3,
             "parent": "scim-users-exp-api",
             "name": "SCIM Users Exp API",
             "slug": "scim-users-exp-api",
