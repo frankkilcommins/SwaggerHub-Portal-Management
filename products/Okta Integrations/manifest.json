@@ -20,15 +20,15 @@
         },
         {
             "order": 1,
-            "parent": "scim-users-exp-api",
+            "parent": "scim-users-exp-api-hld",
             "name": "TSD - SCIM Users Exp API",
             "slug": "tsd-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "TSD - SCIM Users Exp API.md"
+            "contentUrl": "tsd-scim-users-exp-api.md"
         },
         {
             "order": 2,
-            "parent": "scim-users-exp-api",
+            "parent": "scim-users-exp-api-hld",
             "name": "SCIM Users Exp API",
             "slug": "scim-users-exp-api-v1",
             "type": "apiUrl",
