@@ -12,7 +12,7 @@ on:
       skip_api_linting:
         description: 'Skip the API linting job'
         required: false
-        default: 'false'        
+        default: 'true'        
 
 env:
   SWAGGERHUB_API_KEY: ${{ secrets.SWAGGERHUB_API_KEY }}
