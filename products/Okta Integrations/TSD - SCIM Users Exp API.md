@@ -76,7 +76,7 @@ June 07, 2024
 <td></td>
 <td></td>
 <td><p>Update endpoints to Users</p>
-<p>change fisaRegionalCode to fisaCode</p>
+<p>change flsaRegionalCode to flsaCode</p>
 <p>change status to employmentStatusCode</p></td>
 <td>07/23/2024</td>
 </tr>
@@ -94,7 +94,7 @@ the middleName element</td>
 
 This document provides specifics that describes the API application that
 is to be built to support the interactions related to supporting McLane
-usres managed and the synchronization of that data via OKTA.
+users managed and the synchronization of that data via OKTA.
 
 # Taxonomy
 
@@ -167,7 +167,7 @@ deliver of detailed employee data.
 
 OAS Model Project: scim-users-exp-api
 
-Development Project: scim-usres-exp-api
+Development Project: scim-users-exp-api
 
 OpenShift Project: employee-events-dev, employee-events-test,
 employee-events
@@ -212,7 +212,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
@@ -534,7 +534,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
@@ -759,7 +759,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -981,7 +981,7 @@ style="text-align: left;">urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</
 <p>EX. 31-Sep-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">exendedLeaveEffectiveDate</td>
+<td style="text-align: left;">extendedLeaveEffectiveDate</td>
 <td style="text-align: center;">N</td>
 <td style="text-align: left;"><p>date</p>
 <p>EX. 14-Sep-2024</p></td>
@@ -1070,7 +1070,7 @@ Example Request:
 "compensationTypeCode": "S",  
 "businessUnit": "IS790",  
 "terminationDate": "01-Sep-2024",  
-"exendedLeaveEffectiveDate": "30-Sep-2024",  
+"extendedLeaveEffectiveDate": "30-Sep-2024",  
 "flsaCode": "N",  
 "locationId": "999",  
 "startDate": "01-Sep-2022",  
@@ -1364,7 +1364,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -1696,7 +1696,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -1960,7 +1960,7 @@ style="text-align: left;">urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</
 <p>EX. 31-Sep-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">exendedLeaveEffectiveDate</td>
+<td style="text-align: left;">extendedLeaveEffectiveDate</td>
 <td style="text-align: center;">N</td>
 <td style="text-align: left;"><p>date</p>
 <p>EX. 14-Sep-2024</p></td>
@@ -2049,7 +2049,7 @@ Example Request:
 "compensationTypeCode": "S",  
 "businessUnit": "IS790",  
 "terminationDate": "01-Sep-2024",  
-"exendedLeaveEffectiveDate": "30-Sep-2024",  
+"extendedLeaveEffectiveDate": "30-Sep-2024",  
 "flsaCode": "N",  
 "locationId": "999",  
 "startDate": "01-Sep-2022",  
@@ -2122,7 +2122,7 @@ See model project for interaction details: employee-ods-sys-api
 | flsaCode | flsaCode from the scim request | Ex. N |
 | compensationTypeCode | compensationTypeCode from the scim request | Ex. S |
 | extendedTimeOff |  |  |
-| startDate | exendedLeaveEffectiveDate from the scim request | Ex. 01-Sep-2020 |
+| startDate | extendedLeaveEffectiveDate from the scim request | Ex. 01-Sep-2020 |
 | name |  |  |
 | first | firstName from the scim request | Ex. Alex |
 | middle | middleName from the scim request | Ex. Peter |
@@ -2359,7 +2359,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
@@ -2599,7 +2599,7 @@ Example:
 "compensationType": "S",  
 "businessUnit": "GR260",  
 "terminationDate": "",  
-"exendedLeaveEffectiveDate": "2024-07-01",  
+"extendedLeaveEffectiveDate": "2024-07-01",  
 "flsaCode": "N",  
 "locationId": "999",  
 "jobFamilyCode": "D",  
@@ -2637,7 +2637,7 @@ Example:
 "compensationTypeCode": "S",  
 "businessUnit": "GR360",  
 "terminationDate": "",  
-"exendedLeaveEffectiveDate": "21-Oct-2024",  
+"extendedLeaveEffectiveDate": "21-Oct-2024",  
 "flsaCode": "N",  
 "locationId": "999",  
 "jobFamilyCode": "D",  
@@ -3113,7 +3113,7 @@ urn:ietf:params:scim:api:messages:2.0:Error</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
-<td style="text-align: left;"><p>Http status rcode</p>
+<td style="text-align: left;"><p>Http status code</p>
 <p>400=Bad Request</p>
 <p>401=Unauthorized</p>
 <p>403=Forbidden</p>
@@ -3514,7 +3514,7 @@ response</td>
 <p>EX. 11-Oct-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">exendedLeaveEffectiveDate</td>
+<td style="text-align: left;">extendedLeaveEffectiveDate</td>
 <td style="text-align: left;">extendedTimeOff.startDate from the
 response</td>
 <td style="text-align: left;"><p>date</p>
@@ -3634,7 +3634,7 @@ Example:
 "compensationTypeCode": "S",  
 "businessUnit": "IS790",  
 "terminationDate": "01-Sep-2024",  
-"exendedLeaveEffectiveDate": "30-Sep-2024",  
+"extendedLeaveEffectiveDate": "30-Sep-2024",  
 "flsaCode": "N",  
 "locationId": "999",  
 "startDate": "01-Sep-2022",  
