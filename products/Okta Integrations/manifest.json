@@ -1,6 +1,6 @@
 {
     "productMetadata": {
-        "description": "Allws users to get, search, add and delete users from a SCIM compliant user store",
+        "description": "Allows users to get, search, add and delete users using OKTA APIs",
         "slug": "scim-users-exp-api",
         "public": true,
         "hidden": false,
@@ -13,29 +13,21 @@
         {
             "order": 0,
             "parent": "",
-            "name": "SCIM Users Exp API",
-            "slug": "scim-users-exp-api",
+            "name": "SCIM Users Exp API HLD",
+            "slug": "scim-users-exp-api-hld",
             "type": "markdown",
-            "contentUrl": "scim-users-exp-api.md"
+            "contentUrl": "scim-users-exp-api-hld.md"
         },
         {
             "order": 1,
             "parent": "scim-users-exp-api",
-            "name": "Overview",
-            "slug": "overview",
+            "name": "TSD - SCIM Users Exp API",
+            "slug": "tsd-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "Overview.md"
+            "contentUrl": "TSD - SCIM Users Exp API.md"
         },
         {
             "order": 2,
-            "parent": "scim-users-exp-api",
-            "name": "Getting Started",
-            "slug": "getting-started",
-            "type": "markdown",
-            "contentUrl": "Getting-Started.md"
-        },
-        {
-            "order": 3,
             "parent": "scim-users-exp-api",
             "name": "SCIM Users Exp API",
             "slug": "scim-users-exp-api-v1",
