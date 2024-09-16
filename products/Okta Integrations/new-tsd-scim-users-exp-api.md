@@ -1,22 +1,3 @@
----
-subtitle: |
-  []{#_sre6npoo7jss .anchor}v1.0
-
-  []{#_kyfxwj1fyq9c .anchor}
-
-  []{#_c8gtmj124pd6 .anchor}
-title: |
-  []{#_9rsez4gy0kwl .anchor}
-
-  ![Logo, company name Description automatically
-  generated](media/image1.png){width="3.1770833333333335in"
-  height="1.6354166666666667in"}
-
-  SCIM Users
-
-  Experience API[]{#_8z2gp2gyr2vf .anchor}
----
-
 June 07, 2024
 
 # History Of Changes
