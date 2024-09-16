@@ -21,10 +21,10 @@
         {
             "order": 1,
             "parent": "scim-users-exp-api-hld",
-            "name": "REAL - TSD - SCIM Users Exp API",
-            "slug": "tsd-scim-users-exp-api",
+            "name": "new TSD SCIM Users Exp API",
+            "slug": "new-tsd-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "tsd-scim-users-exp-api.md"
+            "contentUrl": "new-tsd-scim-users-exp-api.md"
         },
         {
             "order": 2,
