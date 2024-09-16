@@ -22,7 +22,7 @@
             "order": 1,
             "parent": "scim-users-exp-api-hld",
             "name": "new TSD SCIM Users Exp API",
-            "slug": "tsd-scim-users-exp-api",
+            "slug": "new-tsd-scim-users-exp-api",
             "type": "markdown",
             "contentUrl": "new-tsd-scim-users-exp-api.md"
         },
