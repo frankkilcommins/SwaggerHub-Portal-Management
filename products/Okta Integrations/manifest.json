@@ -21,37 +21,13 @@
         {
             "order": 1,
             "parent": "scim-users-exp-api-hld",
-            "name": "new TSD SCIM Users Exp API",
-            "slug": "new-tsd-scim-users-exp-api",
+            "name": "TSD SCIM Users Exp API",
+            "slug": "tsd-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "new-tsd-scim-users-exp-api.md"
+            "contentUrl": "tsd-scim-users-exp-api.md"
         },
         {
             "order": 2,
-            "parent": "scim-users-exp-api-hld",
-            "name": "ABC - TSD - SCIM Users Exp API",
-            "slug": "abc",
-            "type": "markdown",
-            "contentUrl": "abc.md"
-        },
-        {
-            "order": 3,
-            "parent": "scim-users-exp-api-hld",
-            "name": "test-stoplight-md",
-            "slug": "test-stoplight-md",
-            "type": "markdown",
-            "contentUrl": "test-stoplight-md.md"
-        },
-        {
-            "order": 4,
-            "parent": "scim-users-exp-api-hld",
-            "name": "HTML to MD test",
-            "slug": "test-html-to-md",
-            "type": "markdown",
-            "contentUrl": "testhtmltomd.md"
-        },
-        {
-            "order": 5,
             "parent": "scim-users-exp-api-hld",
             "name": "SCIM Users Exp API",
             "slug": "scim-users-exp-api-v1",

@@ -1,4 +1,400 @@
+---
+subtitle: |
+  []{#_sre6npoo7jss .anchor}v1.0
+
+  []{#_kyfxwj1fyq9c .anchor}
+
+  []{#_c8gtmj124pd6 .anchor}
+title: |
+  []{#_9rsez4gy0kwl .anchor}
+
+  ![Logo, company name Description automatically
+  generated](media/image1.png){width="3.1770833333333335in"
+  height="1.6354166666666667in"}
+
+  SCIM Users
+
+  Experience API[]{#_8z2gp2gyr2vf .anchor}
+---
+
 June 07, 2024
+
+#  {#section .TOC-Heading}
+
+# Table of Contents
+
+[History Of Changes 8](#history-of-changes)
+
+[Purpose 9](#purpose)
+
+[Taxonomy 9](#taxonomy)
+
+[Solution Overview 10](#solution-overview)
+
+[Process Context 10](#process-context)
+
+[Logical Viewpoint 11](#logical-viewpoint)
+
+[Deployment Viewpoint 11](#deployment-viewpoint)
+
+[Experience API 12](#experience-api)
+
+[Functional Design 12](#functional-design)
+
+[Resources 12](#resources)
+
+[Employees 12](#employees)
+
+[Project Names: 12](#project-names)
+
+[Policies 12](#policies)
+
+[Get Service Configuration 13](#get-users)
+
+[Resource Locators 13](#resource-locators-5)
+
+[Path Parameters: Does Not Apply 13](#path-parameters-does-not-apply-3)
+
+[Query Parameters: Does Not Apply 13](#query-parameters)
+
+[Http Header Parameters: 13](#http-header-parameters-9)
+
+[Request Payload: Does Not Apply 13](#request-payload-does-not-apply-3)
+
+[Processing Summary 13](#processing-summary-5)
+
+[Validation 13](#validation-5)
+
+[Prepare Response 14](#prepare-response-5)
+
+[Logging Events: 15](#logging-events-5)
+
+[Error Processing 15](#error-processing-5)
+
+[Non Functional Requirements 16](#non-functional-requirements-5)
+
+[Security 16](#security-5)
+
+[Data 16](#data-5)
+
+[Transport 16](#transport-5)
+
+[Availability 16](#availability-5)
+
+[Reliability 16](#reliability-5)
+
+[Traceability 16](#traceability-5)
+
+[Throughput 16](#throughput-5)
+
+[Response Time 16](#response-time-5)
+
+[Get user data via a user Id 17](#get-user-data-via-a-user-id)
+
+[Resource Locators 17](#resource-locators-1)
+
+[Path Parameters: 17](#path-parameters)
+
+[Query Parameters: Does Not Apply
+17](#query-parameters-does-not-apply-1)
+
+[Http Header Parameters: 17](#http-header-parameters-1)
+
+[Request Payload: Does Not Apply 17](#request-payload-does-not-apply-1)
+
+[Processing Summary 17](#processing-summary-1)
+
+[Validation 17](#validation-1)
+
+[Call System API to Get employee data for an employee identifier
+18](#call-system-api-to-get-employee-data-for-an-employee-identifier)
+
+[Prepare Response 18](#prepare-response-1)
+
+[Logging Events: 19](#logging-events-1)
+
+[Error Processing 19](#error-processing-1)
+
+[Non Functional Requirements 19](#non-functional-requirements-1)
+
+[Security 19](#security-1)
+
+[Data 19](#data-1)
+
+[Transport 19](#transport-1)
+
+[Availability 19](#availability-1)
+
+[Reliability 19](#reliability-1)
+
+[Traceability 20](#traceability-1)
+
+[Throughput 20](#throughput-1)
+
+[Response Time 20](#response-time-1)
+
+[Update employee data via an employee Id
+21](#__RefHeading___Toc838923_406619274_Copy__Copy_1)
+
+[Resource Locators 21](#__RefHeading___Toc838925_406619274_Copy__Copy_1)
+
+[Path Parameters: 21](#__RefHeading___Toc838927_406619274_Copy__Copy_1)
+
+[Query Parameters: Does Not Apply
+21](#__RefHeading___Toc838929_406619274_Copy__Copy_1)
+
+[Http Header Parameters:
+21](#__RefHeading___Toc838931_406619274_Copy__Copy_1)
+
+[Request Payload: See the model repo for details
+21](#__RefHeading___Toc838933_406619274_Copy__Copy_1)
+
+[Processing Summary
+24](#__RefHeading___Toc838935_406619274_Copy__Copy_1)
+
+[Processing 24](#processing-2)
+
+[Validation 24](#validation-4)
+
+[Call the Employees ODS system API
+24](#call-the-employees-ods-system-api-2)
+
+[Prepare Response 25](#scim-employee-detail-mapping)
+
+[Response Payload: #Employee Detail Response Structure\|outline
+25](#response-payload-3)
+
+[Logging Events: 25](#logging-events-4)
+
+[Error Processing 26](#error-processing-4)
+
+[HTTP Status Codes 26](#http-status-codes-2)
+
+[Non Functional Requirements 27](#non-functional-requirements-4)
+
+[Security 27](#security-4)
+
+[Data 27](#data-4)
+
+[Transport 27](#transport-4)
+
+[Availability 27](#availability-4)
+
+[Reliability 27](#reliability-4)
+
+[Traceability 27](#traceability-4)
+
+[Throughput 27](#throughput-4)
+
+[Response Time 27](#response-time-4)
+
+[Patch employee data via an employee Id
+28](#__RefHeading___Toc838923_406619274_Copy__Copy_2)
+
+[Resource Locators 28](#__RefHeading___Toc838925_406619274_Copy__Copy_2)
+
+[Path Parameters: 28](#__RefHeading___Toc838927_406619274_Copy__Copy_2)
+
+[Query Parameters: Does Not Apply
+28](#__RefHeading___Toc838929_406619274_Copy__Copy_2)
+
+[Http Header Parameters:
+28](#__RefHeading___Toc838931_406619274_Copy__Copy_2)
+
+[Request Payload: See the model repo for details
+28](#__RefHeading___Toc838933_406619274_Copy__Copy_2)
+
+[Processing Summary
+29](#__RefHeading___Toc838935_406619274_Copy__Copy_2)
+
+[Processing 29](#__RefHeading___Toc4339717_4251829975_Cop_Copy_1)
+
+[Validation 29](#__RefHeading___Toc838937_406619274_Copy__Copy_1)
+
+[Call the Employees ODS system API
+29](#__RefHeading___Toc838939_406619274_Copy__Copy_1)
+
+[Prepare Response 30](#__RefHeading___Toc838941_406619274_Copy__Copy_1)
+
+[Response Payload: #Employee Detail Response Structure\|outline
+30](#__RefHeading___Toc838943_406619274_Copy__Copy_1)
+
+[Logging Events: 30](#__RefHeading___Toc7826_104875281_Copy_1__Copy_1)
+
+[Error Processing 30](#__RefHeading___Toc838945_406619274_Copy__Copy_1)
+
+[HTTP Status Codes 31](#__RefHeading___Toc838947_406619274_Copy__Copy_1)
+
+[Non Functional Requirements
+32](#__RefHeading___Toc838951_406619274_Copy__Copy_1)
+
+[Security 32](#__RefHeading___Toc838953_406619274_Copy__Copy_1)
+
+[Data 32](#__RefHeading___Toc838955_406619274_Copy__Copy_1)
+
+[Transport 32](#__RefHeading___Toc838957_406619274_Copy__Copy_1)
+
+[Availability 32](#__RefHeading___Toc838959_406619274_Copy__Copy_1)
+
+[Reliability 32](#__RefHeading___Toc838961_406619274_Copy__Copy_1)
+
+[Traceability 32](#__RefHeading___Toc838963_406619274_Copy__Copy_1)
+
+[Throughput 32](#__RefHeading___Toc838965_406619274_Copy__Copy_1)
+
+[Response Time 32](#__RefHeading___Toc838967_406619274_Copy__Copy_1)
+
+[Add an employee 33](#__RefHeading___Toc838923_406619274_Copy__Copy_3)
+
+[Resource Locators 33](#__RefHeading___Toc838925_406619274_Copy__Copy_3)
+
+[Path Parameters: Does Not Apply
+33](#__RefHeading___Toc838927_406619274_Copy__Copy_3)
+
+[Query Parameters: Does Not Apply
+33](#__RefHeading___Toc838929_406619274_Copy__Copy_3)
+
+[Http Header Parameters:
+33](#__RefHeading___Toc838931_406619274_Copy__Copy_3)
+
+[Request Payload: See the model repo for details
+33](#__RefHeading___Toc838933_406619274_Copy__Copy_3)
+
+[Processing Summary
+36](#__RefHeading___Toc838935_406619274_Copy__Copy_3)
+
+[Processing 36](#__RefHeading___Toc4339717_4251829975_Cop_Copy_2)
+
+[Validation 36](#__RefHeading___Toc838937_406619274_Copy__Copy_2)
+
+[Call the Employees ODS system API
+36](#__RefHeading___Toc838939_406619274_Copy__Copy_2)
+
+[Prepare Response 39](#__RefHeading___Toc838941_406619274_Copy__Copy_2)
+
+[Response Payload: #Employee Detail Response Structure\|outline
+39](#__RefHeading___Toc838943_406619274_Copy__Copy_2)
+
+[Logging Events: 39](#__RefHeading___Toc7826_104875281_Copy_1__Copy_2)
+
+[Error Processing 39](#__RefHeading___Toc838945_406619274_Copy__Copy_2)
+
+[HTTP Status Codes 40](#__RefHeading___Toc838947_406619274_Copy__Copy_2)
+
+[Non Functional Requirements
+41](#__RefHeading___Toc838951_406619274_Copy__Copy_2)
+
+[Security 41](#__RefHeading___Toc838953_406619274_Copy__Copy_2)
+
+[Data 41](#__RefHeading___Toc838955_406619274_Copy__Copy_2)
+
+[Transport 41](#__RefHeading___Toc838957_406619274_Copy__Copy_2)
+
+[Availability 41](#__RefHeading___Toc838959_406619274_Copy__Copy_2)
+
+[Reliability 41](#__RefHeading___Toc838961_406619274_Copy__Copy_2)
+
+[Traceability 41](#__RefHeading___Toc838963_406619274_Copy__Copy_2)
+
+[Throughput 41](#__RefHeading___Toc838965_406619274_Copy__Copy_2)
+
+[Response Time 41](#__RefHeading___Toc838967_406619274_Copy__Copy_2)
+
+[Get users 42](#__RefHeading___Toc838923_406619274_Copy__Copy_4)
+
+[Resource Locators 42](#__RefHeading___Toc838925_406619274_Copy__Copy_4)
+
+[Path Parameters: Does Not Apply
+42](#__RefHeading___Toc838927_406619274_Copy__Copy_4)
+
+[Query Parameters: 42](#__RefHeading___Toc838929_406619274_Copy__Copy_4)
+
+[Http Header Parameters:
+42](#__RefHeading___Toc838931_406619274_Copy__Copy_4)
+
+[Request Payload: Does Not Apply
+42](#__RefHeading___Toc838933_406619274_Copy__Copy_4)
+
+[Processing Summary
+42](#__RefHeading___Toc838935_406619274_Copy__Copy_4)
+
+[Validation 43](#__RefHeading___Toc13789_4211432988_Copy__Copy_1)
+
+[Call System API to Get employee data for an employee identifier
+43](#call-system-api-to-get-employee-data-for-an-employee-identifier-1)
+
+[Prepare Response 43](#__RefHeading___Toc13793_4211432988_Copy__Copy_1)
+
+[Logging Events: 46](#__RefHeading___Toc21579_2386123232_Copy__Copy_1)
+
+[Error Processing 46](#__RefHeading___Toc4339727_4251829975_Cop_Copy_1)
+
+[Non Functional Requirements
+46](#__RefHeading___Toc13797_4211432988_Copy__Copy_1)
+
+[Security 46](#__RefHeading___Toc13799_4211432988_Copy__Copy_1)
+
+[Data 46](#__RefHeading___Toc13801_4211432988_Copy__Copy_1)
+
+[Transport 46](#__RefHeading___Toc13803_4211432988_Copy__Copy_1)
+
+[Availability 46](#__RefHeading___Toc13805_4211432988_Copy__Copy_1)
+
+[Reliability 46](#__RefHeading___Toc13807_4211432988_Copy__Copy_1)
+
+[Traceability 46](#__RefHeading___Toc13809_4211432988_Copy__Copy_1)
+
+[Throughput 46](#__RefHeading___Toc13811_4211432988_Copy__Copy_1)
+
+[Response Time 47](#__RefHeading___Toc13813_4211432988_Copy__Copy_1)
+
+[SCIM Users Health Check 48](#scim-users-health-check)
+
+[Resource Locators 48](#resource-locators-6)
+
+[Path Parameters: Does Not Apply 48](#path-parameters-does-not-apply-5)
+
+[Query Parameters: Does Not Apply
+48](#query-parameters-does-not-apply-9)
+
+[Http Request Parameters: 48](#http-request-parameters)
+
+[Request Payload: Does Not Apply 48](#request-payload-does-not-apply-5)
+
+[Processing Summary 48](#processing-summary-6)
+
+[Call the health endpoint for the Employees ODS system API
+49](#call-the-health-endpoint-for-the-employees-ods-system-api)
+
+[Response Payload: For Successful responses
+49](#response-payload-for-successful-responses)
+
+[Response Payload: For Successful responses
+49](#response-payload-for-successful-responses-1)
+
+[Response Payload: For failures only
+51](#response-payload-for-failures-only)
+
+[HTTP Status Codes 51](#http-status-codes-3)
+
+[Appendix 52](#appendix)
+
+[API Environments: 52](#api-environments)
+
+[SCIM Error Structure 52](#scim-error-structure)
+
+[Log Event Structure 53](#log-event-structure)
+
+[Employee User Detail Response Structure
+54](#scim-user-response-detail-mapping-structure)
+
+[SCIM User Response Detail Mapping Structure
+55](#__RefHeading___Toc839007_4066192741_Copy_Copy_1)
+
+[SCIM Employee Detail Mapping
+55](#__RefHeading___Toc838941_406619274_Copy__Copy_3)
+
+[Response Payload: 55](#__RefHeading___Toc838943_406619274_Copy__Copy_3)
 
 # History Of Changes
 
