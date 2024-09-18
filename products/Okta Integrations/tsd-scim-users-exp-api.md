@@ -74,7 +74,7 @@
 <td></td>
 <td></td>
 <td><p>Update endpoints to Users</p>
-<p>change fisaRegionalCode to fisaCode</p>
+<p>change flsaRegionalCode to flsaCode</p>
 <p>change status to employmentStatusCode</p></td>
 <td>07/23/2024</td>
 </tr>
@@ -92,7 +92,7 @@ the middleName element</td>
 
 This document provides specifics that describes the API application that
 is to be built to support the interactions related to supporting McLane
-usres managed and the synchronization of that data via OKTA.
+users managed and the synchronization of that data via OKTA.
 
 # Taxonomy
 
@@ -117,31 +117,13 @@ synchronization.
 
 ## Process Context
 
-OKTA
-
-Experience
-
-Process
-
-System
+![](media/image2.png)
 
 ## Logical Viewpoint
 
-System API
-
-REST
-
-ODS
-
 ## Deployment Viewpoint
 
-Authorized
-
-Consumers
-
-System
-
-jdbc
+![](media/image3.png)
 
 # Experience API
 
@@ -196,26 +178,26 @@ application/json
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| ------------ | :------: | ----- |
 |              |          |       |
 
 Example:
@@ -257,109 +239,106 @@ Response Payload description:
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">authenticationSchemes</td>
-<td style="text-align: left;">Empty array</td>
-<td style="text-align: left;">Ex. []</td>
+<td>authenticationSchemes</td>
+<td>Empty array</td>
+<td>Ex. []</td>
 </tr>
 <tr>
-<td style="text-align: left;">bulk</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>bulk</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">supported</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">Ex. false</td>
+<td>supported</td>
+<td>false</td>
+<td>Ex. false</td>
 </tr>
 <tr>
-<td style="text-align: left;">changePassword</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>changePassword</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">supported</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">Ex. false</td>
+<td>supported</td>
+<td>false</td>
+<td>Ex. false</td>
 </tr>
 <tr>
-<td style="text-align: left;">documentationUrl</td>
-<td
-style="text-align: left;">https://support.okta.com/scim-fake-page.html</td>
-<td style="text-align: left;">Ex.
-https://support.okta.com/scim-fake-page.html</td>
+<td>documentationUrl</td>
+<td>https://support.okta.com/scim-fake-page.html</td>
+<td>Ex. https://support.okta.com/scim-fake-page.html</td>
 </tr>
 <tr>
-<td style="text-align: left;">etag</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>etag</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">supported</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">Ex. false</td>
+<td>supported</td>
+<td>false</td>
+<td>Ex. false</td>
 </tr>
 <tr>
-<td style="text-align: left;">filter</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>filter</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">maxResults</td>
-<td style="text-align: left;">100</td>
-<td style="text-align: left;">Ex. 100</td>
+<td>maxResults</td>
+<td>100</td>
+<td>Ex. 100</td>
 </tr>
 <tr>
-<td style="text-align: left;">supported</td>
-<td style="text-align: left;">true</td>
-<td style="text-align: left;">Ex. true</td>
+<td>supported</td>
+<td>true</td>
+<td>Ex. true</td>
 </tr>
 <tr>
-<td style="text-align: left;">patch</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>patch</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">supported</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">Ex. false</td>
+<td>supported</td>
+<td>false</td>
+<td>Ex. false</td>
 </tr>
 <tr>
-<td style="text-align: left;">schemas</td>
-<td style="text-align: left;">"urn:scim:schemas:core:1.0",<br />
+<td>schemas</td>
+<td>"urn:scim:schemas:core:1.0",<br />
 "urn:okta:schemas:scim:providerconfig:1.0"</td>
-<td style="text-align: left;">Ex. "urn:scim:schemas:core:1.0",
+<td>Ex. "urn:scim:schemas:core:1.0",
 "urn:okta:schemas:scim:providerconfig:1.0"</td>
 </tr>
 <tr>
-<td style="text-align: left;">sort</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>sort</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">supported</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">Ex. false</td>
+<td>supported</td>
+<td>false</td>
+<td>Ex. false</td>
 </tr>
 <tr>
-<td
-style="text-align: left;">urn:okta:schemas:scim:providerconfig:1.0</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>urn:okta:schemas:scim:providerconfig:1.0</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">userManagementCapabilities</td>
-<td style="text-align: left;">"PUSH_NEW_USERS",<br />
+<td>userManagementCapabilities</td>
+<td>"PUSH_NEW_USERS",<br />
 "PUSH_PROFILE_UPDATES",<br />
 "PUSH_USER_DEACTIVATION",<br />
 "REACTIVATE_USERS"</td>
-<td style="text-align: left;">Ex. "PUSH_NEW_USERS",<br />
+<td>Ex. "PUSH_NEW_USERS",<br />
 "PUSH_PROFILE_UPDATES",<br />
 "PUSH_USER_DEACTIVATION",<br />
 "REACTIVATE_USERS"</td>
@@ -369,41 +348,43 @@ style="text-align: left;">urn:okta:schemas:scim:providerconfig:1.0</td>
 
 Example:
 
+```json
 {  
-"authenticationSchemes": \[\],  
-"bulk": {  
-"supported": false  
-},  
-"changePassword": {  
-"supported": false  
-},  
-"documentationUrl": "https://support.okta.com/scim-fake-page.html",  
-"etag": {  
-"supported": false  
-},  
-"filter": {  
-"maxResults": 100,  
-"supported": true  
-},  
-"patch": {  
-"supported": false  
-},  
-"schemas": \[  
-"urn:scim:schemas:core:1.0",  
-"urn:okta:schemas:scim:providerconfig:1.0"  
-\],  
-"sort": {  
-"supported": false  
-},  
-"urn:okta:schemas:scim:providerconfig:1.0": {  
-"userManagementCapabilities": \[  
-"PUSH_NEW_USERS",  
-"PUSH_PROFILE_UPDATES",  
-"PUSH_USER_DEACTIVATION",  
-"REACTIVATE_USERS"  
-\]  
-}  
+  "authenticationSchemes": [],  
+  "bulk": {  
+    "supported": false  
+  },  
+  "changePassword": {  
+    "supported": false  
+  },  
+  "documentationUrl": "https://support.okta.com/scim-fake-page.html",  
+  "etag": {  
+    "supported": false  
+  },  
+  "filter": {  
+    "maxResults": 100,  
+    "supported": true  
+  },  
+  "patch": {  
+    "supported": false  
+  },  
+  "schemas": [  
+    "urn:scim:schemas:core:1.0",  
+    "urn:okta:schemas:scim:providerconfig:1.0"  
+  ],  
+  "sort": {  
+    "supported": false  
+  },  
+  "urn:okta:schemas:scim:providerconfig:1.0": {  
+    "userManagementCapabilities": [  
+      "PUSH_NEW_USERS",  
+      "PUSH_PROFILE_UPDATES",  
+      "PUSH_USER_DEACTIVATION",  
+      "REACTIVATE_USERS"  
+    ]  
+  }  
 }
+```
 
 HTTP Status Codes
 
@@ -436,11 +417,11 @@ flowStep: "Flow Start"
 Error mapping from our standard error structure to the SCIM error
 structure
 
-| Element Name | Assignment | Notes |
-|----|:---|:---|
-| schemas | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
-| detail | context.message from the common error response | No user found |
-| status | status from the common error response | 400 |
+| Element Name | Assignment                                         | Notes                                       |
+| ------------ | -------------------------------------------------- | ------------------------------------------- |
+| schemas      | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
+| detail       | context.message from the common error response     | No user found                               |
+| status       | status from the common error response              | 400                                         |
 
 If an issue/error is encountered, the specifics related to the error are
 to be reported back on the response via our SCIM error structure along
@@ -516,26 +497,26 @@ application/json
 ###### Path Parameters: 
 
 | Name   | Assignment/Description     | Example   |
-|:-------|:---------------------------|:----------|
+| ------ | -------------------------- | --------- |
 | userId | Unique employee identifier | 000061149 |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| ------------ | :------: | ----- |
 |              |          |       |
 
 Example:
@@ -568,26 +549,26 @@ See model project for interaction details: employee-ods-sys-api
 ######## Path Parameters: 
 
 | Name       | Assignment/Description     | Example   |
-|:-----------|:---------------------------|:----------|
+| ---------- | -------------------------- | --------- |
 | employeeId | Unique employee identifier | 000061149 |
 
 ######## Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ######## Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                               | Example                              |
+| ---------------- | ---------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                        | ASY7748901                           |
 | X-Correlation-Id | Assign the correlationId value generated by this api | 979f3d3b-a04a-43d7-b55f-8d5609b48783 |
 
 ######## Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| ------------ | :------: | ----- |
 |              |          |       |
 
 Example:
@@ -617,7 +598,7 @@ Response Payload description: [\#SCIM Employee User Detail Mapping
 Structure\|outline](#scim-user-response-detail-mapping-structure)
 
 | Element Name | Assignment | Notes |
-|:-------------|:-----------|:------|
+| ------------ | ---------- | ----- |
 |              |            |       |
 
 HTTP Status Codes
@@ -661,11 +642,11 @@ flowStep: "Get Employee Response"
 Error mapping from our standard error structure to the SCIM error
 structure
 
-| Element Name | Assignment | Notes |
-|----|:---|:---|
-| schemas | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
-| detail | context.message from the common error response | No user found |
-| status | status from the common error response | 400 |
+| Element Name | Assignment                                         | Notes                                       |
+| ------------ | -------------------------------------------------- | ------------------------------------------- |
+| schemas      | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
+| detail       | context.message from the common error response     | No user found                               |
+| status       | status from the common error response              | 400                                         |
 
 If an issue/error is encountered, the specifics related to the error are
 to be reported back on the response via our SCIM error structure along
@@ -741,21 +722,21 @@ application/json
 ###### Path Parameters: 
 
 | Name   | Assignment/Description     | Example   |
-|:-------|:---------------------------|:----------|
+| ------ | -------------------------- | --------- |
 | userId | Unique employee identifier | 000061149 |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -767,255 +748,253 @@ application/json
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th style="text-align: center;">Required</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">schemas</td>
+<td>schemas</td>
 <td style="text-align: center;">Y</td>
-<td
-style="text-align: left;"><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
+<td><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
 <p>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
+<td></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">userName</td>
+<td>userName</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">active</td>
+<td>active</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>boolean</p>
+<td><p>boolean</p>
 <p>Ex. true</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">name</td>
+<td>name</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;">object</td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">givenName</td>
+<td>givenName</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Mary</p></td>
 </tr>
 <tr>
-<td style="text-align: left;"><del>middleName</del></td>
+<td><del>middleName</del></td>
 <td style="text-align: center;"><del>N</del></td>
-<td style="text-align: left;"><p><del>string</del></p>
+<td><p><del>string</del></p>
 <p><del>Ex. Sue</del></p></td>
 </tr>
 <tr>
-<td style="text-align: left;">familyName</td>
+<td>familyName</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Eliassen</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">password</td>
+<td>password</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. xq69ivVT</p></td>
 </tr>
 <tr>
-<td
-style="text-align: left;">urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</td>
+<td>urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Object</td>
+<td>Object</td>
 </tr>
 <tr>
-<td style="text-align: left;">userId</td>
+<td>userId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. psmith</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">middleName</td>
+<td>middleName</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Sue</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">title</td>
+<td>title</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Administrator, Lead Middleware</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">streetAddress</td>
+<td>streetAddress</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 4747 McLane Parkway</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">city</td>
+<td>city</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Temple</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
+<td>state</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. TX</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">zipCode</td>
+<td>zipCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 76504</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">department</td>
+<td>department</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Platform Administration</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">departmentId</td>
+<td>departmentId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 20000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">managerId</td>
+<td>managerId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">birthDate</td>
+<td>birthDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>Ex. 14-Sep-1959</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">managerId</td>
+<td>managerId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">birthDate</td>
+<td>birthDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>Ex. 01-Sep-2000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">ssnLastFour</td>
+<td>ssnLastFour</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex.1149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobCode</td>
+<td>jobCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 1067</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">divisionCode</td>
+<td>divisionCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. GR260</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">division</td>
+<td>division</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. McLane Business Info Services</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">companyCode</td>
+<td>companyCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 001</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">companyName</td>
+<td>companyName</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. McLane Company, Inc.</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">payGrade</td>
+<td>payGrade</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">employmentStatusCode</td>
+<td>employmentStatusCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. A</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">compensationTypeCode</td>
+<td>compensationTypeCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. S</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">businessUnit</td>
+<td>businessUnit</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. IS790</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">terminationDate</td>
+<td>terminationDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>EX. 31-Sep-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">exendedLeaveEffectiveDate</td>
+<td>extendedLeaveEffectiveDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>EX. 14-Sep-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">flsaCode</td>
+<td>flsaCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. V</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">locationId</td>
+<td>locationId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">startDate</td>
+<td>startDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>EX. 14-Sep-2000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobFamilyCode</td>
+<td>jobFamilyCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobFamilyName</td>
+<td>jobFamilyName</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. T Platform</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">positionCode</td>
+<td>positionCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. P001537</p></td>
 </tr>
 </tbody>
@@ -1027,53 +1006,53 @@ PUT https://\<hostName\>/scim-users-exp-api/v1/Users/000061149
 
 Example Request:
 
-{  
-"schemas": \[  
-"urn:scim:schemas:core:1.0",  
-"urn:scim:schemas:extension:enterprise:1.0",  
-"urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom"  
-\],  
-"userName": "oTEST0004578",  
-"name": {  
-"givenName": "TestFirst4578",  
-"familyName": "TestLast4578"  
-},  
-"password": "xq69ivVT",  
-"active": true,  
-"urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom": {  
-"userId": "psmith",
-
-"middleName": "Test",
-
-"title": "Administrator, Lead Middleware",  
-"streetAddress": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"zipCode": "7504",  
-"department": "Platform Administration",  
-"departmentId": "50200",  
-"managerId": "000058215",  
-"birthDate": "14-Sep-1959",  
-"ssnLastFour": "1234",  
-"jobCode": "1067",  
-"divisionCode": "IS790",  
-"division": "McLane Business Info Services",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"payGrade": "L",  
-"employmentStatusCode": "A",  
-"compensationTypeCode": "S",  
-"businessUnit": "IS790",  
-"terminationDate": "01-Sep-2024",  
-"exendedLeaveEffectiveDate": "30-Sep-2024",  
-"flsaCode": "N",  
-"locationId": "999",  
-"startDate": "01-Sep-2022",  
-"jobFamilyCode": "D",  
-"jobFamilyName": "IT Platform",  
-"positionCode": "P001537"  
-}  
+```json
+{
+  "schemas": [
+    "urn:scim:schemas:core:1.0",
+    "urn:scim:schemas:extension:enterprise:1.0",
+    "urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom"
+  ],
+  "userName": "oTEST0004578",
+  "name": {
+    "givenName": "TestFirst4578",
+    "familyName": "TestLast4578"
+  },
+  "password": "xq69ivVT",
+  "active": true,
+  "urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom": {
+    "userId": "psmith",
+    "middleName": "Test",
+    "title": "Administrator, Lead Middleware",
+    "streetAddress": "4747 McLane Parkway",
+    "city": "Temple",
+    "state": "TX",
+    "zipCode": "7504",
+    "department": "Platform Administration",
+    "departmentId": "50200",
+    "managerId": "000058215",
+    "birthDate": "14-Sep-1959",
+    "ssnLastFour": "1234",
+    "jobCode": "1067",
+    "divisionCode": "IS790",
+    "division": "McLane Business Info Services",
+    "companyCode": "001",
+    "companyName": "McLane Company, Inc.",
+    "payGrade": "L",
+    "employmentStatusCode": "A",
+    "compensationTypeCode": "S",
+    "businessUnit": "IS790",
+    "terminationDate": "01-Sep-2024",
+    "extendedLeaveEffectiveDate": "30-Sep-2024",
+    "flsaCode": "N",
+    "locationId": "999",
+    "startDate": "01-Sep-2022",
+    "jobFamilyCode": "D",
+    "jobFamilyName": "IT Platform",
+    "positionCode": "P001537"
+  }
 }
+```
 
 ###### Processing Summary
 
@@ -1097,26 +1076,26 @@ See model project for interaction details: employee-ods-sys-api
 ######## Path Parameters: 
 
 | Name       | Assignment/Description     | Example   |
-|:-----------|:---------------------------|:----------|
+| ---------- | -------------------------- | --------- |
 | employeeId | Unique employee identifier | 000061149 |
 
 ######## Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ######## Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                               | Example                              |
+| ---------------- | ---------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                        | ASY7748901                           |
 | X-Correlation-Id | Assign the correlationId value generated by this api | 979f3d3b-a04a-43d7-b55f-8d5609b48783 |
 
 ######## Request Payload: see OAS model repo employee-ods-sys-api
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| ------------ | :------: | ----- |
 |              |          |       |
 
 Example:
@@ -1126,58 +1105,54 @@ https://\<server\>:\<port\>/employee-ods-sys-api/v1/employees/000061149
 
 Example request:
 
-{  
-"employee": {  
-"employeeId": "000136214",
-
-"userId": "zernest",  
-"isActive": true,
-
-employmentStatusCode": "A",  
-"birthDate": "15-Oct-1963",  
-"ssnLastFour": "1123",  
-"distributionCenterDivisionId": "GR260",  
-"division": "GR260 GR Concord",  
-"costCenter": "20020",  
-"managerId": "000028632",  
-"locationId": "999",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",
-
-"department": "Platform Administration",
-
-"departmentId": "50200",  
-"terminationDate": null,  
-"payGrade": "L",  
-"flsaCode": "N",  
-"compensationTypeCode": "S",
-
-"businessUnit": "GR260",
-
-"startDate": "11-Aug-2022",  
-"extendedTimeOff": {  
-"startDate": ""  
-},  
-"name": {  
-"first": "Zachary",  
-"middle": "Ernest",  
-"last": "Hines"  
-},  
-"job": {  
-"code": "1067",  
-"title": "Stocker",  
-"familyCode": "D3",  
-"family": "IT Platform3",  
-"positionId": "P001533"  
-},  
-"workAddress": {  
-"address1": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"postalCode": "76504"  
-}  
-}  
+```json
+{
+  "employee": {
+    "employeeId": "000136214",
+    "userId": "zernest",
+    "isActive": true,
+    "employmentStatusCode": "A",
+    "birthDate": "15-Oct-1963",
+    "ssnLastFour": "1123",
+    "distributionCenterDivisionId": "GR260",
+    "division": "GR260 GR Concord",
+    "costCenter": "20020",
+    "managerId": "000028632",
+    "locationId": "999",
+    "companyCode": "001",
+    "companyName": "McLane Company, Inc.",
+    "department": "Platform Administration",
+    "departmentId": "50200",
+    "terminationDate": null,
+    "payGrade": "L",
+    "flsaCode": "N",
+    "compensationTypeCode": "S",
+    "businessUnit": "GR260",
+    "startDate": "11-Aug-2022",
+    "extendedTimeOff": {
+      "startDate": ""
+    },
+    "name": {
+      "first": "Zachary",
+      "middle": "Ernest",
+      "last": "Hines"
+    },
+    "job": {
+      "code": "1067",
+      "title": "Stocker",
+      "familyCode": "D3",
+      "family": "IT Platform3",
+      "positionId": "P001533"
+    },
+    "workAddress": {
+      "address1": "4747 McLane Parkway",
+      "city": "Temple",
+      "state": "TX",
+      "postalCode": "76504"
+    }
+  }
 }
+```
 
 ***Request Connector Configuration**: (externalize into a property
 file)*
@@ -1214,11 +1189,11 @@ flowStep: "Flow End"
 Error mapping from our standard error structure to the SCIM error
 structure
 
-| Element Name | Assignment | Notes |
-|----|:---|:---|
-| schemas | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
-| detail | context.message from the common error response | No user found |
-| status | status from the common error response | 400 |
+| Element Name | Assignment                                         | Notes                                       |
+| ------------ | -------------------------------------------------- | ------------------------------------------- |
+| schemas      | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
+| detail       | context.message from the common error response     | No user found                               |
+| status       | status from the common error response              | 400                                         |
 
 If the results set is empty (employee not found) then create an error
 response and sent back to the caller.
@@ -1235,13 +1210,15 @@ schemas = "urn:ietf:params:scim:api:messages:2.0:Error"
 
 Example:
 
-{  
-"schemas": \[  
-"urn:ietf:params:scim:api:messages:2.0:Error"  
-\],  
-"detail": "User not found for employee Id = 000022340",  
-"status": 404  
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:Error"
+  ],
+  "detail": "User not found for employee Id = 000022340",
+  "status": 404
 }
+```
 
 If an issue/error are encountered, the specifics related to the error
 are to be reported back on the response via our SCIM error structure
@@ -1250,14 +1227,15 @@ along with the correlation Id and the tracing Id if provided. See
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",
-
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:Error"\],  
-"detail": "User not found for employee Id = 000022340",  
-"status": 404  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:Error"],
+  "detail": "User not found for employee Id = 000022340",
+  "status": 404
 }
+```
 
 ###### HTTP Status Codes
 
@@ -1345,21 +1323,21 @@ application/json
 ###### Path Parameters: 
 
 | Name   | Assignment/Description     | Example   |
-|:-------|:---------------------------|:----------|
+| ------ | -------------------------- | --------- |
 | userId | Unique employee identifier | 000061149 |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -1371,39 +1349,39 @@ application/json
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th style="text-align: center;">Required</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">schemas</td>
+<td>schemas</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. urn:ietf:params:scim:api:messages:2.0:PatchOp</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">Operations</td>
+<td>Operations</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">op</td>
+<td>op</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. replace</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">value</td>
+<td>value</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex.</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">active</td>
+<td>active</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>boolean</p>
+<td><p>boolean</p>
 <p>Ex. false</p></td>
 </tr>
 </tbody>
@@ -1415,17 +1393,19 @@ PATCH https://\<hostName\>/scim-users-exp-api/v1/users/000061149
 
 Example Request:
 
-{  
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:PatchOp"\],  
-"Operations": \[  
-{  
-"op": "replace",  
-"value": {  
-"active": false  
-}  
-}  
-\]  
+```json
+{
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "Operations": [
+    {
+      "op": "replace",
+      "value": {
+        "active": false
+      }
+    }
+  ]
 }
+```
 
 ###### Processing Summary
 
@@ -1449,20 +1429,20 @@ See model project for interaction details: employee-ods-sys-api
 ######## Path Parameters: 
 
 | Name       | Assignment/Description     | Example   |
-|:-----------|:---------------------------|:----------|
+| ---------- | -------------------------- | --------- |
 | employeeId | Unique employee identifier | 000061149 |
 
 ######## Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ######## Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                               | Example                              |
+| ---------------- | ---------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                        | ASY7748901                           |
 | X-Correlation-Id | Assign the correlationId value generated by this api | 979f3d3b-a04a-43d7-b55f-8d5609b48783 |
 
 ######## Request Payload: see OAS model repo employee-ods-sys-api
@@ -1475,21 +1455,21 @@ See model project for interaction details: employee-ods-sys-api
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th style="text-align: center;">Required</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">employee</td>
+<td>employee</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
+<td>status</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Terminated</p>
 <p>If active=false then Terminated else Active</p></td>
 </tr>
@@ -1503,11 +1483,13 @@ https://\<server\>:\<port\>/employee-ods-sys-api/v1/employees/000061149
 
 Example request:
 
+```json
 {  
-"employee": {  
-"status": "Terminated"  
-}  
+  "employee": {  
+    "status": "Terminated"  
+  }  
 }
+```
 
 ***Request Connector Configuration**: (externalize into a property
 file)*
@@ -1544,11 +1526,11 @@ flowStep: "Flow End"
 Error mapping from our standard error structure to the SCIM error
 structure
 
-| Element Name | Assignment | Notes |
-|----|:---|:---|
-| schemas | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
-| detail | context.message from the common error response | No user found |
-| status | status from the common error response | 400 |
+| Element Name | Assignment                                         | Notes                                       |
+| ------------ | -------------------------------------------------- | ------------------------------------------- |
+| schemas      | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
+| detail       | context.message from the common error response     | No user found                               |
+| status       | status from the common error response              | 400                                         |
 
 If the results set is empty (employee not found) then create an error
 response and sent back to the caller.
@@ -1565,13 +1547,15 @@ schemas = "urn:ietf:params:scim:api:messages:2.0:Error"
 
 Example:
 
-{  
-"schemas": \[  
-"urn:ietf:params:scim:api:messages:2.0:Error"  
-\],  
-"detail": "User not found for employee Id = 000022340",  
-"status": 404  
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:Error"
+  ],
+  "detail": "User not found for employee Id = 000022340",
+  "status": 404
 }
+```
 
 If an issue/error are encountered, the specifics related to the error
 are to be reported back on the response via the SCIM error structure
@@ -1580,14 +1564,15 @@ along with the correlation Id and the tracing Id if provided. See
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",
-
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:Error"\],  
-"detail": "User not found for employee Id = 000022340",  
-"status": 404  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:Error"],
+  "detail": "User not found for employee Id = 000022340",
+  "status": 404
 }
+```
 
 ###### HTTP Status Codes
 
@@ -1675,21 +1660,21 @@ application/json
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -1701,297 +1686,295 @@ application/json
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th style="text-align: center;">Required</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">schemas</td>
+<td>schemas</td>
 <td style="text-align: center;">Y</td>
-<td
-style="text-align: left;"><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
+<td><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
 <p>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
+<td></td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">userName</td>
+<td>userName</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">active</td>
+<td>active</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>boolean</p>
+<td><p>boolean</p>
 <p>Ex. true</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">name</td>
+<td>name</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;">object</td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">givenName</td>
+<td>givenName</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Mary</p></td>
 </tr>
 <tr>
-<td style="text-align: left;"><del>middleName</del></td>
+<td><del>middleName</del></td>
 <td style="text-align: center;"><del>N</del></td>
-<td style="text-align: left;"><p><del>string</del></p>
+<td><p><del>string</del></p>
 <p><del>Ex. Sue</del></p></td>
 </tr>
 <tr>
-<td style="text-align: left;">familyName</td>
+<td>familyName</td>
 <td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Eliassen</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">password</td>
+<td>password</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. xq69ivVT</p></td>
 </tr>
 <tr>
-<td
-style="text-align: left;">urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</td>
+<td>urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Object</td>
+<td>Object</td>
 </tr>
 <tr>
-<td style="text-align: left;">userId</td>
+<td>userId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. psmith</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">middleName</td>
+<td>middleName</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Sue</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">title</td>
+<td>title</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Administrator, Lead Middleware</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">streetAddress</td>
+<td>streetAddress</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 4747 McLane Parkway</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">city</td>
+<td>city</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Temple</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
+<td>state</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. TX</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">zipCode</td>
+<td>zipCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 76504</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">department</td>
+<td>department</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Platform Administration</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">departmentId</td>
+<td>departmentId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 20000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">managerId</td>
+<td>managerId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">birthDate</td>
+<td>birthDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>Ex. 14-Sep-1959</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">title</td>
+<td>title</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Administrator, Lead Middleware</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">streetAddress</td>
+<td>streetAddress</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 4747 McLane Parkway</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">city</td>
+<td>city</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Temple</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
+<td>state</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. TX</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">zipCode</td>
+<td>zipCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 76504</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">department</td>
+<td>department</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. Platform Administration</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">departmentId</td>
+<td>departmentId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 20000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">managerId</td>
+<td>managerId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">birthDate</td>
+<td>birthDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>Ex. 01-Sep-2000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">ssnLastFour</td>
+<td>ssnLastFour</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex.1149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobCode</td>
+<td>jobCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 1067</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">divisionCode</td>
+<td>divisionCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. GR260</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">division</td>
+<td>division</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. McLane Business Info Services</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">companyCode</td>
+<td>companyCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. 001</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">companyName</td>
+<td>companyName</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. McLane Company, Inc.</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">payGrade</td>
+<td>payGrade</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">employmentStatusCode</td>
+<td>employmentStatusCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. A</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">compensationTypeCode</td>
+<td>compensationTypeCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. S</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">businessUnit</td>
+<td>businessUnit</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. IS790</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">terminationDate</td>
+<td>terminationDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>EX. 31-Sep-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">exendedLeaveEffectiveDate</td>
+<td>extendedLeaveEffectiveDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>EX. 14-Sep-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">flsaCode</td>
+<td>flsaCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. V</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">locationId</td>
+<td>locationId</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">startDate</td>
+<td>startDate</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
+<td><p>date</p>
 <p>EX. 14-Sep-2000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobFamilyCode</td>
+<td>jobFamilyCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobFamilyName</td>
+<td>jobFamilyName</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. T Platform</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">positionCode</td>
+<td>positionCode</td>
 <td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
+<td><p>string</p>
 <p>Ex. P001537</p></td>
 </tr>
 </tbody>
@@ -2003,53 +1986,53 @@ POST https://\<hostName\>/scim-users-exp-api/v1/Users
 
 Example Request:
 
-{  
-"schemas": \[  
-"urn:scim:schemas:core:1.0",  
-"urn:scim:schemas:extension:enterprise:1.0",  
-"urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom"  
-\],  
-"userName": "oTEST0004578",  
-"name": {  
-"givenName": "Peter",  
-"familyName": "Smith"  
-},  
-"password": "xq69ivVT",  
-"active": true,  
-"urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom": {
-
-"userId": "psmith",
-
-"middleName": "M",  
-"title": "Administrator, Lead Middleware",  
-"streetAddress": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"zipCode": "7504",  
-"department": "Platform Administration",  
-"departmentId": "50200",  
-"managerId": "000058215",  
-"birthDate": "14-Sep-1959",  
-"ssnLastFour": "1234",  
-"jobCode": "1067",  
-"divisionCode": "IS790",  
-"division": "McLane Business Info Services",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"payGrade": "L",  
-"employmentStatusCode": "A",  
-"compensationTypeCode": "S",  
-"businessUnit": "IS790",  
-"terminationDate": "01-Sep-2024",  
-"exendedLeaveEffectiveDate": "30-Sep-2024",  
-"flsaCode": "N",  
-"locationId": "999",  
-"startDate": "01-Sep-2022",  
-"jobFamilyCode": "D",  
-"jobFamilyName": "IT Platform",  
-"positionCode": "P001537"  
-}  
+```json
+{
+  "schemas": [
+    "urn:scim:schemas:core:1.0",
+    "urn:scim:schemas:extension:enterprise:1.0",
+    "urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom"
+  ],
+  "userName": "oTEST0004578",
+  "name": {
+    "givenName": "Peter",
+    "familyName": "Smith"
+  },
+  "password": "xq69ivVT",
+  "active": true,
+  "urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom": {
+    "userId": "psmith",
+    "middleName": "M",
+    "title": "Administrator, Lead Middleware",
+    "streetAddress": "4747 McLane Parkway",
+    "city": "Temple",
+    "state": "TX",
+    "zipCode": "7504",
+    "department": "Platform Administration",
+    "departmentId": "50200",
+    "managerId": "000058215",
+    "birthDate": "14-Sep-1959",
+    "ssnLastFour": "1234",
+    "jobCode": "1067",
+    "divisionCode": "IS790",
+    "division": "McLane Business Info Services",
+    "companyCode": "001",
+    "companyName": "McLane Company, Inc.",
+    "payGrade": "L",
+    "employmentStatusCode": "A",
+    "compensationTypeCode": "S",
+    "businessUnit": "IS790",
+    "terminationDate": "01-Sep-2024",
+    "extendedLeaveEffectiveDate": "30-Sep-2024",
+    "flsaCode": "N",
+    "locationId": "999",
+    "startDate": "01-Sep-2022",
+    "jobFamilyCode": "D",
+    "jobFamilyName": "IT Platform",
+    "positionCode": "P001537"
+  }
 }
+```
 
 ###### Processing Summary
 
@@ -2073,66 +2056,66 @@ See model project for interaction details: employee-ods-sys-api
 ######## Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ######## Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ######## Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                               | Example                              |
+| ---------------- | ---------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                        | ASY7748901                           |
 | X-Correlation-Id | Assign the correlationId value generated by this api | 979f3d3b-a04a-43d7-b55f-8d5609b48783 |
 
 ######## Request Payload: see OAS model repo employee-ods-sys-api
 
-| Element Name | Assignment/Description | Notes |
-|:---|:---|:---|
-| employee | Object that holds the employee data |  |
-| employeeId | userName from the scim request | Ex. 000014527 |
-| userId | userId from the scim request | Ex. psmith |
-| isActive | active from the scim request | Ex. true |
-| employmentStatusCode | If employmentStatusCode from the scim request is T then set to Terminated, else set to Active | Ex. A |
-| birthDate | birthDate from the scim request | Ex. 01-Sep-1990 |
-| ssnLastFour | ssnLastFour from the scim request | Ex. 2212 |
-| distributionCenterDivisionId | divisionCode from the scim request | Ex. GR360 |
-| division | division from the scim request | Ex. McLane Business Info Services |
-| department | department from the scim request | Ex. Platform Administration |
-| costCenter | departmentId from the scim request | Ex. 50200 |
-| managerId | managerId from the scim request | Ex. 000025527 |
-| locationId | locationId from the scim request | Ex. 999 |
-| companyCode | companyCode from the scim request | Ex. 101 |
-| companyName | businessUnit from the scim request | Ex. McLane Company, Inc. |
-| businessUnit | companyName from the scim request | Ex. IS970 |
-| terminationDate | terminationDate from the scim request | Ex. 01-Sep-2024 |
-| payGrade | payGrade from the scim request | Ex. L |
-| flsaCode | flsaCode from the scim request | Ex. N |
-| compensationTypeCode | compensationTypeCode from the scim request | Ex. S |
-| extendedTimeOff |  |  |
-| startDate | exendedLeaveEffectiveDate from the scim request | Ex. 01-Sep-2020 |
-| name |  |  |
-| first | firstName from the scim request | Ex. Alex |
-| middle | middleName from the scim request | Ex. Peter |
-| last | lastName from the scim request | Ex. Murry |
-| job |  |  |
-| code | yyyy from the scim request | Ex. 1067 |
-| title | yyyy from the scim request | Ex. Stoker |
-| familyCode | jobFamilyCode from the scim request | Ex. D |
-| family | jobFamilyName from the scim request | Ex. IT Platform |
-| positionId | positionCode from the scim request | Ex. P001533 |
-| payGrade | payGrade from the scim request | Ex. L |
-| startDate | startDate from the scim request | Ex. 30-Sep-2021 |
-| workAddress |  |  |
-| address1 | streetAddress from the scim request | Ex. 123 Main Street |
-| city | city from the scim request | Ex. ROME |
-| state | state from the scim request | Ex. TX |
-| postalCode | zipCode from the scim request | Ex. 14006 |
-|  |  |  |
+| Element Name                 | Assignment/Description                                                                        | Notes                             |
+| ---------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------- |
+| employee                     | Object that holds the employee data                                                           |                                   |
+| employeeId                   | userName from the scim request                                                                | Ex. 000014527                     |
+| userId                       | userId from the scim request                                                                  | Ex. psmith                        |
+| isActive                     | active from the scim request                                                                  | Ex. true                          |
+| employmentStatusCode         | If employmentStatusCode from the scim request is T then set to Terminated, else set to Active | Ex. A                             |
+| birthDate                    | birthDate from the scim request                                                               | Ex. 01-Sep-1990                   |
+| ssnLastFour                  | ssnLastFour from the scim request                                                             | Ex. 2212                          |
+| distributionCenterDivisionId | divisionCode from the scim request                                                            | Ex. GR360                         |
+| division                     | division from the scim request                                                                | Ex. McLane Business Info Services |
+| department                   | department from the scim request                                                              | Ex. Platform Administration       |
+| costCenter                   | departmentId from the scim request                                                            | Ex. 50200                         |
+| managerId                    | managerId from the scim request                                                               | Ex. 000025527                     |
+| locationId                   | locationId from the scim request                                                              | Ex. 999                           |
+| companyCode                  | companyCode from the scim request                                                             | Ex. 101                           |
+| companyName                  | businessUnit from the scim request                                                            | Ex. McLane Company, Inc.          |
+| businessUnit                 | companyName from the scim request                                                             | Ex. IS970                         |
+| terminationDate              | terminationDate from the scim request                                                         | Ex. 01-Sep-2024                   |
+| payGrade                     | payGrade from the scim request                                                                | Ex. L                             |
+| flsaCode                     | flsaCode from the scim request                                                                | Ex. N                             |
+| compensationTypeCode         | compensationTypeCode from the scim request                                                    | Ex. S                             |
+| extendedTimeOff              |                                                                                               |                                   |
+| startDate                    | extendedLeaveEffectiveDate from the scim request                                              | Ex. 01-Sep-2020                   |
+| name                         |                                                                                               |                                   |
+| first                        | firstName from the scim request                                                               | Ex. Alex                          |
+| middle                       | middleName from the scim request                                                              | Ex. Peter                         |
+| last                         | lastName from the scim request                                                                | Ex. Murry                         |
+| job                          |                                                                                               |                                   |
+| code                         | yyyy from the scim request                                                                    | Ex. 1067                          |
+| title                        | yyyy from the scim request                                                                    | Ex. Stoker                        |
+| familyCode                   | jobFamilyCode from the scim request                                                           | Ex. D                             |
+| family                       | jobFamilyName from the scim request                                                           | Ex. IT Platform                   |
+| positionId                   | positionCode from the scim request                                                            | Ex. P001533                       |
+| payGrade                     | payGrade from the scim request                                                                | Ex. L                             |
+| startDate                    | startDate from the scim request                                                               | Ex. 30-Sep-2021                   |
+| workAddress                  |                                                                                               |                                   |
+| address1                     | streetAddress from the scim request                                                           | Ex. 123 Main Street               |
+| city                         | city from the scim request                                                                    | Ex. ROME                          |
+| state                        | state from the scim request                                                                   | Ex. TX                            |
+| postalCode                   | zipCode from the scim request                                                                 | Ex. 14006                         |
+|                              |                                                                                               |                                   |
 
 Example:
 
@@ -2225,11 +2208,11 @@ flowStep: "Flow End"
 Error mapping from our standard error structure to the SCIM error
 structure
 
-| Element Name | Assignment | Notes |
-|----|:---|:---|
-| schemas | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
-| detail | context.message from the common error response | No user found |
-| status | status from the common error response | 400 |
+| Element Name | Assignment                                         | Notes                                       |
+| ------------ | -------------------------------------------------- | ------------------------------------------- |
+| schemas      | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
+| detail       | context.message from the common error response     | No user found                               |
+| status       | status from the common error response              | 400                                         |
 
 If an issue/error are encountered, the specifics related to the error
 are to be reported back on the response via our SCIM error structure
@@ -2333,28 +2316,28 @@ application/json
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Query Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| startIndex | Start position, Optional, default is 0 | 0 |
-| count | Number of items to return in the collection , Value between 1 and 100, optional default is 50 | 75 |
-| filter | Search phrase, Optional | userName = 000014527 |
+| Name       | Assignment/Description                                                                        | Example              |
+| ---------- | --------------------------------------------------------------------------------------------- | -------------------- |
+| startIndex | Start position, Optional, default is 0                                                        | 0                    |
+| count      | Number of items to return in the collection , Value between 1 and 100, optional default is 50 | 75                   |
+| filter     | Search phrase, Optional                                                                       | userName = 000014527 |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| ------------ | :------: | ----- |
 |              |          |       |
 
 Example:
@@ -2388,7 +2371,7 @@ See model project for interaction details: employee-ods-sys-api
 ######## Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ######## Query Parameters: 
@@ -2401,45 +2384,42 @@ See model project for interaction details: employee-ods-sys-api
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Assignment/Description</th>
-<th style="text-align: left;">Example</th>
+<th>Name</th>
+<th>Assignment/Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">offset</td>
-<td style="text-align: left;">startIndex query parameter from the
-request</td>
-<td style="text-align: left;">0</td>
+<td>offset</td>
+<td>startIndex query parameter from the request</td>
+<td>0</td>
 </tr>
 <tr>
-<td style="text-align: left;">limit</td>
-<td style="text-align: left;">count query parameter from the
-request</td>
-<td style="text-align: left;">75</td>
+<td>limit</td>
+<td>count query parameter from the request</td>
+<td>75</td>
 </tr>
 <tr>
-<td style="text-align: left;">filter</td>
-<td style="text-align: left;"><p>filter query parameter from the
-request</p>
+<td>filter</td>
+<td><p>filter query parameter from the request</p>
 <p>map userName to employeeId</p></td>
-<td style="text-align: left;">employeeId=000014527</td>
+<td>employeeId=000014527</td>
 </tr>
 </tbody>
 </table>
 
 ######## Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                               | Example                              |
+| ---------------- | ---------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optionally sent in on request                        | ASY7748901                           |
 | X-Correlation-Id | Assign the correlationId value generated by this api | 979f3d3b-a04a-43d7-b55f-8d5609b48783 |
 
 ######## Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| ------------ | :------: | ----- |
 |              |          |       |
 
 Example:
@@ -2485,64 +2465,59 @@ Structure\|outline](#scim-user-response-detail-mapping-structure)
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
+<td>correlationId</td>
+<td>correlationId</td>
+<td><p>string</p>
 <p>Ex. ae8c5b85-97e0-4f55-80e7-6161d67220ae</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">Optional tracing_Id from the system API
-request header</td>
-<td style="text-align: left;"><p>string</p>
+<td>tracingId</td>
+<td>Optional tracing_Id from the system API request header</td>
+<td><p>string</p>
 <p>Ex. A19283745</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">schemas</td>
-<td
-style="text-align: left;">urn:ietf:params:scim:api:messages:2.0:ListResponse</td>
-<td style="text-align: left;"><p>string array</p>
+<td>schemas</td>
+<td>urn:ietf:params:scim:api:messages:2.0:ListResponse</td>
+<td><p>string array</p>
 <p>EX, urn:ietf:params:scim:api:messages:2.0:ListResponse</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">totalResults</td>
-<td style="text-align: left;">Total number of items in the resources
-collection</td>
-<td style="text-align: left;"><p>number</p>
+<td>totalResults</td>
+<td>Total number of items in the resources collection</td>
+<td><p>number</p>
 <p>Ex. 50</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">startIndex</td>
-<td style="text-align: left;">startIndex query parameter</td>
-<td style="text-align: left;"><p>number</p>
+<td>startIndex</td>
+<td>startIndex query parameter</td>
+<td><p>number</p>
 <p>Ex. 1</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">itemsPerPage</td>
-<td style="text-align: left;">Total number of items in the resources
-collection</td>
-<td style="text-align: left;"><p>number</p>
+<td>itemsPerPage</td>
+<td>Total number of items in the resources collection</td>
+<td><p>number</p>
 <p>Ex. 50</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">Resources</td>
-<td style="text-align: left;"><p>Collection of SCIM employees without
-the meta information</p>
+<td>Resources</td>
+<td><p>Collection of SCIM employees without the meta information</p>
 <p><a href="#scim-user-response-detail-mapping-structure">#SCIM Employee
 User Detail Mapping Structure|outline</a></p></td>
-<td style="text-align: left;"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2589,7 +2564,7 @@ Example:
 "compensationType": "S",  
 "businessUnit": "GR260",  
 "terminationDate": "",  
-"exendedLeaveEffectiveDate": "2024-07-01",  
+"extendedLeaveEffectiveDate": "2024-07-01",  
 "flsaCode": "N",  
 "locationId": "999",  
 "jobFamilyCode": "D",  
@@ -2627,7 +2602,7 @@ Example:
 "compensationTypeCode": "S",  
 "businessUnit": "GR360",  
 "terminationDate": "",  
-"exendedLeaveEffectiveDate": "21-Oct-2024",  
+"extendedLeaveEffectiveDate": "21-Oct-2024",  
 "flsaCode": "N",  
 "locationId": "999",  
 "jobFamilyCode": "D",  
@@ -2677,11 +2652,11 @@ flowStep: "Get Employees Response"
 Error mapping from our standard error structure to the SCIM error
 structure
 
-| Element Name | Assignment | Notes |
-|----|:---|:---|
-| schemas | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
-| detail | context.message from the common error response | No user found |
-| status | status from the common error response | 400 |
+| Element Name | Assignment                                         | Notes                                       |
+| ------------ | -------------------------------------------------- | ------------------------------------------- |
+| schemas      | Assign urn:ietf:params:scim:api:messages:2.0:Error | urn:ietf:params:scim:api:messages:2.0:Error |
+| detail       | context.message from the common error response     | No user found                               |
+| status       | status from the common error response              | 400                                         |
 
 If an issue/error is encountered, the specifics related to the error are
 to be reported back on the response via our SCIM error structure along
@@ -2762,26 +2737,26 @@ Does not apply as there is no request payload
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| ---- | ---------------------- | ------- |
 |      |                        |         |
 
 ###### Http Request Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optional | Z987yy54r3 |
+| Name             | Assignment/Description                                   | Example                              |
+| ---------------- | -------------------------------------------------------- | ------------------------------------ |
+| tracing_id       | Optional                                                 | Z987yy54r3                           |
 | X-Correlation-Id | Optional, if present should be used as the correlationId | 979f3d3b-a04a-43d7-b55f-8d5609b48783 |
 
 ###### Request Payload: Does Not Apply
 
 | Element Name | Assignment | Notes |     |
-|:-------------|:-----------|:------|:----|
+| ------------ | ---------- | ----- | --- |
 |              |            |       |     |
 
 Example:
@@ -2827,80 +2802,77 @@ GET https:\<host\>:\<port\>/{BASE_URI}/v1/health
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">Constant UP or DOWN</td>
-<td style="text-align: left;"><p>string</p>
+<td>status</td>
+<td>Constant UP or DOWN</td>
+<td><p>string</p>
 <p>Ex. UP</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">checks</td>
-<td style="text-align: left;">Object that contains the dependent
-status</td>
-<td style="text-align: left;"></td>
+<td>checks</td>
+<td>Object that contains the dependent status</td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: left;">The value of API name returned from the
-calling that application health check</td>
-<td style="text-align: left;"><p>string</p>
+<td>name</td>
+<td>The value of API name returned from the calling that application
+health check</td>
+<td><p>string</p>
 <p>Ex. EBS Purchasing</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">The value of the API status returned from
-the calling that application health check</td>
-<td style="text-align: left;"><p>string</p>
+<td>status</td>
+<td>The value of the API status returned from the calling that
+application health check</td>
+<td><p>string</p>
 <p>Ex. UP</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">data</td>
-<td style="text-align: left;">Object that hold health check
-specifics</td>
-<td style="text-align: left;"></td>
+<td>data</td>
+<td>Object that hold health check specifics</td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
+<td>correlationId</td>
+<td>correlationId</td>
+<td><p>string</p>
 <p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">Optional tracing_id from the system API
-request header, if present</td>
-<td style="text-align: left;"><p>string</p>
+<td>tracingId</td>
+<td>Optional tracing_id from the system API request header, if
+present</td>
+<td><p>string</p>
 <p>Ex. A3345732</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">apiVersion</td>
-<td style="text-align: left;">Version of the API</td>
-<td style="text-align: left;"><p>string</p>
+<td>apiVersion</td>
+<td>Version of the API</td>
+<td><p>string</p>
 <p>Ex. v1</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">apiName</td>
-<td style="text-align: left;">API application name</td>
-<td style="text-align: left;"><p>string</p>
+<td>apiName</td>
+<td>API application name</td>
+<td><p>string</p>
 <p>Ex. procurement-mgmt-exp-api</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">timestamp</td>
-<td style="text-align: left;">now</td>
-<td style="text-align: left;"><p>string</p>
+<td>timestamp</td>
+<td>now</td>
+<td><p>string</p>
 <p>Ex. 2021-07-18T16:55:46.678-05:00</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">url</td>
-<td style="text-align: left;">rl called when checking the dependant
-API</td>
-<td style="text-align: left;"><p>string</p>
+<td>url</td>
+<td>rl called when checking the dependant API</td>
+<td><p>string</p>
 <p>Ex.</p></td>
 </tr>
 </tbody>
@@ -2954,66 +2926,63 @@ object outlining the context of the issue
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
+<td>correlationId</td>
+<td>correlationId</td>
+<td><p>string</p>
 <p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">tracing_id from the system API request
-header, if present</td>
-<td style="text-align: left;"><p>string</p>
+<td>tracingId</td>
+<td>tracing_id from the system API request header, if present</td>
+<td><p>string</p>
 <p>Ex. A3345732</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">Http status code</td>
-<td style="text-align: left;">Object that holds processing status
-context</td>
+<td>status</td>
+<td>Http status code</td>
+<td>Object that holds processing status context</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>context</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Object that holds the collection of
-diagnostic information</td>
+<td><strong>context</strong></td>
+<td></td>
+<td>Object that holds the collection of diagnostic information</td>
 </tr>
 <tr>
-<td style="text-align: left;">type</td>
-<td style="text-align: left;">“Error”</td>
-<td style="text-align: left;">string</td>
+<td>type</td>
+<td>“Error”</td>
+<td>string</td>
 </tr>
 <tr>
-<td style="text-align: left;">severity</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">string</td>
+<td>severity</td>
+<td></td>
+<td>string</td>
 </tr>
 <tr>
-<td style="text-align: left;">reasonCode</td>
-<td style="text-align: left;">Sql code if available</td>
-<td style="text-align: left;">string</td>
+<td>reasonCode</td>
+<td>Sql code if available</td>
+<td>string</td>
 </tr>
 <tr>
-<td style="text-align: left;">message</td>
-<td style="text-align: left;">Error message text</td>
-<td style="text-align: left;">string</td>
+<td>message</td>
+<td>Error message text</td>
+<td>string</td>
 </tr>
 <tr>
-<td style="text-align: left;">component</td>
-<td style="text-align: left;">app.name</td>
-<td style="text-align: left;">string</td>
+<td>component</td>
+<td>app.name</td>
+<td>string</td>
 </tr>
 <tr>
-<td style="text-align: left;">timeStamp</td>
-<td style="text-align: left;">Current date &amp; time</td>
-<td style="text-align: left;">string</td>
+<td>timeStamp</td>
+<td>Current date &amp; time</td>
+<td>string</td>
 </tr>
 </tbody>
 </table>
@@ -3054,7 +3023,7 @@ Possible HTTP status codes for the response include:
 ## API Environments:
 
 | Environment | Host                   |
-|:------------|:-----------------------|
+| ----------- | ---------------------- |
 | Development | apim-dev.mclaneco.com  |
 | Test        | apim-test.mclaneco.com |
 | Production  | apim.mclaneco.com      |
@@ -3069,41 +3038,39 @@ Possible HTTP status codes for the response include:
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
+<td>correlationId</td>
+<td>correlationId</td>
+<td><p>string</p>
 <p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">tracing_id from the system API request
-header, if present</td>
-<td style="text-align: left;"><p>string</p>
+<td>tracingId</td>
+<td>tracing_id from the system API request header, if present</td>
+<td><p>string</p>
 <p>Ex. A3345732</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">schemas</td>
-<td style="text-align: left;">Assign
-urn:ietf:params:scim:api:messages:2.0:Error</td>
-<td style="text-align: left;"><p>string</p>
+<td>schemas</td>
+<td>Assign urn:ietf:params:scim:api:messages:2.0:Error</td>
+<td><p>string</p>
 <p>Ex. urn:ietf:params:scim:api:messages:2.0:Error</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">message</td>
-<td style="text-align: left;">Error message text</td>
-<td style="text-align: left;"><p>string</p>
+<td>message</td>
+<td>Error message text</td>
+<td><p>string</p>
 <p>Ex. User not found</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;"><p>Http status rcode</p>
+<td>status</td>
+<td><p>Http status code</p>
 <p>400=Bad Request</p>
 <p>401=Unauthorized</p>
 <p>403=Forbidden</p>
@@ -3113,13 +3080,13 @@ urn:ietf:params:scim:api:messages:2.0:Error</td>
 <p>429=Too Many Requests</p>
 <p>3xx: Redirection</p>
 <p>5xx: Unexpected error</p></td>
-<td style="text-align: left;"><p>number</p>
+<td><p>number</p>
 <p>Ex, 404</p></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3146,64 +3113,62 @@ Example:
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
+<td>correlationId</td>
+<td>correlationId</td>
+<td><p>string</p>
 <p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">tracing_id from the system API request
-header, if present</td>
-<td style="text-align: left;">Ex. A3345732</td>
+<td>tracingId</td>
+<td>tracing_id from the system API request header, if present</td>
+<td>Ex. A3345732</td>
 </tr>
 <tr>
-<td style="text-align: left;">clientId</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. c9feb3160f0b4ea785875ad678e00c1c</td>
+<td>clientId</td>
+<td></td>
+<td>Ex. c9feb3160f0b4ea785875ad678e00c1c</td>
 </tr>
 <tr>
-<td style="text-align: left;">appName</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. mfdb2-sales-sys-api-1</td>
+<td>appName</td>
+<td></td>
+<td>Ex. mfdb2-sales-sys-api-1</td>
 </tr>
 <tr>
-<td style="text-align: left;">flowName</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. mfdb2-sales-sys-api-main</td>
+<td>flowName</td>
+<td></td>
+<td>Ex. mfdb2-sales-sys-api-main</td>
 </tr>
 <tr>
-<td style="text-align: left;">flowStep</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. Flow End</td>
+<td>flowStep</td>
+<td></td>
+<td>Ex. Flow End</td>
 </tr>
 <tr>
-<td style="text-align: left;">timestamp</td>
-<td style="text-align: left;">Current date &amp; time</td>
-<td style="text-align: left;">Ex. 2023-04-25T03:06:16.405Z</td>
+<td>timestamp</td>
+<td>Current date &amp; time</td>
+<td>Ex. 2023-04-25T03:06:16.405Z</td>
 </tr>
 <tr>
-<td style="text-align: left;">environment</td>
-<td style="text-align: left;">DEV,TEST, PROD</td>
-<td style="text-align: left;">Based on the environment we are running
-in</td>
+<td>environment</td>
+<td>DEV,TEST, PROD</td>
+<td>Based on the environment we are running in</td>
 </tr>
 <tr>
-<td style="text-align: left;">payload</td>
-<td style="text-align: left;">If log level is DEBUG add the payload</td>
-<td style="text-align: left;"></td>
+<td>payload</td>
+<td>If log level is DEBUG add the payload</td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3307,279 +3272,269 @@ Example system API response:
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
+<th>Element Name</th>
+<th>Assignment</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">schemas</td>
-<td style="text-align: left;"><p>Text array of scim schema
-definitions</p>
+<td>schemas</td>
+<td><p>Text array of scim schema definitions</p>
 <p>Assign the constants:</p>
 <p>-urn:ietf:params:scim:schemas:core:2.0:User</p>
 <p>-urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
-<td
-style="text-align: left;"><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
+<td><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
 <p>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">employeeId from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>id</td>
+<td>employeeId from the response</td>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">userName</td>
-<td style="text-align: left;">employeeId from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>userName</td>
+<td>employeeId from the response</td>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">active</td>
-<td style="text-align: left;">isActive from the response</td>
-<td style="text-align: left;"><p>boolean</p>
+<td>active</td>
+<td>isActive from the response</td>
+<td><p>boolean</p>
 <p>Ex. true</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">object</td>
+<td>name</td>
+<td></td>
+<td>object</td>
 </tr>
 <tr>
-<td style="text-align: left;">givenName</td>
-<td style="text-align: left;">name.first from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>givenName</td>
+<td>name.first from the response</td>
+<td><p>string</p>
 <p>Ex. Mary</p></td>
 </tr>
 <tr>
-<td style="text-align: left;"><del>middleName</del></td>
-<td style="text-align: left;"><del>name.middle from the
-response</del></td>
-<td style="text-align: left;"><p><del>string</del></p>
+<td><del>middleName</del></td>
+<td><del>name.middle from the response</del></td>
+<td><p><del>string</del></p>
 <p><del>Ex. Sue</del></p></td>
 </tr>
 <tr>
-<td style="text-align: left;">familyName</td>
-<td style="text-align: left;">name.last from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>familyName</td>
+<td>name.last from the response</td>
+<td><p>string</p>
 <p>Ex. Eliassen</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">userId</td>
-<td style="text-align: left;">userId from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>userId</td>
+<td>userId from the response</td>
+<td><p>string</p>
 <p>Ex. psmith</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">middleName</td>
-<td style="text-align: left;">name.middle from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>middleName</td>
+<td>name.middle from the response</td>
+<td><p>string</p>
 <p>Ex. Sue</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">title</td>
-<td style="text-align: left;">job.title from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>title</td>
+<td>job.title from the response</td>
+<td><p>string</p>
 <p>Ex. Administrator, Lead Middleware</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">streetAddress</td>
-<td style="text-align: left;">workAddress.address1 from the
-response</td>
-<td style="text-align: left;"><p>string</p>
+<td>streetAddress</td>
+<td>workAddress.address1 from the response</td>
+<td><p>string</p>
 <p>Ex. 4747 McLane Parkway</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">city</td>
-<td style="text-align: left;">workAddress.city from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>city</td>
+<td>workAddress.city from the response</td>
+<td><p>string</p>
 <p>Ex. Temple</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">workAddress.state from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>state</td>
+<td>workAddress.state from the response</td>
+<td><p>string</p>
 <p>Ex. TX</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">zipCode</td>
-<td style="text-align: left;">workAddress.postalCode from the
-response</td>
-<td style="text-align: left;"><p>string</p>
+<td>zipCode</td>
+<td>workAddress.postalCode from the response</td>
+<td><p>string</p>
 <p>Ex. 76504</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">department</td>
-<td style="text-align: left;">department from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>department</td>
+<td>department from the response</td>
+<td><p>string</p>
 <p>Ex. Platform Administration</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">departmentId</td>
-<td style="text-align: left;">costCenter from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>departmentId</td>
+<td>costCenter from the response</td>
+<td><p>string</p>
 <p>Ex. 20000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">managerId</td>
-<td style="text-align: left;">managerId from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>managerId</td>
+<td>managerId from the response</td>
+<td><p>string</p>
 <p>Ex. 000061149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">birthDate</td>
-<td style="text-align: left;">birthDate from the response</td>
-<td style="text-align: left;"><p>date</p>
+<td>birthDate</td>
+<td>birthDate from the response</td>
+<td><p>date</p>
 <p>Ex. 11-Oct-1995</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">ssnLastFour</td>
-<td style="text-align: left;">ssnLastFour from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>ssnLastFour</td>
+<td>ssnLastFour from the response</td>
+<td><p>string</p>
 <p>Ex.1149</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobCode</td>
-<td style="text-align: left;">job.code from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>jobCode</td>
+<td>job.code from the response</td>
+<td><p>string</p>
 <p>Ex. 1067</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">divisionCode</td>
-<td style="text-align: left;">distributionCenterDivisionId from the
-response</td>
-<td style="text-align: left;"><p>string</p>
+<td>divisionCode</td>
+<td>distributionCenterDivisionId from the response</td>
+<td><p>string</p>
 <p>Ex. GR260</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">division</td>
-<td style="text-align: left;">division from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>division</td>
+<td>division from the response</td>
+<td><p>string</p>
 <p>Ex. McLane Business Info Services</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">companyCode</td>
-<td style="text-align: left;">companyCode from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>companyCode</td>
+<td>companyCode from the response</td>
+<td><p>string</p>
 <p>Ex. 20020</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">companyName</td>
-<td style="text-align: left;">companyName from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>companyName</td>
+<td>companyName from the response</td>
+<td><p>string</p>
 <p>Ex. McLane Company, Inc.</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">payGrade</td>
-<td style="text-align: left;">payGrade from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>payGrade</td>
+<td>payGrade from the response</td>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">employmentStatusCode</td>
-<td style="text-align: left;">employmentStatusCode from the
-response</td>
-<td style="text-align: left;"><p>string</p>
+<td>employmentStatusCode</td>
+<td>employmentStatusCode from the response</td>
+<td><p>string</p>
 <p>Ex. A</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">compensationTypeCode</td>
-<td style="text-align: left;">compensationTypeCode from the
-response</td>
-<td style="text-align: left;"><p>string</p>
+<td>compensationTypeCode</td>
+<td>compensationTypeCode from the response</td>
+<td><p>string</p>
 <p>Ex. S</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">businessUnit</td>
-<td style="text-align: left;">businessUnit from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>businessUnit</td>
+<td>businessUnit from the response</td>
+<td><p>string</p>
 <p>Ex. IS970</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">terminationDate</td>
-<td style="text-align: left;">terminationDate from the response</td>
-<td style="text-align: left;"><p>date</p>
+<td>terminationDate</td>
+<td>terminationDate from the response</td>
+<td><p>date</p>
 <p>EX. 11-Oct-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">exendedLeaveEffectiveDate</td>
-<td style="text-align: left;">extendedTimeOff.startDate from the
-response</td>
-<td style="text-align: left;"><p>date</p>
+<td>extendedLeaveEffectiveDate</td>
+<td>extendedTimeOff.startDate from the response</td>
+<td><p>date</p>
 <p>EX. 11-Aug-2024</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">flsaCode</td>
-<td style="text-align: left;">flsaCode from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>flsaCode</td>
+<td>flsaCode from the response</td>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">locationId</td>
-<td style="text-align: left;">locationId from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>locationId</td>
+<td>locationId from the response</td>
+<td><p>string</p>
 <p>Ex. 099</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: left;">startDate from the response</td>
-<td style="text-align: left;"><p>date</p>
+<td>startDate</td>
+<td>startDate from the response</td>
+<td><p>date</p>
 <p>EX. 11-Oct-2000</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobFamilyCode</td>
-<td style="text-align: left;">job.familyCode from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>jobFamilyCode</td>
+<td>job.familyCode from the response</td>
+<td><p>string</p>
 <p>Ex. L</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">jobFamilyName</td>
-<td style="text-align: left;">job.family from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>jobFamilyName</td>
+<td>job.family from the response</td>
+<td><p>string</p>
 <p>Ex. T Platform</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">positionCode</td>
-<td style="text-align: left;">job.positionId from the response</td>
-<td style="text-align: left;"><p>string</p>
+<td>positionCode</td>
+<td>job.positionId from the response</td>
+<td><p>string</p>
 <p>Ex. P001537</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">meta</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td>meta</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align: left;">resourceType</td>
-<td style="text-align: left;">Assign “User”</td>
-<td style="text-align: left;"><p>string</p>
+<td>resourceType</td>
+<td>Assign “User”</td>
+<td><p>string</p>
 <p>Ex. User</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">created</td>
-<td style="text-align: left;">Assign “User”</td>
-<td style="text-align: left;"><p>date-time</p>
+<td>created</td>
+<td>Assign “User”</td>
+<td><p>date-time</p>
 <p>Ex. 2024-01-23T04:56:22Z</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">lastModified</td>
-<td style="text-align: left;">lastModifiedDateTime from the
-response</td>
-<td style="text-align: left;"><p>date-time</p>
+<td>lastModified</td>
+<td>lastModifiedDateTime from the response</td>
+<td><p>date-time</p>
 <p>Ex. 2024-05-13T04:42:34Z</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">version</td>
-<td style="text-align: left;">Assign “v2.0”</td>
-<td style="text-align: left;"><p>string</p>
+<td>version</td>
+<td>Assign “v2.0”</td>
+<td><p>string</p>
 <p>Ex. v2.0</p></td>
 </tr>
 <tr>
-<td style="text-align: left;">location</td>
-<td style="text-align: left;">Assign the full url that was called</td>
-<td style="text-align: left;"><p>string</p>
+<td>location</td>
+<td>Assign the full url that was called</td>
+<td><p>string</p>
 <p>Ex.
 https://apim-test.mclanecp.com/scim-users-exp-api/v1/users/000136214</p></td>
 </tr>
@@ -3623,7 +3578,7 @@ Example:
 "compensationTypeCode": "S",  
 "businessUnit": "IS790",  
 "terminationDate": "01-Sep-2024",  
-"exendedLeaveEffectiveDate": "30-Sep-2024",  
+"extendedLeaveEffectiveDate": "30-Sep-2024",  
 "flsaCode": "N",  
 "locationId": "999",  
 "startDate": "01-Sep-2022",  
