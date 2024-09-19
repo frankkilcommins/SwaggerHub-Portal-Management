@@ -2123,55 +2123,53 @@ POST https://\<server\>:\<port\>/employee-ods-sys-api/v1/employees
 
 Example request:
 
-{  
-"employee": {  
-"employeeId": "000136214",
-
-"userId": "zernest",  
-"isActive": true,  
-"employmentStatusCode": "A",  
-"birthDate": "30-Sep-2000",  
-"ssnLastFour": "1123",  
-"distributionCenterDivisionId": "GR260",  
-"division": "GR260 GR Concord",  
-"costCenter": "20020",  
-"managerId": "000028632",  
-"locationId": "999",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",
-
-"department": "Platform Administration",
-
-"departmentId": "50200",  
-"terminationDate": null,  
-"payGrade": "L",  
-"flsaCode": "N",  
-"compensationTypeCode": "S",
-
-"startDate": "11-Aug-2022",  
-"extendedTimeOff": {  
-"startDate": ""  
-},  
-"name": {  
-"first": "Zachary",  
-"middle": "Ernest",  
-"last": "Hines"  
-},  
-"job": {  
-"code": "1067",  
-"title": "Stocker",  
-"familyCode": "D",  
-"family": "IT Platform",  
-"positionId": "P001537"  
-},  
-"workAddress": {  
-"address1": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"postalCode": "76504"  
-}  
-}  
+```json
+{
+  "employee": {
+    "employeeId": "000136214",
+    "userId": "zernest",
+    "isActive": true,
+    "employmentStatusCode": "A",
+    "birthDate": "30-Sep-2000",
+    "ssnLastFour": "1123",
+    "distributionCenterDivisionId": "GR260",
+    "division": "GR260 GR Concord",
+    "costCenter": "20020",
+    "managerId": "000028632",
+    "locationId": "999",
+    "companyCode": "001",
+    "companyName": "McLane Company, Inc.",
+    "department": "Platform Administration",
+    "departmentId": "50200",
+    "terminationDate": null,
+    "payGrade": "L",
+    "flsaCode": "N",
+    "compensationTypeCode": "S",
+    "startDate": "11-Aug-2022",
+    "extendedTimeOff": {
+      "startDate": ""
+    },
+    "name": {
+      "first": "Zachary",
+      "middle": "Ernest",
+      "last": "Hines"
+    },
+    "job": {
+      "code": "1067",
+      "title": "Stocker",
+      "familyCode": "D",
+      "family": "IT Platform",
+      "positionId": "P001537"
+    },
+    "workAddress": {
+      "address1": "4747 McLane Parkway",
+      "city": "Temple",
+      "state": "TX",
+      "postalCode": "76504"
+    }
+  }
 }
+```
 
 ***Request Connector Configuration**: (externalize into a property
 file)*
@@ -2221,14 +2219,15 @@ along with the correlation Id and the tracing Id if provided. See
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",
-
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:Error"\],  
-"detail": "Bad Request",  
-"status": 400  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:Error"],
+  "detail": "Bad Request",
+  "status": 400
 }
+```
 
 ###### HTTP Status Codes
 
@@ -2524,94 +2523,96 @@ User Detail Mapping Structure|outline</a></p></td>
 
 Example:
 
-{  
-"correlationId": "87f646bd-5cfd-41de-8263-02e636a91383",  
-"tracingId": "js-20240703-001",  
-"totalResults": 2,  
-"startIndex": 1,  
-"itemsPerPage": 2,  
-"schemas": \[  
-"urn:ietf:params:scim:api:messages:2.0:ListResponse"  
-\],  
-"Resources": \[  
-{  
-"id": "000012333",  
-"userName": "000012333",  
-"active": true,  
-"name": {  
-"familyName": "Julips",  
-"givenName": "Skip"  
-},  
-"title": "Stocker",  
-"middleName": "Terry",  
-"streetAddress": "133 Center Street",  
-"city": "Angola",  
-"state": "NY",  
-"zipCode": "14006",  
-"employeeNumber": "000012333",  
-"department": "Platform Administration",  
-"managerId": "000028633",  
-"birthDate": "1999-06-23",  
-"ssnLastFour": "1234",  
-"departmentId": "20020",  
-"jobCode": "1067",  
-"divisionCode": "GR260",  
-"division": "GR260 GR Concords",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"payGrade": "L",  
-"employmentStatusCode": "A",  
-"compensationType": "S",  
-"businessUnit": "GR260",  
-"terminationDate": "",  
-"extendedLeaveEffectiveDate": "2024-07-01",  
-"flsaCode": "N",  
-"locationId": "999",  
-"jobFamilyCode": "D",  
-"jobFamilyName": "IT Platform",  
-"positionCode": "P001537",  
-"startDate": "2020-01-01"  
-},  
-{  
-"id": "000012388",  
-"userName": "000012388",  
-"active": true,  
-"name": {  
-"familyName": "Drew",  
-"givenName": "Nancy"  
-},  
-"title": "Stocker",  
-"middleName": "P",  
-"streetAddress": "133 Center Street",  
-"city": "Angola",  
-"state": "NY",  
-"zipCode": "14006",  
-"employeeNumber": "000012388",  
-"department": "Platform Administration",  
-"managerId": "000028633",  
-"birthDate": "11-Oct-1995",  
-"ssnLastFour": "5749",  
-"departmentId": "50020",  
-"jobCode": "1088",  
-"divisionCode": "GR260",  
-"division": "GR360 GR Concords",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"payGrade": "L",  
-"employmentStatusCode": "A",  
-"compensationTypeCode": "S",  
-"businessUnit": "GR360",  
-"terminationDate": "",  
-"extendedLeaveEffectiveDate": "21-Oct-2024",  
-"flsaCode": "N",  
-"locationId": "999",  
-"jobFamilyCode": "D",  
-"jobFamilyName": "IT Platform",  
-"positionCode": "P001588",  
-"startDate": "11-Oct-2000"  
-}  
-\]  
+```json
+{
+  "correlationId": "87f646bd-5cfd-41de-8263-02e636a91383",
+  "tracingId": "js-20240703-001",
+  "totalResults": 2,
+  "startIndex": 1,
+  "itemsPerPage": 2,
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+  ],
+  "Resources": [
+    {
+      "id": "000012333",
+      "userName": "000012333",
+      "active": true,
+      "name": {
+        "familyName": "Julips",
+        "givenName": "Skip"
+      },
+      "title": "Stocker",
+      "middleName": "Terry",
+      "streetAddress": "133 Center Street",
+      "city": "Angola",
+      "state": "NY",
+      "zipCode": "14006",
+      "employeeNumber": "000012333",
+      "department": "Platform Administration",
+      "managerId": "000028633",
+      "birthDate": "1999-06-23",
+      "ssnLastFour": "1234",
+      "departmentId": "20020",
+      "jobCode": "1067",
+      "divisionCode": "GR260",
+      "division": "GR260 GR Concords",
+      "companyCode": "001",
+      "companyName": "McLane Company, Inc.",
+      "payGrade": "L",
+      "employmentStatusCode": "A",
+      "compensationType": "S",
+      "businessUnit": "GR260",
+      "terminationDate": "",
+      "extendedLeaveEffectiveDate": "2024-07-01",
+      "flsaCode": "N",
+      "locationId": "999",
+      "jobFamilyCode": "D",
+      "jobFamilyName": "IT Platform",
+      "positionCode": "P001537",
+      "startDate": "2020-01-01"
+    },
+    {
+      "id": "000012388",
+      "userName": "000012388",
+      "active": true,
+      "name": {
+        "familyName": "Drew",
+        "givenName": "Nancy"
+      },
+      "title": "Stocker",
+      "middleName": "P",
+      "streetAddress": "133 Center Street",
+      "city": "Angola",
+      "state": "NY",
+      "zipCode": "14006",
+      "employeeNumber": "000012388",
+      "department": "Platform Administration",
+      "managerId": "000028633",
+      "birthDate": "11-Oct-1995",
+      "ssnLastFour": "5749",
+      "departmentId": "50020",
+      "jobCode": "1088",
+      "divisionCode": "GR260",
+      "division": "GR360 GR Concords",
+      "companyCode": "001",
+      "companyName": "McLane Company, Inc.",
+      "payGrade": "L",
+      "employmentStatusCode": "A",
+      "compensationTypeCode": "S",
+      "businessUnit": "GR360",
+      "terminationDate": "",
+      "extendedLeaveEffectiveDate": "21-Oct-2024",
+      "flsaCode": "N",
+      "locationId": "999",
+      "jobFamilyCode": "D",
+      "jobFamilyName": "IT Platform",
+      "positionCode": "P001588",
+      "startDate": "11-Oct-2000"
+    }
+  ]
 }
+```
 
 HTTP Status Codes
 
@@ -2880,38 +2881,40 @@ present</td>
 
 Example:
 
+```json
 {  
-"status": "UP",  
-"checks": \[  
-{  
-"name": "Liveness",  
-"status": "UP",  
-"data": {  
-"apiName": "supplier-items-exp-api",  
-"apiVersion": "v1",  
-"dependencies":
-"\[http:/supplier-items-exp-api-service.supplier-items.svc.cluster.local:8080/supplier-items-exp-api/v1,
-http://ecomm-jira-sys-api-service.ecomm-jira-dev.svc.cluster.local:8080/ecomm-jira-sys-api/v1\]",  
-"timestamp": "2024-03-12T17:20:57.874697615",  
-"correlationId": "93b0a5ca-4eaa-4650-a7a1-ca51bd63e0e1",  
-"tracingId": "try again"  
-}  
-},  
-{  
-"name": "Readiness",  
-"status": "UP",  
-"data": {  
-"apiName": "ecomm-jira-sys-api",  
-"apiVersion": "v1",  
-"timestamp": "2024-03-12T17:20:57.875002037",  
-"correlationId": "93b0a5ca-4eaa-4650-a7a1-ca51bd63e0e1",  
-"tracingId": "try again",  
-"url":
-"http://ecomm-jira-sys-api-service.ecomm-jira-dev.svc.cluster.local:8080/ecomm-jira-sys-api/v1"  
-}  
-}  
-\]  
+  "status": "UP",  
+  "checks": [  
+    {  
+      "name": "Liveness",  
+      "status": "UP",  
+      "data": {  
+        "apiName": "supplier-items-exp-api",  
+        "apiVersion": "v1",  
+        "dependencies": [
+          "http://supplier-items-exp-api-service.supplier-items.svc.cluster.local:8080/supplier-items-exp-api/v1",
+          "http://ecomm-jira-sys-api-service.ecomm-jira-dev.svc.cluster.local:8080/ecomm-jira-sys-api/v1"
+        ],  
+        "timestamp": "2024-03-12T17:20:57.874697615",  
+        "correlationId": "93b0a5ca-4eaa-4650-a7a1-ca51bd63e0e1",  
+        "tracingId": "try again"  
+      }  
+    },  
+    {  
+      "name": "Readiness",  
+      "status": "UP",  
+      "data": {  
+        "apiName": "ecomm-jira-sys-api",  
+        "apiVersion": "v1",  
+        "timestamp": "2024-03-12T17:20:57.875002037",  
+        "correlationId": "93b0a5ca-4eaa-4650-a7a1-ca51bd63e0e1",  
+        "tracingId": "try again",  
+        "url": "http://ecomm-jira-sys-api-service.ecomm-jira-dev.svc.cluster.local:8080/ecomm-jira-sys-api/v1"  
+      }  
+    }  
+  ]  
 }
+```
 
 -Return a 500 if any issue(s) are encountered returning the status
 object outlining the context of the issue
@@ -2989,22 +2992,23 @@ object outlining the context of the issue
 
 Example:
 
+```json
 {  
-"correlationId": "d5f6fbf8-6774-4a95-9b59-15348943abd4",  
-"tracingId": "A19283745",  
-"status": 500,  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "40613",  
-"message": "Database mydb on server mydbserver is not currently
-available",  
-"component": "supplier-items-exp-api",  
-"timeStamp": "2022-09-30T15:27:49.274Z"  
-}  
-\]  
+  "correlationId": "d5f6fbf8-6774-4a95-9b59-15348943abd4",  
+  "tracingId": "A19283745",  
+  "status": 500,  
+  "context": [  
+    {  
+      "type": "Error",  
+      "severity": "1",  
+      "reasonCode": "40613",  
+      "message": "Database mydb on server mydbserver is not currently available",  
+      "component": "supplier-items-exp-api",  
+      "timeStamp": "2022-09-30T15:27:49.274Z"  
+    }  
+  ]  
 }
+```
 
 ###### HTTP Status Codes
 
@@ -3093,15 +3097,17 @@ Possible HTTP status codes for the response include:
 
 Example:
 
-{  
-"correlationId": "d5ebd3b0-774e-11ed-aa7d-02d22cb5f8e0",  
-"tracingId": "XYZ188978-001",  
-"schemas": \[  
-"urn:ietf:params:scim:api:messages:2.0:Error"  
-\],  
-"detail": "User not found",  
-"status": 404  
+```json
+{
+  "correlationId": "d5ebd3b0-774e-11ed-aa7d-02d22cb5f8e0",
+  "tracingId": "XYZ188978-001",
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:Error"
+  ],
+  "detail": "User not found",
+  "status": 404
 }
+```
 
 ## Log Event Structure
 
@@ -3175,86 +3181,86 @@ Example:
 
 Example:
 
-{  
-"appName": "mcl-b2bi-files-sys-api-1",  
-"clientId": "c9feb3160f0b4ea785875ad678e00c1c",  
-"correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",  
-"tracingId": "A23778-01",  
-"flowName": "ebs-employee-sys-api-main",  
-"flowStep": "Flow End",  
-"timestamp": "2023-05-25T03:06:16.405Z",  
-"environment": "PROD",  
-"payload": {  
-"correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",  
-"tracingId": "",  
-"status": {  
-"code": "200",  
-"messages": \[  
-{  
-"type": "Diagnostic",  
-"message": "BuyerQuestTerm Data has been queued for processing",  
-"timeStamp": "2023-04-25T03:06:16.403Z"  
-}  
-\]  
-}  
-}  
+```json
+{
+  "appName": "mcl-b2bi-files-sys-api-1",
+  "clientId": "c9feb3160f0b4ea785875ad678e00c1c",
+  "correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",
+  "tracingId": "A23778-01",
+  "flowName": "ebs-employee-sys-api-main",
+  "flowStep": "Flow End",
+  "timestamp": "2023-05-25T03:06:16.405Z",
+  "environment": "PROD",
+  "payload": {
+    "correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",
+    "tracingId": "",
+    "status": {
+      "code": "200",
+      "messages": [
+        {
+          "type": "Diagnostic",
+          "message": "BuyerQuestTerm Data has been queued for processing",
+          "timeStamp": "2023-04-25T03:06:16.403Z"
+        }
+      ]
+    }
+  }
 }
+```
 
 ## Employee ODS System API User Detail Response Structure
 
 Example system API response:
 
-{  
-"correlationId": "d5ebd3b0-774e-11ed-aa7d-02d22cb5f8e0",  
-"tracingId": "XYZ188978-001",  
-"employee": {  
-"employeeId": "000136214",
-
-"userId": "zernest",
-
-"isActive": true,  
-"startDate": "2022-01-08",  
-"employmentStatusCode": "A",  
-"birthDate": "2000-06-08",  
-"ssnLastFour": "1123",  
-"distributionCenterDivisionId": "GR260",  
-"division": "GR260 GR Concord",  
-"costCenter": "20020",  
-"managerId": "000028632",  
-"locationId": "999",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"terminationDate": null,  
-"payGrade": "L",  
-"flsaCode": "A",  
-"compensationTypeCode": "S",
-
-"businessUnit": "GR360",
-
-"lastModifiedDateTime": "2024-08-16T19:41:53Z",  
-"extendedTimeOff": {  
-"startDate": ""  
-},  
-"name": {  
-"first": "Zachary",  
-"middle": "Ernest",  
-"last": "Hines"  
-},  
-"job": {  
-"code": "1067",  
-"title": "Stocker",  
-"familyCode": "D",  
-"family": "IT Platform",  
-"positionId": "P001537"  
-},  
-"workAddress": {  
-"address1": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"postalCode": "76504"  
-}  
-}  
+```json
+{
+  "correlationId": "d5ebd3b0-774e-11ed-aa7d-02d22cb5f8e0",
+  "tracingId": "XYZ188978-001",
+  "employee": {
+    "employeeId": "000136214",
+    "userId": "zernest",
+    "isActive": true,
+    "startDate": "2022-01-08",
+    "employmentStatusCode": "A",
+    "birthDate": "2000-06-08",
+    "ssnLastFour": "1123",
+    "distributionCenterDivisionId": "GR260",
+    "division": "GR260 GR Concord",
+    "costCenter": "20020",
+    "managerId": "000028632",
+    "locationId": "999",
+    "companyCode": "001",
+    "companyName": "McLane Company, Inc.",
+    "terminationDate": null,
+    "payGrade": "L",
+    "flsaCode": "A",
+    "compensationTypeCode": "S",
+    "businessUnit": "GR360",
+    "lastModifiedDateTime": "2024-08-16T19:41:53Z",
+    "extendedTimeOff": {
+      "startDate": ""
+    },
+    "name": {
+      "first": "Zachary",
+      "middle": "Ernest",
+      "last": "Hines"
+    },
+    "job": {
+      "code": "1067",
+      "title": "Stocker",
+      "familyCode": "D",
+      "family": "IT Platform",
+      "positionId": "P001537"
+    },
+    "workAddress": {
+      "address1": "4747 McLane Parkway",
+      "city": "Temple",
+      "state": "TX",
+      "postalCode": "76504"
+    }
+  }
 }
+```
 
 ## SCIM User Response Detail Mapping Structure
 
@@ -3543,54 +3549,53 @@ https://apim-test.mclanecp.com/scim-users-exp-api/v1/users/000136214</p></td>
 
 Example:
 
-{  
-"schemas": \[  
-"urn:ietf:params:scim:schemas:core:2.0:User"  
-\],  
-"userName": "000014527",  
-"active": true,  
-"id": "000014527",  
-"name": {  
-"familyName": "Smith",  
-"givenName": "Peter"  
-},
-
-"userId": "psmith",
-
-"middleName": null,  
-"title": "Administrator, Lead Middleware",  
-"streetAddress": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"zipCode": "7504",  
-"department": "Platform Administration",  
-"departmentId": "50200",  
-"managerId": "000058215",  
-"birthDate": "14-Sep-1959",  
-"ssnLastFour": "1234",  
-"jobCode": "1067",  
-"divisionCode": "IS790",  
-"division": "McLane Business Info Services",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"payGrade": "L",  
-"employmentStatusCode": "A",  
-"compensationTypeCode": "S",  
-"businessUnit": "IS790",  
-"terminationDate": "01-Sep-2024",  
-"extendedLeaveEffectiveDate": "30-Sep-2024",  
-"flsaCode": "N",  
-"locationId": "999",  
-"startDate": "01-Sep-2022",  
-"jobFamilyCode": "D",  
-"jobFamilyName": "IT Platform",  
-"positionCode": "P001537",  
-"meta": {  
-"resourceType": "User",  
-"created": "2024-01-23T04:56:22Z",  
-"lastModified": "2024-05-13T04:42:34Z",  
-"version": "v2.0",  
-"location":
-"https://apim-test.mclanecp.com/scim-users-exp-api/v1/users/000014527"  
-}  
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
+  "userName": "000014527",
+  "active": true,
+  "id": "000014527",
+  "name": {
+    "familyName": "Smith",
+    "givenName": "Peter"
+  },
+  "userId": "psmith",
+  "middleName": null,
+  "title": "Administrator, Lead Middleware",
+  "streetAddress": "4747 McLane Parkway",
+  "city": "Temple",
+  "state": "TX",
+  "zipCode": "7504",
+  "department": "Platform Administration",
+  "departmentId": "50200",
+  "managerId": "000058215",
+  "birthDate": "14-Sep-1959",
+  "ssnLastFour": "1234",
+  "jobCode": "1067",
+  "divisionCode": "IS790",
+  "division": "McLane Business Info Services",
+  "companyCode": "001",
+  "companyName": "McLane Company, Inc.",
+  "payGrade": "L",
+  "employmentStatusCode": "A",
+  "compensationTypeCode": "S",
+  "businessUnit": "IS790",
+  "terminationDate": "01-Sep-2024",
+  "extendedLeaveEffectiveDate": "30-Sep-2024",
+  "flsaCode": "N",
+  "locationId": "999",
+  "startDate": "01-Sep-2022",
+  "jobFamilyCode": "D",
+  "jobFamilyName": "IT Platform",
+  "positionCode": "P001537",
+  "meta": {
+    "resourceType": "User",
+    "created": "2024-01-23T04:56:22Z",
+    "lastModified": "2024-05-13T04:42:34Z",
+    "version": "v2.0",
+    "location": "https://apim-test.mclanecp.com/scim-users-exp-api/v1/users/000014527"
+  }
 }
+```
