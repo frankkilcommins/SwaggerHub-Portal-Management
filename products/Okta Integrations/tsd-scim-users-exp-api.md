@@ -147,7 +147,7 @@ deliver of detailed employee data.
 
 OAS Model Project: scim-users-exp-api
 
-Development Project: scim-usres-exp-api
+Development Project: scim-users-exp-api
 
 OpenShift Project: employee-events-dev, employee-events-test,
 employee-events
