@@ -117,15 +117,15 @@ synchronization.
 
 ## Process Context
 
-![](./images/scim-users-exp-api/process-context.png)
+![](./images/process-context.png)
 
 ## Logical Viewpoint
 
-![](./images/scim-users-exp-api/logical-viewpoint.png)
+![](./images/logical-viewpoint.png)
 
 ## Deployment Viewpoint
 
-![](./images/scim-users-exp-api/deployment-viewpoint.png)
+![](./images/deployment-viewpoint.png)
 
 # Experience API
 

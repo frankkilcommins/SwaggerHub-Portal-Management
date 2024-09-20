@@ -16,7 +16,7 @@
             "name": "SCIM Users Exp API HLD",
             "slug": "scim-users-exp-api-hld",
             "type": "markdown",
-            "contentUrl": "scim-users-exp-api-hld.md"
+            "contentUrl": "okta-employee-sync-hld.md"
         },
         {
             "order": 1,
@@ -33,6 +33,30 @@
             "slug": "scim-users-exp-api-v1",
             "type": "apiUrl",
             "contentUrl": "https://app.swaggerhub.com/apis/MCLANECO/scim-users-exp-api/v1/"
+        },
+        {
+            "order": 3,
+            "parent": "",
+            "name": "Employee Sync ODS System API HLD",
+            "slug": "employee-ods-sys-api-hld",
+            "type": "markdown",
+            "contentUrl": "okta-employee-sync-hld.md"
+        },
+        {
+            "order": 4,
+            "parent": "employee-ods-sys-api-hld",
+            "name": "TSD Employee Sync ODS System API",
+            "slug": "tsd-employee-ods-sys-api",
+            "type": "markdown",
+            "contentUrl": "tsd-employee-ods-sys-api.md"
+        },
+        {
+            "order": 5,
+            "parent": "employee-ods-sys-api-hld",
+            "name": "Employee Sync ODS System API",
+            "slug": "employee-ods-sys-api-v1",
+            "type": "apiUrl",
+            "contentUrl": "https://app.swaggerhub.com/apis/MCLANECO/employee-ods-sys-api/v1"
         }
     ]
 }
