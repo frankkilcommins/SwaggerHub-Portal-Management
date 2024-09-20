@@ -69,7 +69,7 @@ procedure</td>
 <tr>
 <td></td>
 <td></td>
-<td><p>Changed fisaRegionalCode to fisaCode</p>
+<td><p>Changed flsaRegionalCode to flsaCode</p>
 <p>Changed status to employmentStatusCode</p></td>
 <td>07/23/2024</td>
 </tr>
@@ -150,7 +150,7 @@ employee ODS.
 Employee data is consumed by many systems in the McLane application
 landscape, and having accurate employee data is imperative for the
 successful operation of those applications. This ODS is sourced from the
-HCM system via OKTA, will seek to synchronize employee data in a timly
+HCM system via OKTA, will seek to synchronize employee data in a timely
 manner
 
 The ODS is underpinned with an Oracle database that this system API will
@@ -200,7 +200,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
@@ -520,7 +520,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -880,7 +880,7 @@ INTERIM_CODE.UPDATEUSERBYID_SP(:EMPLID,:FIRST_NM,:MIDDLE_NM,:LAST_NM,:BIRTHDATE,
 <td style="text-align: center;">IN</td>
 <td><p>employee.birthDate</p>
 <p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date formt comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
+If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
 format when assigning for the update</p></td>
 <td style="text-align: left;">30-Jul-1980</td>
 </tr>
@@ -991,7 +991,7 @@ format when assigning for the update</p></td>
 <td style="text-align: center;">IN</td>
 <td><p>employee.terminationDate</p>
 <p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date formt comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
+If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
 format when assigning for the update</p></td>
 <td style="text-align: left;">30-Jul-2003</td>
 </tr>
@@ -1042,7 +1042,7 @@ format when assigning for the update</p></td>
 <td style="text-align: center;">IN</td>
 <td><p>employee.startDate</p>
 <p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date formt comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
+If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
 format when assigning for the update</p></td>
 <td style="text-align: left;">30-Jan-2000</td>
 </tr>
@@ -1398,7 +1398,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -1676,7 +1676,7 @@ application/json
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
@@ -2042,13 +2042,13 @@ INTERIM_CODE.AddUser_SP(**:EMPLID**,**:FIRST_NM**,**:MIDDLE_NM**,**:LAST_NM**,**
 <td>BIRTHDATE</td>
 <td><p>employee.birthDate</p>
 <p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date formt comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
+If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
 format when assigning for the insert</p></td>
 <td>01-Sep-2001</td>
 </tr>
 <tr>
 <td>SSN</td>
-<td>mployee.ssnLastFour</td>
+<td>employee.ssnLastFour</td>
 <td>1123</td>
 </tr>
 <tr>
@@ -2135,7 +2135,7 @@ format when assigning for the insert</p></td>
 <td>TERM_DT</td>
 <td><p>employee.terminationDate</p>
 <p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date formt comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
+If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
 format when assigning for the insert</p></td>
 <td>01-Sep-2001</td>
 </tr>
@@ -2178,7 +2178,7 @@ format when assigning for the insert</p></td>
 <td>START_DT</td>
 <td><p>employee.​​​​startDate</p>
 <p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date formt comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
+If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
 format when assigning for the insert</p></td>
 <td>01-Sep-2001</td>
 </tr>
@@ -2206,7 +2206,7 @@ Example:
 
 Example:
 
-I~~NSERT INTO INTERIM.MCL_ONBOARDING_AND_EMPL~~
+~~INSERT INTO INTERIM.MCL_ONBOARDING_AND_EMPL~~
 
 ~~(EMPLID, ALTER_EMPLID, SM_OB_INVITN_ID, FIRST_NM, MIDDLE_NM, LAST_NM,
 BIRTHDATE, SSN, DEPT_ID, DEPT_NM, JOB_CD, JOB_NM, DIV_CD, DIV_NM, DIV,
@@ -2419,7 +2419,7 @@ value=</p>
 | Name | Assignment/Description | Example |
 |:---|:---|:---|
 | tracing_id | Optionally sent in on request | ASY7748901 |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
@@ -2459,7 +2459,7 @@ FETCH NEXT \<limit\> ROWS ONLY;~~
 If the filter query parameter is present as part of the request, URL
 decode the value to get the employeeId that is to be assigned to the
 EMPLID stored procedure input parameter. Remember after URL decoding to
-remove the double quites that enclode the employeeId value.
+remove the double quotes that enclose the employeeId value.
 
 For example: employeeId%20eq%20%22000013028%22 would result in an EMPLID
 = 000013028
@@ -2939,7 +2939,7 @@ Example:
 
 "status": "OK",
 
-"apiName": "empoyees-ods-sys-api",
+"apiName": "employees-ods-sys-api",
 
 "apiVersion": "v1",
 
@@ -3749,7 +3749,7 @@ Example:
 
 "userId": "zernest",  
 "isActive": true,  
-"employeementStatusCode": "A",  
+"employmentStatusCode": "A",  
 "birthDate": "2000-06-08",  
 "ssnLastFour": "1123",  
 "department": "Platform Administration",  
