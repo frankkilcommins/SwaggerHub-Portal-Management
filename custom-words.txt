@@ -32,6 +32,8 @@ apim
 mfdb
 
 EMPL
+Lawler
+Suneast
 EMPLID
 GETUSERS
 GETUSERBYID
