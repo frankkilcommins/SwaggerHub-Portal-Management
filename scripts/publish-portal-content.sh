@@ -620,6 +620,7 @@ function portal_product_toc_api_reference_post() {
         --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
         --header "Content-Type: application/json" \
         --data "{
+            \"type\": \"new\",
             \"title\": \"$api_title\",
             \"slug\": \"$api_slug\",
             \"order\": $content_order,
@@ -719,6 +720,7 @@ function portal_product_toc_markdown_post() {
         --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
         --header "Content-Type: application/json" \
         --data "{
+            \"type\": \"new\",        
             \"title\": \"$markdown_title\",
             \"slug\": \"$markdown_slug\",
             \"order\": $content_order,
