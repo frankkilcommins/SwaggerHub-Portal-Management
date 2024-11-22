@@ -473,6 +473,7 @@ function portal_product_post() {
         --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
         --header "Content-Type: application/json" \
         --data "{
+            \"type\": \"new\",
             \"name\": \"$product_name\",
             \"description\": \"$product_description\",
             \"slug\": \"$product_slug\",
