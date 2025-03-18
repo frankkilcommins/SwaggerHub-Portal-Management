@@ -35,6 +35,14 @@
             "contentUrl": "Client-Code-Typescript.md"
         },
         {
+            "order": 3,
+            "parent": "",
+            "name": "Test",
+            "slug": "test",
+            "type": "markdown",
+            "contentUrl": "Test.md"
+        },        
+        {
             "order": 5,
             "parent": "",
             "name": "Pets API",

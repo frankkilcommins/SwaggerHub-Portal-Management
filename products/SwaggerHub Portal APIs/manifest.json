@@ -73,6 +73,14 @@
             "slug":"api-changelog",
             "type": "markdown",
             "contentUrl": "API-Changelog.md"
-        }
+        },
+        {
+            "order": 8,
+            "parent": "",
+            "name": "Test",
+            "slug": "test",
+            "type": "markdown",
+            "contentUrl": "Test.md"
+        }        
     ]
 }
