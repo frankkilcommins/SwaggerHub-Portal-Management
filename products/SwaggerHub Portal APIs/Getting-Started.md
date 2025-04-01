@@ -26,7 +26,7 @@ The SwaggerHub Portal API provides the management APIs for the following resourc
 | -------- | ----------- | ----------- |
 | Portals | A collection representing portal instances and allowing management on portal instances settings. The portal settings control the branding, name, domain url, and availability of a portal. These settings are split into three levels: `general`, `branding`, and `landingPage`. | Read, Modify, Delete |
 | Documents | A resource for storing document content (specifically for Markdown files/attachments) | Read, Modify, Delete |
-| Sections | A section is a resource used to hold API references as well as API document references and organize them into tables of contents. | Create, Modify, Delete |
+| Sections | A section is a resource used to hold API references as well as API document references and organize them into tables of contents. | Read |
 | Products | A collection of metadata (a.k.a. *product settings*), API reference documents (e.g., an OpenAPI document), and Markdown documents which are bundled and presented to a consumer as a product. | Create, Modify, Delete |
 
 ## Base Info

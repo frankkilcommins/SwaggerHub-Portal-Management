@@ -525,32 +525,8 @@ function portal_product_get_default_section_id() {
 
     section_id=$(echo "$response" | jq -r '.items[0].id')
 
-    if [ -z "$section_id" ] || [ "$section_id" == "null" ]; then
-        portal_product_section_post "$product_id"
-    fi
-
     log_message $INFO "Done fetching default section ID: $section_id"
     log_message $DEBUG "Exit portal_product_get_default_section_id"
-}
-
-function portal_product_section_post() {
-    log_message $DEBUG "Enter portal_product_section_post"
-    local product_id=$1
-
-    log_message $INFO "Creating default section in product $product_id ..."
-    local response=$(curl -s --request POST \
-        --url "$PORTAL_URL/products/$product_id/sections" \
-        --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
-        --header "Content-Type: application/json" \
-        --data "{
-            \"title\": \"default\",
-            \"slug\": \"default\",
-            \"order\": 0
-        }")
-
-    section_id=$(echo "$response" | jq -r .id)
-    log_message $INFO "Done creating default section: $section_id"
-    log_message $DEBUG "Exit portal_product_section_post"
 }
 
 function portal_product_toc_get_id() {
