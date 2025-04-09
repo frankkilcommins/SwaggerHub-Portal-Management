@@ -4,42 +4,10 @@ The SwaggerHub Portal APIs can be leveraged to automate the creation of API refe
 
 The following API resources and paths are leveraged:
 
-* `/sections`
 * `/sections/{sectionId}/table-of-contents`
 * `/documents/{documentId}`
 
 Within the portal, API reference material and documentation are grouped under a resource known as **sections**. 
-
-## Add Section
-Prior to adding API references or supporting documentation, you must create a _section_ to house the content. 
-
-A section can be created via a `POST` request to the [`/sections`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Content-Sections/createSection) resource endpoint.
-
-Sample cURL request to create a section:
-
-```
-curl --location --request POST 'https://api.portal.swaggerhub.com/v1/sections' \
---header 'Authorization: Bearer <YOUR-SWAGGERHUB-APIKEY>' \
---header 'Content-Type: application/json' \
-
---data '
-{
-    "productId": "<The productId from previous step>",
-    "title": "Petstore Adoptions API",
-    "slug": "petstore-adoptions",
-    "order": 1
-}
-```
-
-Sample response payload:
-
-```
-{
-  "id": "5234107e-f789-4540-87b1-53a566f47163"
-}
-```
-
-> **Note:** keep note of the returned `id` for the section, as it will be needed for later API calls to add API references and documentation.
 
 ## Add API Reference
 
