@@ -3,8 +3,8 @@
 # Author: @frankkilcommins
 # This script is part of a workflow that publishes content to the SwaggerHub Portal instance.
 
-# SwaggerHub Portal API Ref: https://app.swaggerhub.com/apis-docs/smartbear-public/swaggerhub-portal-api/0.2.0-beta
-# Tested against SwaggerHub Portal API v0.2.0-beta
+# SwaggerHub Portal API Ref: https://app.swaggerhub.com/apis-docs/smartbear-public/swaggerhub-portal-api/0.5.0-beta
+# Tested against SwaggerHub Portal API v0.5.0-beta
 
 # Required environment variables:
 # - SWAGGERHUB_API_KEY: SwaggerHub API Key
@@ -783,7 +783,8 @@ function portal_product_document_markdown_patch() {
         --header "Authorization: Bearer $SWAGGERHUB_API_KEY" \
         --header "Content-Type: application/json" \
         --data "{
-            \"content\": $escaped_contents
+            \"content\": $escaped_contents,
+            \"type\": \"markdown\"
         }")
     
     log_message $DEBUG "Document patch response: $response"

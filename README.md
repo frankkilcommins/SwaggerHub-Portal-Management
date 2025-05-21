@@ -57,9 +57,10 @@ The OpenAPI references are predictable based on your known SwaggerHub Portal sub
 
 The convention for embedding a link to a specific OpenAPI operation within a markdown page is as follows:
 
-`[link text of your choice](https://<YOUR-SWAGGERHUB-SUBDOMAIN>.portal.swaggerhub.com/swaggerhub-portal/default/<API-SLUG>#/<OPENAPI-TAG-CONTAINING-OPERATIONAL-IF-APPLICABLE>/<OPENAPI-OPERATION-ID>)`.
+`[link text of your choice](https://<YOUR-SWAGGERHUB-SUBDOMAIN>.portal.swaggerhub.com/swaggerhub-portal/docs/<API-SLUG>#/<OPENAPI-TAG-CONTAINING-OPERATIONAL-IF-APPLICABLE>/<OPENAPI-OPERATION-ID>)`.
 
 So you will replace the following parameters which are all known up front:
+
 - `YOUR-SWAGGERHUB-SUBDOMAIN` - the sub-domain used by your portal instance
 - `API-SLUG` - the slug defined for your API content (defined in the relevant manifest.json)
 - `OPENAPI-TAG-CONTAINING-OPERATIONAL-IF-APPLICABLE` - if your operation is nested under a tag then you should define the link with the appropriate tag name
@@ -68,8 +69,27 @@ So you will replace the following parameters which are all known up front:
 An example of how an operation reference should be embedded in the markdown is as follows:
 
 ```markdown
-Check out the products operation at [`/products`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/default/swaggerhub-portal-api#/Products/createProduct).
+Check out the products operation at [`/products`](https://frankkilcommins.portal.swaggerhub.com/swaggerhub-portal/docs/swaggerhub-portal-api#/Products/createProduct).
 ```
+
+### Relative Page Links in Markdown Convention
+
+Linking between pages that are part of your product also follow a predictable convention. The convention for embedding a link to a specific another product page within a markdown page is as follows:
+
+`[link text of your choice](https://<YOUR-SWAGGERHUB-SUBDOMAIN>.portal.swaggerhub.com/swaggerhub-portal/docs/<CONTENTMETADATA-SLUG>)`.
+
+So you will replace the following parameters which are all known up front:
+
+- `YOUR-SWAGGERHUB-SUBDOMAIN` - the sub-domain used by your portal instance
+- `CONTENTMETADATA-SLUG` - the slug defined for page you want to link to (defined in the relevant manifest.json)
+
+Here is an example of how a relative page link should be inserted into the markdown:
+
+```markdown
+Check out our [csharp](https://frankkilcommins.portal.swaggerhub.com/pet-adoptions/docs/client-code-csharp) client implementation.
+```
+
+You can link to a specific anchor using normal anchor referencing (e.g. `/#someanchor` being appended to your link URL). Links to external pages and sources operation as normal (e.g. `[link text of your choice](full URL to external source)`).
 
 ### Table of Contents Conventions
 

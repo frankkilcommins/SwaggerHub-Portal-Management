@@ -5,7 +5,7 @@
         "public": true,
         "hidden": false,
         "logo": "images/AdoptionsAPI.png",
-        "logoDark": "",
+        "logoDark": "images/AdoptionsAPI.png",
         "autoPublish": true,
         "validateAPIs": true
     },

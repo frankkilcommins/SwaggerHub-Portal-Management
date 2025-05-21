@@ -35,7 +35,7 @@ Here's a breakdown of the steps you'll carry out to integrate this capability in
 
 ### Graphical Representation of Workflow Steps
 
-![Arazzo-PlantUML.png](./images/embedded/Arazzo-PlantUML.png) 
+![Arazzo-PlantUML.png](./images/embedded/Arazzo-PlantUML.png)
 
 ![Arazzo-Mermaid.png](./images/embedded/Arazzo-Mermaid.png)
 
@@ -50,5 +50,5 @@ Developers integrating this workflow should note:
 
 ### Client Code Samples
 
-- [csharp](./client-code-csharp)
-- [typescript](./client-code-typescript)
+* [csharp](https://frankkilcommins.portal.swaggerhub.com/pet-adoptions/docs/client-code-csharp)
+* [typescript](https://frankkilcommins.portal.swaggerhub.com/pet-adoptions/docs/client-code-typescript)
