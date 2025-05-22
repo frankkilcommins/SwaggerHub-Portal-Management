@@ -40,7 +40,7 @@
             "name": "Pets API",
             "type": "apiUrl",
             "slug": "pets",
-            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/Pets/1.0.0/swagger.json"
+            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/pets/1.0.0/swagger.json"
         },
         {
             "order": 6,
@@ -48,7 +48,7 @@
             "name": "Adoptions API",
             "type": "apiUrl",
             "slug": "adoptions",
-            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/Adoptions/1.0.0/swagger.json"
+            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/adoptions/1.0.0/swagger.json"
         }
     ]
 }
