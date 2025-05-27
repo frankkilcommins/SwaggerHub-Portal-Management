@@ -49,6 +49,14 @@
             "type": "apiUrl",
             "slug": "adoptions",
             "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/adoptions/1.0.0/swagger.json"
+        },
+        {
+            "order": 7,
+            "parent": "",
+            "name": "Docs As Code",
+            "slug": "docs-as-code",
+            "type": "html",
+            "contentUrl": "Docs-As-Code.html"
         }
     ]
 }

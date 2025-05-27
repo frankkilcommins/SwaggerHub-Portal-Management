@@ -1,0 +1,108 @@
+<h1>
+ DocsAsCode HTML Page
+</h1>
+<p>
+ Here goes some content can go into this paragraph
+</p>
+<blockquote>
+ <p>
+  What about a quote here
+ </p>
+</blockquote>
+<h2>
+ Code Samples
+</h2>
+<pre><code class="language-cs">
+//sample client
+using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+public class PetAdoptionWorkflow
+{
+    private readonly HttpClient httpClient = new HttpClient();
+    private readonly string token;
+    private readonly string location;
+
+    public PetAdoptionWorkflow(string token, string location)
+    {
+        this.token = token;
+        this.location = location;
+        httpClient.BaseAddress = new Uri("https://api.swaggerhub.com/apis/");
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+    }
+ }</code></pre>
+<h2>
+ Images
+</h2>
+<p>
+ Let's drop in an image
+</p>
+<figure class="image">
+ <img height="256" src="/services/api/attachments/12c8be2a-efec-4240-b8dc-ee681d2f9993" style="aspect-ratio:993/256;" width="993"/>
+</figure>
+<h2>
+ Video
+</h2>
+<p>
+</p>
+<figure class="media">
+ <div data-oembed-url="https://www.youtube.com/watch?v=7D5bbaj60Cc">
+  <div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.2493%;">
+   <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/7D5bbaj60Cc" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
+   </iframe>
+  </div>
+ </div>
+</figure>
+<h2>
+ Table
+</h2>
+<p>
+ Here's a table
+</p>
+<figure class="table">
+ <table>
+  <thead>
+   <tr>
+    <th>
+     Heading One
+    </th>
+    <th>
+     Heading Two
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>
+     A1
+    </td>
+    <td>
+     value
+    </td>
+   </tr>
+   <tr>
+    <td>
+     A2
+    </td>
+    <td>
+     value
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</figure>
+<p>
+ <br/>
+ <strong>
+  Endpoint:
+ </strong>
+ <br/>
+ <a href="/pet-adoptions/docs/adoptions#/adoptions/postAdoption">
+  POST Add a new adoption
+ </a>
+ is an endpoint to add a new pet
+</p>
