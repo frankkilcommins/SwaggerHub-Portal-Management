@@ -1,0 +1,106 @@
+<h1>
+ DocsAsCode HTML Page
+</h1>
+<p>
+ This is a sample HTML page that demonstrates how to use Docs-as-Code features in SwaggerHub Portal when using a local HTML file. It includes code samples, images, videos, and tables.
+</p>
+<blockquote>
+ <p>
+  Using HTML snippets is a great way to showcase your API documentation and provide a rich user experience
+ </p>
+</blockquote>
+<h2>
+ Embed Code Samples
+</h2>
+<pre><code class="language-cs">
+    using System.Net.Http.Headers;
+    var client = new HttpClient();
+    var request = new HttpRequestMessage
+    {
+        Method = HttpMethod.Get,
+        RequestUri = new Uri("https://virtserver.swaggerhub.com/frank-kilcommins/Portal-API-Copy/0.2.0-beta/portals"),
+        Headers =
+        {
+            { "Accept", "application/json, application/problem+json" },
+            { "Authorization", "Bearer <INSERT TOKEN HERE>" },
+        },
+    };
+    using (var response = await client.SendAsync(request))
+    {
+        response.EnsureSuccessStatusCode();
+        var body = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(body);
+    }
+</code></pre>
+<h2>
+ Embed Images
+</h2>
+<p>
+ Let's drop in an image. It's similar to how you would do it in Markdown, but you can also use HTML tags directly if you prefer.
+</p>
+<figure class="image">
+ <img height="256" src="./images/embedded/arazzo_horizontal_color.png" style="aspect-ratio:993/256;" width="993"/>
+</figure>
+<h2>
+ Embed Video
+</h2>
+<p>
+    Here's an example of embedding a video. You can use the feature to include videos from platforms like YouTube.
+</p>
+<figure class="media">
+ <div data-oembed-url="https://www.youtube.com/watch?v=7D5bbaj60Cc">
+  <div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.2493%;">
+   <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/7D5bbaj60Cc" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
+   </iframe>
+  </div>
+ </div>
+</figure>
+<h2>
+ Include Tables
+</h2>
+<p>
+ Here's a table
+</p>
+<figure class="table">
+ <table>
+  <thead>
+   <tr>
+    <th>
+     Heading One
+    </th>
+    <th>
+     Heading Two
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>
+     A1
+    </td>
+    <td>
+     value
+    </td>
+   </tr>
+   <tr>
+    <td>
+     A2
+    </td>
+    <td>
+     value
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</figure>
+<p>
+ <br/>
+ <strong>
+  Insert Endpoints:
+ </strong>
+ <br/>
+ <a href="/swaggerhub-portal/docs/swaggerhub-portal-api#/Portals/getPortals">
+  GET get list of portals
+ </a>
+ is an endpoint to filter portals by subdomain, and other parameters. You can use this endpoint to retrieve a list of portals that match your criteria.
+</p>

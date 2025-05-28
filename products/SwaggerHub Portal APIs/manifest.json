@@ -69,6 +69,14 @@
         {
             "order": 7,
             "parent": "",
+            "name": "Docs As Code",
+            "slug": "docs-as-code",
+            "type": "html",
+            "contentUrl": "Docs-As-Code.html"
+        },
+        {
+            "order": 8,
+            "parent": "",
             "name": "API Changelog",
             "slug":"api-changelog",
             "type": "markdown",

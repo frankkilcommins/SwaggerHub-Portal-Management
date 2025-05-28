@@ -1,4 +1,6 @@
-Welcome to the SwaggerHub Portal API! 👋
+# Welcome to the SwaggerHub Portal API! 👋
+
+> 🚧 This is only a sample product. If you want the real API Hub Portal docs, then head over to [https://developer.smartbear.com/](https://developer.smartbear.com/)
 
 The SwaggerHub Portal is an API developer portal designed to provide a seamless and comprehensive experience for teams and companies to showcase their APIs. This guide will help you get started and understand the business value of the SwaggerHub Portal API. 🚀
 

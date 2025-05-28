@@ -252,20 +252,20 @@ function load_and_process_product_manifest_content_metadata() {
         log_message $INFO "****************************************************************"
 
         if [ "${type,,}" == "apiurl" ]; then        
-            portal_product_toc_api_reference_upsert "$name" "$slug" $order "$contentUrl" "$product_toc_id"
+            portal_product_toc_api_reference_upsert "$name" "$slug" $order "$contentUrl" "$product_toc_id" "$type"
         else
-            portal_product_toc_markdown_upsert "$name" "$slug" $order "$product_toc_id"
+            portal_product_toc_markdown_upsert "$name" "$slug" $order "$product_toc_id" "$type"
             log_message $INFO "Document ID: $document_id"
 
             local markdown_file="./products/$product_name/$contentUrl"
             if [ ! -f "$markdown_file" ]; then
-                log_message $ERROR "Markdown file not found: $markdown_file"
+                log_message $ERROR "Markdown/html file not found: $markdown_file"
                 exit 1
             fi
 
             local markdownContent="$(cat "$markdown_file")"
 
-            log_message $INFO "Checking for attachments to replace in markdown content..."
+            log_message $INFO "Checking for attachments to replace in markdown/html content..."
             log_message $DEBUG "Existing attachments: $existing_attachments"
             IFS=$'\n' # set the internal field separator to newline
             attachments=($(jq -r '.[] | "\(.id)\t\(.name)"' <<< "$existing_attachments"))
@@ -278,13 +278,18 @@ function load_and_process_product_manifest_content_metadata() {
                 escaped_attachment_name=$(escape_sed "$attachment_name")
                 escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
-
+                if [[ "$type" == "html" ]]; then
+                    # Replace image src in HTML fragments
+                    markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownContent")
+                else
+                    # Replace markdown image path
+                    markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
+                fi
             done
 
             log_message $INFO "Attachment replacement done."
-            log_message $DEBUG "Markdown Content: $markdownContent"
-            portal_product_document_markdown_patch "$markdownContent"
+            log_message $DEBUG "Markdown/HTML Content: $markdownContent"
+            portal_product_document_markdown_patch "$markdownContent" "$type"
         fi
         
         log_message $DEBUG "Setting parent_toc_id to $product_toc_id"
@@ -309,8 +314,8 @@ function load_and_process_product_manifest_content_metadata() {
                 log_message $DEBUG "Processing API reference for : $child_name, $child_slug, $child_order, $child_contentUrl, $parent_toc_id"
                 portal_product_toc_api_reference_upsert "$child_name" "$child_slug" $child_order "$child_contentUrl" "$parent_toc_id"
             else
-                log_message $DEBUG "Processing markdown for : $child_name, $child_slug, $child_order, $parent_toc_id"
-                portal_product_toc_markdown_upsert "$child_name" "$child_slug" $child_order "$parent_toc_id"
+                log_message $DEBUG "Processing markdown for : $child_name, $child_slug, $child_order, $parent_toc_id", "$child_type"
+                portal_product_toc_markdown_upsert "$child_name" "$child_slug" $child_order "$parent_toc_id" "$child_type" 
                 log_message $INFO "Document ID for CHILD: $document_id"
 
                 local child_markdown_file="./products/$product_name/$child_contentUrl"
@@ -321,7 +326,7 @@ function load_and_process_product_manifest_content_metadata() {
 
                 local markdownChildContent="$(cat "$child_markdown_file")"
 
-                log_message $INFO "Checking for attachments to replace in nested markdown content..."
+                log_message $INFO "Checking for attachments to replace in nested markdown/html content..."
                 log_message $DEBUG "Existing attachments: $existing_attachments"
                 IFS=$'\n' # set the internal field separator to newline
     
@@ -335,14 +340,19 @@ function load_and_process_product_manifest_content_metadata() {
                     escaped_attachment_name=$(escape_sed "$attachment_name")
                     escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                    markdownChildContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
-
-                done
+                    if [[ "$child_type" == "html" ]]; then
+                        # Replace image src in HTML fragments
+                        markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownChildContent")
+                    else
+                        # Replace markdown image path
+                        markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
+                    fi
+                done                
 
                 log_message $INFO "Attachment replacement in nested content done."            
-                log_message $INFO "Updating markdown content for $child_name"
+                log_message $INFO "Updating markdown/html content for $child_name"
                 log_message $DEBUG "Markdown Content: $markdownChildContent"
-                portal_product_document_markdown_patch "$markdownChildContent"
+                portal_product_document_markdown_patch "$markdownChildContent" "$child_type"
             fi
         done
 
@@ -666,16 +676,17 @@ function portal_product_toc_markdown_upsert() {
     local markdown_slug=$2
     local content_order=$3
     local parent_toc_id=$4
+    local type=$5
 
     log_message $INFO "Upserting markdown TOC: $markdown_title in product $product_id ..."
     portal_product_toc_get_id "$section_id" "$markdown_title"
 
     if [ -z "$product_toc_id" ] || [ "$product_toc_id" == "null" ]; then
         log_message $INFO "Posting markdown TOC: $section_id, $markdown_title, $markdown_slug, $content_order, $parent_toc_id"
-        portal_product_toc_markdown_post "$section_id" "$markdown_title" "$markdown_slug" "$content_order" "$parent_toc_id"
+        portal_product_toc_markdown_post "$section_id" "$markdown_title" "$markdown_slug" "$content_order" "$parent_toc_id" "$type"
     else
         log_message $INFO "Patching markdown TOC: $section_id, $product_toc_id, $markdown_title, $markdown_slug, $content_order, $parent_toc_id"
-        portal_product_toc_markdown_patch "$section_id" "$product_toc_id" "$markdown_title" "$markdown_slug" "$content_order" "$product_toc_slug" "$parent_toc_id"
+        portal_product_toc_markdown_patch "$section_id" "$product_toc_id" "$markdown_title" "$markdown_slug" "$content_order" "$product_toc_slug" "$parent_toc_id" "$type"
     fi
 
     log_message $DEBUG "Returning document_id: $document_id"
@@ -690,6 +701,7 @@ function portal_product_toc_markdown_post() {
     local markdown_slug=$3
     local content_order=$4
     local parent_toc_id=$5
+    local type=$6
 
     log_message $INFO "Creating markdown TOC: $markdown_title in product $product_id with parent $parent_toc_id ..."
     local response=$(curl -s --request POST \
@@ -703,7 +715,7 @@ function portal_product_toc_markdown_post() {
             \"order\": $content_order,
             \"parentId\": \"$parent_toc_id\",
             \"content\": {
-                \"type\": \"markdown\"
+                \"type\": \"$type\"
             }
         }")
 
@@ -723,6 +735,7 @@ function portal_product_toc_markdown_patch() {
     local content_order=$5
     local product_toc_slug=$6
     local parent_toc_id=$7
+    local type=$8
 
     log_message $INFO "Updating markdown TOC: $markdown_title in product $product_id with parent $parent_toc_id ..."
     if [ "$markdown_slug" == "$product_toc_slug" ]; then
@@ -736,7 +749,7 @@ function portal_product_toc_markdown_patch() {
                 \"order\": $content_order,
                 \"parentId\": \"$parent_toc_id\",
                 \"content\": {
-                    \"type\": \"markdown\"
+                    \"type\": \"$type\"
                 }
             }")
     else
@@ -750,7 +763,7 @@ function portal_product_toc_markdown_patch() {
                 \"order\": $content_order,
                 \"parentId\": \"$parent_toc_id\",
                 \"content\": {
-                    \"type\": \"markdown\"
+                    \"type\": \"$type\"
                 }
             }")
     fi
@@ -774,6 +787,7 @@ function portal_product_toc_markdown_patch() {
 function portal_product_document_markdown_patch() {
     log_message $DEBUG "Enter portal_product_document_markdown_patch"
     local contents=$1
+    local type=$2
 
     log_message $INFO "Updating markdown document in product $product_id for document $document_id..."
     local escaped_contents=$(jq -Rs . <<< "$contents")
@@ -784,11 +798,11 @@ function portal_product_document_markdown_patch() {
         --header "Content-Type: application/json" \
         --data "{
             \"content\": $escaped_contents,
-            \"type\": \"markdown\"
+            \"type\": \"$type\"
         }")
     
     log_message $DEBUG "Document patch response: $response"
-    log_message $INFO "Done updating markdown document."
+    log_message $INFO "Done updating $type document."
     log_message $DEBUG "Exit portal_product_document_markdown_patch"
 }
 
