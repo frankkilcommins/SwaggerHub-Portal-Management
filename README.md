@@ -153,22 +153,23 @@ When creating a HTML page, you just create a HTML snippet. All this means is tha
 The safest approach is to follow the guidelines from [CKEditor Docs](https://ckeditor.com/docs/ckeditor5/latest) as that is the WYSIWYG editor we use for HTML pages.
 
 #### Supported Code Block Languages
-| Language   | css class    |
-|------------|--------------|
-| plain text  | plaintext    |
-| C          | c            |
-| C#         | cs           |
-| C++        | cpp |
-| CSS        | css|
-| Diff        | diff |
-| HTML        | html |
-| Java        | java |
-| JavaScript  | javascript |
-| PHP        | php |
-| Python     | python |
-| Ruby        | ruby |
-| TypeScript  | typescript |
-| XML        | xml |
+
+| Language    | css class               |
+|------------ |-------------------------|
+| plain text  | language-plaintext      |
+| C           | language-c              |
+| C#          | language-cs             |
+| C++         | language-cpp            |
+| CSS         | language-css            |
+| Diff        | language-diff           |
+| HTML        | language-html           |
+| Java        | language-java           |
+| JavaScript  | language-javascript     |
+| PHP         | language-php            |
+| Python      | language-python         |
+| Ruby        | language-ruby           |
+| TypeScript  | language-typescript     |
+| XML         | language-xml            |
 
 An embedded snippet example for C#:
 
