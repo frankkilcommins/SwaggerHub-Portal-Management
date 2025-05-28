@@ -259,13 +259,13 @@ function load_and_process_product_manifest_content_metadata() {
 
             local markdown_file="./products/$product_name/$contentUrl"
             if [ ! -f "$markdown_file" ]; then
-                log_message $ERROR "Markdown file not found: $markdown_file"
+                log_message $ERROR "Markdown/html file not found: $markdown_file"
                 exit 1
             fi
 
             local markdownContent="$(cat "$markdown_file")"
 
-            log_message $INFO "Checking for attachments to replace in markdown content..."
+            log_message $INFO "Checking for attachments to replace in markdown/html content..."
             log_message $DEBUG "Existing attachments: $existing_attachments"
             IFS=$'\n' # set the internal field separator to newline
             attachments=($(jq -r '.[] | "\(.id)\t\(.name)"' <<< "$existing_attachments"))
@@ -278,12 +278,17 @@ function load_and_process_product_manifest_content_metadata() {
                 escaped_attachment_name=$(escape_sed "$attachment_name")
                 escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
-
+                if [[ "$type" == "html" ]]; then
+                    # Replace image src in HTML fragments
+                    markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/$escaped_attachment_name[\"']#src=\"$escaped_attachment_url\"#g" <<< "$markdownContent")
+                else
+                    # Replace markdown image path
+                    markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
+                fi
             done
 
             log_message $INFO "Attachment replacement done."
-            log_message $DEBUG "Markdown Content: $markdownContent"
+            log_message $DEBUG "Markdown/HTML Content: $markdownContent"
             portal_product_document_markdown_patch "$markdownContent" "$type"
         fi
         
@@ -321,7 +326,7 @@ function load_and_process_product_manifest_content_metadata() {
 
                 local markdownChildContent="$(cat "$child_markdown_file")"
 
-                log_message $INFO "Checking for attachments to replace in nested markdown content..."
+                log_message $INFO "Checking for attachments to replace in nested markdown/html content..."
                 log_message $DEBUG "Existing attachments: $existing_attachments"
                 IFS=$'\n' # set the internal field separator to newline
     
@@ -335,12 +340,17 @@ function load_and_process_product_manifest_content_metadata() {
                     escaped_attachment_name=$(escape_sed "$attachment_name")
                     escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                    markdownChildContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
-
-                done
+                    if [[ "$child_type" == "html" ]]; then
+                        # Replace image src in HTML fragments
+                        markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/$escaped_attachment_name[\"']#src=\"$escaped_attachment_url\"#g" <<< "$markdownChildContent")
+                    else
+                        # Replace markdown image path
+                        markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
+                    fi
+                done                
 
                 log_message $INFO "Attachment replacement in nested content done."            
-                log_message $INFO "Updating markdown content for $child_name"
+                log_message $INFO "Updating markdown/html content for $child_name"
                 log_message $DEBUG "Markdown Content: $markdownChildContent"
                 portal_product_document_markdown_patch "$markdownChildContent" "$child_type"
             fi
