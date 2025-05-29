@@ -30,7 +30,7 @@ The following product structure must be adhered to allow for the automation to p
 
 - products _folder_- a folder containing all products to be uploaded and published. Each product _sub-folder_ name will be used as the `product name` created/modified within the portal
   - product One _folder_ - contains all data relevant to "Product One"
-    - *.md _files_ - contains the markdown documents to be published within "Product One". The file name is used as the table-of-contents entry name.
+    - `*.md / *.html` _files_ - contains the markdown and/or HTML documents to be published within "Product One". The file name is used as the table-of-contents entry name.
     - images _folder_ - a folder to house the product logo and _embedded_ sub-folder
       - `*.png / *.jpeg` - a root level image to be used as the product logo (needs to be reference from the `manifest.json`)
       - embedded _folder_ - a folder to storing all images to be embedded within the product markdown (or HTML) pages. See the image embedding conventions ([markdown](#image-embedding-convention-markdown) or [html](#image-embedding-convention-html)) for more info on how to reference.
@@ -138,7 +138,7 @@ So you will replace the following parameters which are all known up front:
 
 - `CONTENTMETADATA-SLUG` - the slug defined for page you want to link to (defined in the relevant manifest.json)
 
-Here is an example of how a relative page link should be inserted into the markdown:
+Here is an example of how a relative page link should be inserted into the HTML:
 
 ```html
 <p>Check out <a href="authentication">auth docs</a>.</p>
@@ -282,7 +282,7 @@ The `contentMetadata` defines the following properties:
 | name | The name of the content page. |
 | slug | The slug is a unique identifier for the content. It is used in the URL and helps to identify the content in the portal. |
 | type | The type of the content. It can be either "markdown", "html", or "apiUrl". |
-| contentUrl | The URL or file path of the content. For markdown content, it is the path to the markdown file. For API content, it is the URL of the Swagger/OpenAPI specification as published in SwaggerHub |
+| contentUrl | The URL or file path of the content. For markdown/html content, it is the path to the markdown/html file. For API content, it is the URL of the Swagger/OpenAPI specification as published in SwaggerHub |
 
 ## GitHub Actions
 
