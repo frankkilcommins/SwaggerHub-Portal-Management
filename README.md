@@ -2,6 +2,8 @@
 
 This repository demonstrates how to automate the deployment of products and product content to be published to a [SwaggerHub Portal](https://swagger.io/tools/swaggerhub/features/swaggerhub-portal/?utm_medium=product&utm_source=GitHub&utm_campaign=devrel-portal&utm_content=automation-reference) instance 🚀
 
+[![Docs-As-Code-Automation-APIHub](https://img.youtube.com/vi/7D5bbaj60Cc/0.jpg)](https://www.youtube.com/watch?v=7D5bbaj60Cc)
+
 This bootstrapped repository is setup with 3 sample products which will be deployed and optionally auto-published.
 
 - A sample "_Adopt a Pet_" product exists in this [folder](./products/Adopt-a-Pet/)
