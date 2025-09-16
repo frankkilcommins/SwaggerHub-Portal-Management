@@ -62,10 +62,23 @@ The convention is as follows (within an `<img>` element):
 
 `src="relative path to image in the ./images/embedded folder"`
 
-An example of how an image should be referenced in the html is as follows (you can choose appropriate dimensions and styles):
+An example of how an image should be referenced in the HTML is as follows (you can choose appropriate dimensions and styles):
 
 ```html
 <img height="256" src="./images/embedded/arazzo_horizontal_color.png" style="aspect-ratio:993/256;" width="993"/>
+```
+
+It's also supported to have multiple sources within a `picture` element:
+
+`srcset="relative path to image in the ./images/embedded folder"`
+
+An example of using a picture source to control dark mode image in the HTML is as follows:
+
+```html
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./images/embedded/BugSnag-Repository-Header-Dark.svg">
+      <img height="256" src="./images/embedded/BugSnag-Repository-Header-Light.svg" alt="SmartBear BugSnag Logo">
+    </picture>
 ```
 
 ### OpenAPI References Convention (Markdown)

@@ -281,6 +281,9 @@ function load_and_process_product_manifest_content_metadata() {
                 if [[ "$type" == "html" ]]; then
                     # Replace image src in HTML fragments
                     markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownContent")
+                    
+                    # Replace image srcset in HTML fragments
+                    markdownContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownContent")   
                 else
                     # Replace markdown image path
                     markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
@@ -343,6 +346,9 @@ function load_and_process_product_manifest_content_metadata() {
                     if [[ "$child_type" == "html" ]]; then
                         # Replace image src in HTML fragments
                         markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownChildContent")
+
+                        # Replace image srcset in HTML fragments
+                        markdownContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownChildContent")
                     else
                         # Replace markdown image path
                         markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
