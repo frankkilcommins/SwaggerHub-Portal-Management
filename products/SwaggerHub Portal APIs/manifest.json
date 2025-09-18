@@ -71,7 +71,7 @@
             "parent": "",
             "name": "Docs As Code",
             "slug": "docs-as-code",
-            "type": "html",
+            "type": "markdown",
             "contentUrl": "Docs-As-Code.html"
         },
         {

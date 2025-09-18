@@ -165,7 +165,7 @@ You can link to a specific anchor using normal anchor referencing (e.g. `/#somea
 
 When creating a HTML page, you just create a HTML snippet. All this means is that you omit the HTML, head, and body wrapper elements (`<html><head>...</head><body>...</body></html>`).
 
-The safest approach is to follow the guidelines from [CKEditor Docs](https://ckeditor.com/docs/ckeditor5/latest) as that is the WYSIWYG editor we use for HTML pages.
+Ensure that your HTML conforms to the safe attributes defined in the `sanitize-html` package. See [here](https://github.com/apostrophecms/sanitize-html) for more info.
 
 #### Supported Code Block Languages
 
@@ -296,7 +296,7 @@ The `contentMetadata` defines the following properties:
 | parent | The slug of the parent content, if the current item is to be nested under a parent item. |
 | name | The name of the content page. |
 | slug | The slug is a unique identifier for the content. It is used in the URL and helps to identify the content in the portal. |
-| type | The type of the content. It can be either "markdown", "html", or "apiUrl". |
+| type | The type of the content. It can be either "markdown", or "apiUrl". For `html` content, you must still use `markdown` as the specified type.|
 | contentUrl | The URL or file path of the content. For markdown/html content, it is the path to the markdown/html file. For API content, it is the URL of the Swagger/OpenAPI specification as published in SwaggerHub |
 
 ## GitHub Actions

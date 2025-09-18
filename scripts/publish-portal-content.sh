@@ -278,16 +278,14 @@ function load_and_process_product_manifest_content_metadata() {
                 escaped_attachment_name=$(escape_sed "$attachment_name")
                 escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                if [[ "$type" == "html" ]]; then
-                    # Replace image src in HTML fragments
-                    markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownContent")
-                    
-                    # Replace image srcset in HTML fragments
-                    markdownContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownContent")   
-                else
-                    # Replace markdown image path
-                    markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
-                fi
+                # Replace image src in HTML fragments
+                markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownContent")
+                
+                # Replace image srcset in HTML fragments
+                markdownContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownContent") 
+
+                # Replace markdown image path
+                markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
             done
 
             log_message $INFO "Attachment replacement done."
@@ -343,16 +341,14 @@ function load_and_process_product_manifest_content_metadata() {
                     escaped_attachment_name=$(escape_sed "$attachment_name")
                     escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                    if [[ "$child_type" == "html" ]]; then
-                        # Replace image src in HTML fragments
-                        markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownChildContent")
+                    # Replace image src in HTML fragments
+                    markdownChildContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownChildContent")
 
-                        # Replace image srcset in HTML fragments
-                        markdownContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownChildContent")
-                    else
-                        # Replace markdown image path
-                        markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
-                    fi
+                    # Replace image srcset in HTML fragments
+                    markdownChildContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownChildContent") 
+
+                    # Replace markdown image path
+                    markdownChildContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
                 done                
 
                 log_message $INFO "Attachment replacement in nested content done."            
